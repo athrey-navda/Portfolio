@@ -1,2 +1,2 @@
 # portfolio
-A site to say out who I am 
+A site to say out who I am! 

@@ -1,8 +1,8 @@
 export default function HeroSection() {
   return (
-    <div className="overflow-hidden py-12 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-8 sm:gap-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+    <div className="overflow-hidden">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 sm:gap-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
               <h2 className="text-lg sm:text-xl lg:text-base xl:text-lg font-semibold leading-6 text-indigo-600">Hello there!</h2>

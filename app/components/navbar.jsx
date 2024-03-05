@@ -5,12 +5,13 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 const navigation = [
-  { name: 'Education', href: '#' },
-  { name: 'Experience', href: '#' },
-  { name: 'Skills', href: '#' },
-  { name: 'Projects', href: '#' },
-  { name: 'About me', href: '#' },
-  { name: 'Contact Us', href: '#' },
+  { name: 'Education', href: '/education' },
+  { name: 'Experience', href: '/experience' },
+  { name: 'Skills', href: '/skills' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'About me', href: '/about-me' },
+  { name: 'Contact me', href: '/contact-me' },
+  { name: 'Fun', href: '/games' },
 ]
 
 export default function Navbar() {
@@ -55,7 +56,7 @@ export default function Navbar() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6">
+              <a key={item.name} href={item.href} className="text-md font-semibold leading-6">
                 {item.name}
               </a>
             ))}

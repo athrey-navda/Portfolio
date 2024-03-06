@@ -1,21 +1,21 @@
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 const navigation = [
-  { name: 'Education', href: '/education' },
-  { name: 'Experience', href: '/experience' },
-  { name: 'Skills', href: '/skills' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'About me', href: '/about-me' },
-  { name: 'Contact me', href: '/contact-me' },
-  { name: 'Fun', href: '/fun' },
-]
+  { name: "Education", href: "/education" },
+  { name: "Experience", href: "/experience" },
+  { name: "Projects", href: "/projects" },
+  { name: "Skills", href: "/skills" },
+  { name: "About me", href: "/about-me" },
+  { name: "Contact me", href: "/contact-me" },
+  { name: "Fun", href: "/fun" },
+];
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -27,21 +27,29 @@ export default function Navbar() {
     return null;
   }
 
-
   return (
     <div className="">
       <header className="absolute inset-x-0 top-0 z-50">
-        <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <nav
+          className="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Athrey</span>
-              {!mobileMenuOpen ? 
-                  <img
+              {!mobileMenuOpen ? (
+                <img
                   className="h-auto w-28"
-                  src= {resolvedTheme === 'dark' ?  "./images/logo/athrey-high-resolution-logo-white-transparent.png" : "./images/logo/athrey-high-resolution-logo-black-transparent.png"}
+                  src={
+                    resolvedTheme === "dark"
+                      ? "./images/logo/athrey-high-resolution-logo-white-transparent.png"
+                      : "./images/logo/athrey-high-resolution-logo-black-transparent.png"
+                  }
                   alt=""
-                />   : "" 
-              }
+                />
+              ) : (
+                ""
+              )}
             </a>
           </div>
           <div className="flex lg:hidden">
@@ -56,27 +64,45 @@ export default function Navbar() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-md font-semibold leading-6">
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-md font-semibold leading-6"
+              >
                 {item.name}
               </a>
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a href="#" className="text-sm font-semibold leading-6">
-                {resolvedTheme === 'dark' ? (
-                    <button>
-                      <SunIcon width={30} height={25} className="text-white" onClick={() => setTheme('light')} />
-                    </button>
-                ) : (
-                  <button>
-                    <MoonIcon width={30} height={25} className="text-black" onClick={() => setTheme('dark')} />
-                  </button>
-                )}
-              
+              {resolvedTheme === "dark" ? (
+                <button>
+                  <SunIcon
+                    width={30}
+                    height={25}
+                    className="text-white"
+                    onClick={() => setTheme("light")}
+                  />
+                </button>
+              ) : (
+                <button>
+                  <MoonIcon
+                    width={30}
+                    height={25}
+                    className="text-black"
+                    onClick={() => setTheme("dark")}
+                  />
+                </button>
+              )}
             </a>
           </div>
         </nav>
-        <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenuOpen}
+          onClose={setMobileMenuOpen}
+        >
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 text-black dark:text-white bg-white dark:bg-black">
             <div className="flex items-center justify-between">
@@ -84,9 +110,13 @@ export default function Navbar() {
                 <span className="sr-only">Athrey</span>
                 <img
                   className="h-auto w-28"
-                  src= {resolvedTheme === 'dark' ?  "./images/logo/athrey-high-resolution-logo-white-transparent.png" : "./images/logo/athrey-high-resolution-logo-black-transparent.png"}
+                  src={
+                    resolvedTheme === "dark"
+                      ? "./images/logo/athrey-high-resolution-logo-white-transparent.png"
+                      : "./images/logo/athrey-high-resolution-logo-black-transparent.png"
+                  }
                   alt=""
-                />    
+                />
               </a>
               <button
                 type="button"
@@ -111,15 +141,25 @@ export default function Navbar() {
                   ))}
                 </div>
                 <div className="py-6">
-                {resolvedTheme === 'dark' ? (
+                  {resolvedTheme === "dark" ? (
                     <button>
-                      <SunIcon width={30} height={25} className="text-white" onClick={() => setTheme('light')} />
+                      <SunIcon
+                        width={30}
+                        height={25}
+                        className="text-white"
+                        onClick={() => setTheme("light")}
+                      />
                     </button>
-                ) : (
-                  <button>
-                    <MoonIcon width={30} height={25} className="text-black" onClick={() => setTheme('dark')} />
-                  </button>
-                )}
+                  ) : (
+                    <button>
+                      <MoonIcon
+                        width={30}
+                        height={25}
+                        className="text-black"
+                        onClick={() => setTheme("dark")}
+                      />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -127,5 +167,5 @@ export default function Navbar() {
         </Dialog>
       </header>
     </div>
-  )
+  );
 }

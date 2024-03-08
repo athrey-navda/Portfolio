@@ -4,7 +4,7 @@ export default function ExperienceComponent() {
   return (
     <Link href="./experience">
       <h2 className="text-3xl font-bold py-8 sm:text-4xl">Experience</h2>
-      <div className="overflow-hidden py-4 sm:py-4 bg-slate-400 dark:bg-slate-800 mt-3">
+      <div className="overflow-hidden py-4 sm:py-4 bg-amber-400 dark:bg-zinc-800 mt-3">
         <div className="mx-auto px-6 lg:px-8">
           <div>
             <div className="flex items-center gap-x-6">
@@ -97,7 +97,7 @@ export default function ExperienceComponent() {
           </div>
         </div>
       </div>
-      <div className="overflow-hidden py-4 sm:py-4 bg-slate-400 dark:bg-slate-800 mt-3">
+      <div className="overflow-hidden py-4 sm:py-4 bg-amber-400 dark:bg-zinc-800 mt-3">
         <div className="mx-auto px-6 lg:px-8">
           <div>
             <div className="flex items-center gap-x-6">

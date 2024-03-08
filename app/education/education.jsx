@@ -26,7 +26,7 @@ export default function EducationComponent() {
     <Link href="./education">
       <h2 className="text-3xl font-bold py-12 sm:text-4xl">Education</h2>
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8 bg-stone-300 dark:bg-stone-700 mt-3 py-4">
-        <div>
+        <div className="px-2">
           <h3 className="font-semibold">
             George Mason University - Fairfax, Viginia, United States
           </h3>
@@ -46,26 +46,14 @@ export default function EducationComponent() {
           >
             <img
               src="https://cec.gmu.edu/sites/g/files/yyqcgq471/files/styles/large/public/2022-08/Generic-thumnbail-image.jpg"
-              alt="Walnut card tray filled with cards and card angled in dedicated groove."
+              alt="GMU"
               className="w-full h-full object-cover"
             />
           </div>
         </div>
       </div>
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8 bg-stone-300 dark:bg-stone-700 mt-3 py-4">
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
-          <div
-            className="rounded-lg overflow-hidden"
-            style={{ height: "30rem", overflow: "hidden" }}
-          >
-            <img
-              src="/images/homepage/vtu.jpeg"
-              alt="Walnut card tray filled with cards and card angled in dedicated groove."
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div>
+        <div className="px-2 lg:order-2">
           <h3 className="font-semibold">
             Visveswaraya Technological University - Kalburgi, Karnataka, India
           </h3>
@@ -76,6 +64,19 @@ export default function EducationComponent() {
                 <dd className="mt-2 text-sm">{vtu.description}</dd>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 lg:order-1">
+          <div
+            className="rounded-lg overflow-hidden"
+            style={{ height: "30rem", overflow: "hidden" }}
+          >
+            <img
+              src="/images/homepage/vtu.jpeg"
+              alt="VTU"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

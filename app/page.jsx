@@ -5,7 +5,7 @@ import EducationComponent from "./education/education";
 import ExperienceComponent from "./experience/experience";
 import ProjectsComponent from "./projects/projects";
 import SkillsComponent from "./skills/skills";
-
+import Footer from "./components/footer";
 const gmu = [
   { name: "Majors", description: "MS in Computer Science" },
   {
@@ -30,14 +30,14 @@ const vtu = [
 export default function Home() {
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
-      <div className="md:container md:mx-auto flex min-h-screen flex-col items-center justify-between p-24">
+      <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-24 lg:px-24">
         <Navbar />
 
         <section className="d-block px-6 py-14 sm:py-18 lg:px-8">
           <HeroSection />
         </section>
 
-        <section className="d-block px-6 py-6 sm:py-2 lg:px-8">
+        <section className="d-block px-6 py-4 sm:py-1 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
             <blockquote className="text-center text-xl font-semibold leading-8 sm:text-2xl sm:leading-9">
               <p>
@@ -68,6 +68,7 @@ export default function Home() {
           <SkillsComponent />
         </section>
       </div>
+      <Footer />
     </div>
   );
 }

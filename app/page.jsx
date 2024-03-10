@@ -6,28 +6,61 @@ import ExperienceComponent from "./experience/experience";
 import ProjectsComponent from "./projects/projects";
 import SkillsComponent from "./skills/skills";
 import Footer from "./components/footer";
-const gmu = [
-  { name: "Majors", description: "MS in Computer Science" },
-  {
-    name: "Coursework",
-    description:
-      "Analysis of Algorithms, User Interface and Experience (UI-UX) Development , Information Security Theory, Software Testing, Software Project Management.",
-  },
-  { name: "Duration", description: "Jan 2023 to Dec 2024" },
-  { name: "GPA", description: "3.89/4.0" },
-];
-const vtu = [
-  { name: "Majors", description: "BE in Information Science" },
-  {
-    name: "Coursework",
-    description:
-      "Software Engineering, DSA, OOPC, Web Development, Cryptography Network Security,Software Testing, DBMS, Computer Network",
-  },
-  { name: "Duration", description: "Aug 2015 to July 2019" },
-  { name: "GPA", description: "3.0/4.0" },
-];
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    const handleHashChange = () => {
+      const { hash } = window.location;
+      if (hash) {
+        const element = document.getElementById(hash.substring(1));
+        if (element) {
+          scrollTo(element);
+        }
+      }
+    };
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+
+    // Scroll to section if hash exists on initial load
+    handleHashChange();
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  const scrollTo = (element) => {
+    const offsetTop = element.getBoundingClientRect().top;
+    const headerOffset = 100; // Adjust this value as needed
+    const duration = 800; // Adjust the duration (in milliseconds)
+
+    const startTime = performance.now();
+    const startOffset = window.scrollY;
+
+    function scroll(timestamp) {
+      const elapsed = timestamp - startTime;
+      const progress = elapsed / duration;
+
+      window.scrollTo({
+        top: startOffset + offsetTop * ease(progress),
+        behavior: "auto",
+      });
+
+      if (elapsed < duration) {
+        requestAnimationFrame(scroll);
+      }
+    }
+
+    requestAnimationFrame(scroll);
+  };
+
+  // Easing function for smoother animation
+  const ease = (t) =>
+    t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
       <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-24 lg:px-24">
@@ -52,19 +85,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="education" className="d-block px-6 py-8 sm:py-8 lg:px-8">
           <EducationComponent />
         </section>
 
-        <section className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="experience" className="d-block px-6 py-8 sm:py-8 lg:px-8">
           <ExperienceComponent />
         </section>
 
-        <section className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="projects" className="d-block px-6 py-8 sm:py-8 lg:px-8">
           <ProjectsComponent />
         </section>
 
-        <section className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="skills" className="d-block px-6 py-8 sm:py-8 lg:px-8">
           <SkillsComponent />
         </section>
       </div>

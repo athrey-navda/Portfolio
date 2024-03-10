@@ -5,13 +5,13 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 const navigation = [
-  { name: "Education", href: "/education" },
-  { name: "Experience", href: "/experience" },
-  { name: "Projects", href: "/projects" },
-  { name: "Skills", href: "/skills" },
-  { name: "About me", href: "/about-me" },
-  { name: "Contact me", href: "/contact-me" },
-  { name: "Fun", href: "/fun" },
+  { name: "Education", id: "education" },
+  { name: "Experience", id: "experience" },
+  { name: "Projects", id: "projects" },
+  { name: "Skills", id: "skills" },
+  { name: "About me", id: "about-me" },
+  { name: "Contact me", id: "contact-me" },
+  { name: "Fun", id: "fun" },
 ];
 
 export default function Navbar() {
@@ -66,7 +66,7 @@ export default function Navbar() {
             {navigation.map((item) => (
               <a
                 key={item.name}
-                href={item.href}
+                href={`#${item.id}`}
                 className="text-md font-semibold leading-6"
               >
                 {item.name}
@@ -133,7 +133,7 @@ export default function Navbar() {
                   {navigation.map((item) => (
                     <a
                       key={item.name}
-                      href={item.href}
+                      href={`#${item.id}`}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-500"
                     >
                       {item.name}

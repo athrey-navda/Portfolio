@@ -1,10 +1,8 @@
-"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-const products = [
+const projects = [
   {
     id: 1,
     name: "Rapid Cloudify",
@@ -78,12 +76,12 @@ export default function ProjectsComponent() {
   return (
     <>
       <h2 className="text-3xl font-bold py-12 sm:text-4xl">Projects</h2>
-      <div className="mx-auto max-w-2xl items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-gray-400 dark:bg-gray-900 ">
+      <div className="mx-auto max-w-2xl items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-gray-400 dark:bg-gray-900">
         <div className="md:container md:mx-auto flex min-h-screen flex-col items-center justify-between">
           <section className="d-block px-4 py-8 sm:px-6 sm:py-6 lg:px-4">
             <div className="mx-auto max-w-2xl lg:max-w-7xl ">
               <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                {products.map((product) => (
+                {projects.map((product) => (
                   <div
                     key={product.id}
                     className="group relative group-hover:opacity-75 hover:p-2"

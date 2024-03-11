@@ -6,7 +6,7 @@ export default function Fun() {
           Games page
         </section>
         <section className="d-block px-6 py-8 sm:py-4 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:max-w-4xl">Coming Soon</div>
+          <div className="p-2 mt-24">Coming Soon</div>
         </section>
       </div>
     </div>

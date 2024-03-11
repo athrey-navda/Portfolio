@@ -1,11 +1,9 @@
 "use client";
 import HeroSection from "./components/heroSection";
-import Navbar from "./components/navbar";
 import EducationComponent from "./education/education";
 import ExperienceComponent from "./experience/experience";
 import ProjectsComponent from "./projects/projects";
 import SkillsComponent from "./skills/skills";
-import Footer from "./components/footer";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -20,13 +18,8 @@ export default function Home() {
       }
     };
 
-    // Listen for hash changes
     window.addEventListener("hashchange", handleHashChange);
-
-    // Scroll to section if hash exists on initial load
     handleHashChange();
-
-    // Clean up event listener
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
@@ -34,8 +27,7 @@ export default function Home() {
 
   const scrollTo = (element) => {
     const offsetTop = element.getBoundingClientRect().top;
-    const headerOffset = 100; // Adjust this value as needed
-    const duration = 800; // Adjust the duration (in milliseconds)
+    const duration = 800;
 
     const startTime = performance.now();
     const startOffset = window.scrollY;
@@ -57,15 +49,12 @@ export default function Home() {
     requestAnimationFrame(scroll);
   };
 
-  // Easing function for smoother animation
   const ease = (t) =>
     t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
       <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-24 lg:px-24">
-        <Navbar />
-
         <section className="d-block px-6 py-14 sm:py-18 lg:px-8">
           <HeroSection />
         </section>
@@ -101,7 +90,6 @@ export default function Home() {
           <SkillsComponent />
         </section>
       </div>
-      <Footer />
     </div>
   );
 }

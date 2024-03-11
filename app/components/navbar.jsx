@@ -1,3 +1,4 @@
+"use client";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
@@ -35,7 +36,7 @@ export default function Navbar() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="./" className="-m-1.5 p-1.5">
               <span className="sr-only">Athrey</span>
               {!mobileMenuOpen ? (
                 <img
@@ -67,9 +68,11 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={
-                  `${item.id}` == ("contact-me" || "about-me" || "fun")
+                  `${item.id}` === ("contact-me" || "about-me" || "fun")
                     ? `${item.id}`
-                    : `#${item.id}`
+                    : window.pathname === "/"
+                    ? `#${item.id}`
+                    : `/${item.id}`
                 }
                 className="text-md font-semibold leading-6"
               >
@@ -110,7 +113,7 @@ export default function Navbar() {
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 text-black dark:text-white bg-white dark:bg-black">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="./" className="-m-1.5 p-1.5">
                 <span className="sr-only">Athrey</span>
                 <img
                   className="h-auto w-28"
@@ -138,9 +141,11 @@ export default function Navbar() {
                     <a
                       key={item.name}
                       href={
-                        `${item.id}` == ("contact-me" || "about-me" || "fun")
+                        `${item.id}` === ("contact-me" || "about-me" || "fun")
                           ? `${item.id}`
-                          : `#${item.id}`
+                          : window.pathname === "/"
+                          ? `#${item.id}`
+                          : `/${item.id}`
                       }
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-500"
                       onClick={() => setMobileMenuOpen(false)}

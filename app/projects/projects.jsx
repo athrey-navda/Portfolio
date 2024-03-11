@@ -17,8 +17,7 @@ const products = [
     imageSrc: "/images/logo/athrey-high-resolution-logo-white.png",
     imageAlt: "Rapid Cloudify",
     stack: "React with Nextjs (App Router), Tailwind CSS",
-    description:
-      "Automated AWS deployment for ReactJS, Node.js, and Python apps",
+    description: "An introductory site to my profile",
   },
   {
     id: 3,

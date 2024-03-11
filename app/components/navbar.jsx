@@ -66,7 +66,11 @@ export default function Navbar() {
             {navigation.map((item) => (
               <a
                 key={item.name}
-                href={`#${item.id}`}
+                href={
+                  `{item.name}` == "contact me" || "about-me" || "fun"
+                    ? `${item.id}`
+                    : `#${item.id}`
+                }
                 className="text-md font-semibold leading-6"
               >
                 {item.name}
@@ -133,7 +137,11 @@ export default function Navbar() {
                   {navigation.map((item) => (
                     <a
                       key={item.name}
-                      href={`#${item.id}`}
+                      href={
+                        `{item.name}` == "contact me" || "about-me" || "fun"
+                          ? `${item.id}`
+                          : `#${item.id}`
+                      }
                       className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-500"
                       onClick={() => setMobileMenuOpen(false)}
                     >

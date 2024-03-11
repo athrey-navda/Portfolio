@@ -31,3 +31,27 @@ body {
     text-wrap: balance;
   }
 }
+
+.white-btn {
+  color: black;
+  background: #ffffff;
+  font-weight: 600;
+  border-color: #ffffff;
+  border-width: 2px;
+}
+
+.black-btn {
+  color: white;
+  background: black;
+  font-weight: 600;
+  border-color: #ffffff;
+  border-width: 2px;
+}
+
+.transparent-btn {
+  color: #ffffff;
+  background: transparent;
+  font-weight: 600;
+  border-color: #ffffff;
+  border-width: 2px;
+}

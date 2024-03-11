@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 export default function HeroSection() {
+  const { setTheme, resolvedTheme } = useTheme();
+
   return (
     <div className="overflow-hidden">
       <div className="mx-auto max-w-7xl mt-18">
@@ -37,16 +40,16 @@ export default function HeroSection() {
                 Graduating Dec '24.
               </div>
               <div>
-                <div className="flex mt-4 sm:justify-start sm:mt-10">
+                <div className="flex mt-4 sm:justify-between sm:mt-10">
                   <Link
                     href="mailto:bnavda@gmu.edu"
                     target="_blank"
-                    className=" hover:text-gray-900 dark:hover:text-sky-300 mx-5"
+                    className="hover:text-gray-900 dark:hover:text-sky-300 mx-3"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="26"
-                      height="26"
+                      width="30"
+                      height="30"
                       fill="currentColor"
                       className="bi bi-envelope"
                       viewBox="0 0 16 16"
@@ -60,12 +63,12 @@ export default function HeroSection() {
                   <Link
                     href="https://www.linkedin.com/in/byndoor-athrey-navda-5068a0130/"
                     target="_blank"
-                    className=" mx-3 hover:text-gray-900 dark:hover:text-sky-300 ms-5"
+                    className="mx-3 hover:text-gray-900 dark:hover:text-sky-300"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="30"
+                      height="30"
                       fill="currentColor"
                       className="bi bi-linkedin"
                       viewBox="0 0 16 16"
@@ -78,11 +81,11 @@ export default function HeroSection() {
                   <Link
                     href="https://github.com/athrey-navda"
                     target="_blank"
-                    className=" mx-3 hover:text-gray-900 dark:hover:text-sky-300 ms-5"
+                    className="mx-3 hover:text-gray-900 dark:hover:text-sky-300"
                   >
                     <svg
-                      width="24"
-                      height="24"
+                      width="30"
+                      height="30"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="currentColor"
@@ -104,8 +107,8 @@ export default function HeroSection() {
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
+                      width="30"
+                      height="30"
                       fill="currentColor"
                       className="bi bi-instagram"
                       viewBox="0 0 16 16"
@@ -115,6 +118,22 @@ export default function HeroSection() {
 
                     <span className="sr-only">Instagram</span>
                   </Link>
+                  <div className="mx-3">
+                    <Link
+                      href="/file/ByndoorAthreyNavda_Resume.pdf"
+                      target="_blank"
+                    >
+                      <button
+                        className={
+                          resolvedTheme === "dark"
+                            ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
+                            : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                        }
+                      >
+                        Resume
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -124,8 +143,8 @@ export default function HeroSection() {
               src="/images/homepage/herosectionImage.jpg"
               alt="ProfilePic"
               className="w-full max-w-sm md:max-w-none rounded-full shadow-xl ring-1 ring-gray-400/10"
-              width={400}
-              height={400}
+              width={350}
+              height={350}
             />
           </div>
         </div>

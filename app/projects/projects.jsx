@@ -116,15 +116,17 @@ export default function ProjectsComponent() {
             </div>
           </section>
           <div className="flex justify-center">
-            <div
-              className={
-                resolvedTheme === "dark"
-                  ? `white-btn inline-flex items-center rounded-lg px-8 py-4 hover:bg-transparent hover:text-white`
-                  : `black-btn inline-flex items-center rounded-lg px-8 py-4 hover:bg-transparent hover:text-black`
-              }
-            >
-              More
-            </div>
+            <Link href="/projects">
+              <div
+                className={
+                  resolvedTheme === "dark"
+                    ? `white-btn inline-flex items-center rounded-lg px-8 py-4 hover:bg-transparent hover:text-white`
+                    : `black-btn inline-flex items-center rounded-lg px-8 py-4 hover:bg-transparent hover:text-black`
+                }
+              >
+                More
+              </div>
+            </Link>
           </div>
         </div>
       </div>

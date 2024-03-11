@@ -67,7 +67,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={
-                  `{item.name}` == "contact me" || "about-me" || "fun"
+                  `${item.id}` == ("contact-me" || "about-me" || "fun")
                     ? `${item.id}`
                     : `#${item.id}`
                 }
@@ -138,7 +138,7 @@ export default function Navbar() {
                     <a
                       key={item.name}
                       href={
-                        `{item.name}` == "contact me" || "about-me" || "fun"
+                        `${item.id}` == ("contact-me" || "about-me" || "fun")
                           ? `${item.id}`
                           : `#${item.id}`
                       }

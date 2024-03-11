@@ -1,58 +1,107 @@
 import Link from "next/link";
+const products = [
+  {
+    id: 1,
+    name: "Rapid Cloudify",
+    href: "http://rapidcloudify.com",
+    imageSrc: "/images/homepage/rapidcloudify.png",
+    imageAlt: "Rapid Cloudify",
+    stack: "React, React-Bootstrap, Formik, Yup, Python, Ansible, AWS EC2",
+    description:
+      "Automated AWS deployment for ReactJS, Node.js, and Python apps",
+  },
+  {
+    id: 2,
+    name: "My Portfolio",
+    href: "https://portfolio-rho-swart.vercel.app/",
+    imageSrc: "/images/logo/athrey-high-resolution-logo-white.png",
+    imageAlt: "Rapid Cloudify",
+    stack: "React with Nextjs (App Router), Tailwind CSS",
+    description:
+      "Automated AWS deployment for ReactJS, Node.js, and Python apps",
+  },
+  {
+    id: 3,
+    name: "Universal Booking System",
+    href: "https://book.clayworks.space",
+    imageSrc:
+      "https://clayworks.space/assets/website/property/clayworks-cbd/Clayworks-cbd-hot-seats.jpg",
+    imageAlt: "Booking System",
+    stack:
+      "React - Next.js(pageRouter), Node.js, ExpressJS, MySQL, Tailwind CSS, JWT and OAuth",
+    description: "Booking System for different booking types",
+  },
+  {
+    id: 4,
+    name: "Inventory Management System",
+    href: "https://ims.clayworks.co",
+    imageSrc: "/images/homepage/ims.jpg",
+    imageAlt: "IMS",
+    stack: "Node, Express.js, MySQL, HTML, JS, Bootstrap CSS",
+    description:
+      "Inventory Management Application to manage inventory within co-working spaces",
+  },
+  {
+    id: 5,
+    name: "ClayWorks",
+    href: "https://clayworks.space",
+    imageSrc: "https://clayworks.space/assets/website/fbm/build-1.jpg",
+    imageAlt: "ClayWorks",
+    stack: "JS, HTML, Bootstrap",
+    description: "ClayWorks Company Website",
+  },
+  {
+    id: 6,
+    name: "Spotch",
+    href: "https://spotch.works",
+    imageSrc: "https://spotch.works/assets/website/spotch/S3/S3-1.webp",
+    imageAlt: "Spotch",
+    stack: "JS, HTML, Bootstrap",
+    description: "Spotch Company Website",
+  },
+];
 
 export default function ProjectsComponent() {
   return (
     <Link href="./projects">
       <h2 className="text-3xl font-bold py-12 sm:text-4xl">Projects</h2>
       <div className="mx-auto max-w-2xl  items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-gray-400 dark:bg-gray-900 ">
-        <div>
-          <div className="text-xl font-bold">
-            Rapid Cloudify
-            <span className="text-sm flex float-end">Nov 2023 - present</span>
-          </div>
-          <div className="text-md font-bold mt-4">
-            React, React-Bootstrap, Formik, Yup, Python, Ansible, AWS EC2
-          </div>
-          <div className="mt-2">
-            <div className="mt-2 text-sm">
-              Automated AWS deployment for ReactJS, Node.js, and Python apps,
-              cutting manual effort by 70% and accelerating cycles by 50% for
-              small-scale industries.
+        <div className="md:container md:mx-auto flex min-h-screen flex-col items-center justify-between">
+          <section className="d-block px-4 py-8 sm:px-6 sm:py-6 lg:px-4">
+            <div className="mx-auto max-w-2xl  lg:max-w-7xl ">
+              <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+                {products.map((product) => (
+                  <div
+                    key={product.id}
+                    className="group relative group-hover:opacity-75 hover:p-2"
+                  >
+                    <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none p-2 lg:h-80">
+                      <img
+                        src={product.imageSrc}
+                        alt={product.imageAlt}
+                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                      />
+                    </div>
+                    <div className="mt-4 flex justify-center">
+                      <div>
+                        <h3 className="text-xl my-2">
+                          <a href={product.href}>
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-0"
+                            />
+                            {product.name}
+                          </a>
+                        </h3>
+                      </div>
+                    </div>
+                    <div className="text-md font-bold">{product.stack}</div>
+                    <div className="font-light ">{product.description}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="mt-2 text-sm">
-              Crafted a robust CI/CD pipeline utilizing GitHub Webhooks to
-              automate code updates, ensuring an impressive uptime of 99.9% and
-              seamless scalability in real-time.
-            </div>
-            <div className="mt-2 text-sm">
-              Implemented Ansible for IaC, reducing AWS setup times by 60% and
-              operational costs by 40%, while enhancing client control through a
-              user-friendly interface.
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="mx-auto max-w-2xl  items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-gray-400 dark:bg-gray-900 ">
-        <div>
-          <div className="text-xl font-bold">
-            Part-time Job Portal - Intra college
-            <span className="text-sm flex float-end">Oct 2018 - May 2019</span>
-          </div>
-          <div className="text-md font-bold mt-4">
-            PHP, Laravel, CSS-Bootstrap, MySQL
-          </div>
-          <div className="mt-2">
-            <div className="mt-2 text-sm">
-              Directed the development of a comprehensive full-stack web
-              application, enabling students to seamlessly apply for on-campus
-              part-time opportunities, resulting in a 40% increase in student
-              engagement with the platform.
-            </div>
-            <div className="mt-2 text-sm">
-              Collaborated within a front-end team of 4 to optimize application
-              handling and responses, contributing to a
-            </div>
-          </div>
+          </section>
         </div>
       </div>
     </Link>

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 const navigation = [
+  { name: "Home", id: "./" },
   { name: "Education", id: "education" },
   { name: "Experience", id: "experience" },
   { name: "Projects", id: "projects" },

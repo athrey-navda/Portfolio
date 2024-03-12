@@ -62,7 +62,7 @@ export default function Home() {
         <section className="d-block px-6 py-4 sm:py-1 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-4xl">
             <blockquote className="text-center text-xl font-semibold leading-8 sm:text-2xl sm:leading-9">
-              <p>
+              <p className="my-16">
                 “Welcome to my digital space, where code meets creativity, and
                 innovation drives impact. With a passion for crafting software
                 solutions, exploring the world, whipping up culinary delights,

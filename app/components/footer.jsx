@@ -42,22 +42,32 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#experience" className="text-md font-semibold">
+                  <Link href="/education" className="text-md font-semibold">
+                    Education
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/experience" className="text-md font-semibold">
                     Experience
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#skills" className="text-md font-semibold">
+                  <Link href="/projects" className="text-md font-semibold">
+                    Projects
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/skills" className="text-md font-semibold">
                     Skills
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#contact-me" className="text-md font-semibold">
+                  <Link href="/contact-me" className="text-md font-semibold">
                     Contact Me
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#about-me" className="text-md font-semibold">
+                  <Link href="/about-me" className="text-md font-semibold">
                     About me
                   </Link>
                 </li>

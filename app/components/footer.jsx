@@ -196,6 +196,19 @@ export default function Footer() {
 
               <span className="sr-only">Instagram</span>
             </Link>
+            <div className="mx-3">
+              <Link href="/file/ByndoorAthreyNavda_Resume.pdf" target="_blank">
+                <button
+                  className={
+                    resolvedTheme === "white"
+                      ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
+                      : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                  }
+                >
+                  Resume
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

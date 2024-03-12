@@ -36,7 +36,7 @@ export default function HeroSection() {
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <div className="flex justify-center">
+              <div className="flex justify-center pl-4">
                 <div className="lg:max-w-lg">
                   <h2 className="text-lg sm:text-xl py-4 sm:pt-8 lg:text-base xl:text-lg font-semibold leading-6 text-indigo-600">
                     Hello there!
@@ -168,7 +168,7 @@ export default function HeroSection() {
               </div>
             </Transition>
           </div>
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mx-8">
             <Transition
               as={Fragment}
               show={isShowing}
@@ -179,7 +179,7 @@ export default function HeroSection() {
               leaveFrom="opacity-100 rotate-0 scale-100 "
               leaveTo="opacity-0 scale-95 "
             >
-              <div className="flex justify-center">
+              <div className="flex justify-center mt-8">
                 <img
                   src="/images/homepage/herosectionImage.jpg"
                   alt="ProfilePic"

@@ -1,6 +1,5 @@
 import { Quicksand } from "next/font/google";
 import { Providers } from "./provider";
-import Head from "next/head"; // Import the Head component from next/head
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
@@ -15,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         {/* Insert your script here */}
         <script
           dangerouslySetInnerHTML={{
@@ -32,7 +31,7 @@ export default function RootLayout({ children }) {
           }}
         />
         <link rel="shortcut icon" href="/images/logo/favicon.ico" />
-      </Head>
+      </head>
       <body className={quicksand.className}>
         <Providers>
           <Navbar />

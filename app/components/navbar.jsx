@@ -127,9 +127,25 @@ export default function Navbar() {
                   alt=""
                 />
               </a>
+
+              {resolvedTheme === "dark" ? (
+                <button className="-m-2.5 rounded-md p-2.5">
+                  <SunIcon
+                    className="h-6 w-6 text-white "
+                    onClick={() => setTheme("light")}
+                  />
+                </button>
+              ) : (
+                <button className="-m-2.5 rounded-md p-2.5">
+                  <MoonIcon
+                    className="h-6 w-6 text-black"
+                    onClick={() => setTheme("dark")}
+                  />
+                </button>
+              )}
+
               <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 "
+                className="-m-2.5 rounded-md p-2.5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -157,27 +173,6 @@ export default function Navbar() {
                       {item.name}
                     </a>
                   ))}
-                </div>
-                <div className="py-6">
-                  {resolvedTheme === "dark" ? (
-                    <button>
-                      <SunIcon
-                        width={30}
-                        height={25}
-                        className="text-white"
-                        onClick={() => setTheme("light")}
-                      />
-                    </button>
-                  ) : (
-                    <button>
-                      <MoonIcon
-                        width={30}
-                        height={25}
-                        className="text-black"
-                        onClick={() => setTheme("dark")}
-                      />
-                    </button>
-                  )}
                 </div>
               </div>
             </div>

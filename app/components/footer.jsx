@@ -42,26 +42,26 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/education" className="text-md font-semibold">
+                  <Link href="/#education" className="text-md font-semibold">
                     Education
                   </Link>
                 </li>
                 <li>
-                  <Link href="/experience" className="text-md font-semibold">
+                  <Link href="/#experience" className="text-md font-semibold">
                     Experience
                   </Link>
                 </li>
                 <li>
-                  <Link href="/projects" className="text-md font-semibold">
+                  <Link href="/#projects" className="text-md font-semibold">
                     Projects
                   </Link>
                 </li>
                 <li>
-                  <Link href="/skills" className="text-md font-semibold">
+                  <Link href="/#skills" className="text-md font-semibold">
                     Skills
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/contact-me" className="text-md font-semibold">
                     Contact Me
                   </Link>
@@ -70,14 +70,17 @@ export default function Footer() {
                   <Link href="/about-me" className="text-md font-semibold">
                     About me
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div>
               <h2 className="text-md font-semibold">Address</h2>
               <ul className="font-medium">
                 <li>
-                  <Link href="https://maps.app.goo.gl/GWyXiSP3ezWkawrC7">
+                  <Link
+                    href="https://maps.app.goo.gl/GWyXiSP3ezWkawrC7"
+                    target="_blank"
+                  >
                     Fairfax VA 22031
                   </Link>
                 </li>
@@ -201,8 +204,8 @@ export default function Footer() {
                 <button
                   className={
                     resolvedTheme === "white"
-                      ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
-                      : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                      ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white hover:border-black`
+                      : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black hover:border-black`
                   }
                 >
                   Resume

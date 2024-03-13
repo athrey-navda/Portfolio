@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 const navigation = [
-  { name: "Home", id: "./" },
   { name: "Education", id: "education" },
   { name: "Experience", id: "experience" },
   { name: "Projects", id: "projects" },
@@ -37,7 +36,7 @@ export default function Navbar() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="./" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Athrey</span>
               {!mobileMenuOpen ? (
                 <img
@@ -65,6 +64,14 @@ export default function Navbar() {
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
+            <a
+              key="home"
+              href="./"
+              className="text-md font-semibold leading-6"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </a>
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -132,6 +139,14 @@ export default function Navbar() {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
+                  <a
+                    key="home"
+                    href="./"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-500"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Home
+                  </a>
                   {navigation.map((item) => (
                     <a
                       key={item.name}

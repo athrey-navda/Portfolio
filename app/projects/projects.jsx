@@ -36,7 +36,7 @@ const projects = [
   {
     id: 4,
     name: "Inventory Management System",
-    href: "https://ims.clayworks.co",
+    href: "https://ims.clayworks.co/docs",
     imageSrc: "/images/homepage/ims.jpg",
     imageAlt: "IMS",
     stack: "Node, Express.js, MySQL, HTML, JS, Bootstrap CSS",
@@ -81,33 +81,42 @@ export default function ProjectsComponent() {
           <section className="d-block px-4 py-8 sm:px-6 sm:py-6 lg:px-4">
             <div className="mx-auto max-w-2xl lg:max-w-7xl ">
               <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                {projects.map((product) => (
+                {projects.map((project) => (
                   <div
-                    key={product.id}
-                    className="group relative group-hover:opacity-75 hover:p-2"
+                    key={project.id}
+                    className={`group relative group-hover:opacity-75 hover:p-2 rounded-lg ${
+                      resolvedTheme === "dark"
+                        ? `hover:bg-slate-300 hover:text-black`
+                        : `hover:bg-slate-900 hover:text-white`
+                    }`}
                   >
                     <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none p-2 lg:h-80">
                       <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
+                        src={project.imageSrc}
+                        alt={project.imageAlt}
                         className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                       />
                     </div>
                     <div className="mt-4 flex justify-center">
                       <div>
-                        <h3 className="text-xl my-2">
-                          <a href={product.href}>
-                            <span
-                              aria-hidden="true"
-                              className="absolute inset-0"
-                            />
-                            {product.name}
-                          </a>
-                        </h3>
+                        <h3 className="text-xl my-2">{project.name}</h3>
                       </div>
                     </div>
-                    <div className="text-md font-bold">{product.stack}</div>
-                    <div className="font-light ">{product.description}</div>
+                    <div className="text-md font-bold">{project.stack}</div>
+                    <div className="font-light ">{project.description}</div>
+                    <div className="mt-3 flex justify-center">
+                      <Link href={project.href}>
+                        <button
+                          className={
+                            resolvedTheme === "dark"
+                              ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
+                              : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                          }
+                        >
+                          View
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -122,7 +131,7 @@ export default function ProjectsComponent() {
                     : `black-btn inline-flex items-center rounded-lg px-8 py-4 hover:bg-transparent hover:text-black`
                 }
               >
-                More
+                More details
               </div>
             </Link>
           </div>

@@ -68,13 +68,24 @@ const projects = [
   },
   {
     id: 7,
+    name: "Spotch Blog - Wordpress",
+    href: "blog.spotch.works",
+    imageSrc:
+      "https://blog.spotch.works/wp-content/uploads/2021/05/home-s3-1.jpg",
+    imageAlt: "Spotch Blog",
+    stack: "Wordpress, PHP, CSS",
+    description:
+      "Developed a blog site for using wordpress, altered themes using PHP and CSS.",
+  },
+  {
+    id: 8,
     name: "Part-time Job Portal - Intra college",
     href: "#",
     imageSrc: "/images/homepage/jobportal.jpg",
     imageAlt: "Job portal",
     stack: "PHP, Laravel, CSS-Bootstrap, MySQL",
     description:
-      "Directed the development of a comprehensive full-stack web application, enabling students to seamlessly apply for on-campus part-time opportunities, resulting in a 40% increase in student engagement with the platform. Collaborated within a front-end team of 4 to optimize application handling and responses, contributing to a significant milestone of 300+ registrations within a month, showcasing a 50% increase in platform utilization.",
+      "Directed the development of a comprehensive full-stack web application, enabling students to seamlessly apply for on-campus part-time opportunities, resulting in a 40% increase in student engagement with the platform. Collaborated within a front-end team of 4 to optimize application handling and responses, contributing to a significant milestone of 300+ registrations within a month, showcasing a 50% increase in platform utilization. The site is not used anymore",
   },
 ];
 export default function Projects() {
@@ -93,59 +104,55 @@ export default function Projects() {
           <div className="flex-col p-2 mt-24">
             <h2 className="text-3xl font-bold py-12 sm:text-4xl ">Projects</h2>
             {projects.map((projects) => (
-              <Link href={projects.href}>
+              <div
+                key={projects.id}
+                className="mx-auto grid grid-cols-1 items-center  gap-y-16  lg:grid-cols-2  bg-gray-400 dark:bg-gray-900 mt-4"
+              >
                 <div
-                  key={projects.id}
-                  className="mx-auto grid grid-cols-1 items-center  gap-y-16  lg:grid-cols-2  bg-gray-400 dark:bg-gray-900 mt-4"
+                  className={`order-1 ${
+                    projects.id % 2 === 0 ? "md:order-1" : "md:order-2"
+                  }`}
                 >
                   <div
-                    className={`${
-                      projects.id % 2 === 0 ? "md:order-1" : "md:order-2"
-                    }`}
+                    className="rounded-lg overflow-hidden"
+                    style={{ height: "30rem" }}
                   >
-                    <div
-                      className="rounded-lg overflow-hidden"
-                      style={{ height: "30rem" }}
-                    >
-                      <img
-                        src={projects.imageSrc}
-                        alt={projects.imageAlt}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    <img
+                      src={projects.imageSrc}
+                      alt={projects.imageAlt}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div
-                    className={`${
-                      projects.id % 2 === 0 ? "md:order-2" : "md:order-1"
-                    }`}
-                  >
-                    <div className="mx-4">
-                      <h3 className="font-normal">{projects.name}</h3>
-                      <div className="mt-2">
-                        <div className="font-semibold">
-                          Technology Used: {projects.stack}
-                        </div>
-                        <div className="mt-2 text-sm">
-                          {projects.description}
-                        </div>
-                        <div className="mt-4">
-                          <Link href={projects.href}>
-                            <div
-                              className={
-                                resolvedTheme === "dark"
-                                  ? `white-btn inline-flex items-center rounded-lg px-4 py-2 hover:bg-transparent hover:text-white`
-                                  : `black-btn inline-flex items-center rounded-lg px-4 py-2 hover:bg-transparent hover:text-black`
-                              }
-                            >
-                              Visit site
-                            </div>
-                          </Link>
-                        </div>
+                </div>
+                <div
+                  className={`order-2 ${
+                    projects.id % 2 === 0 ? "md:order-2" : "md:order-1"
+                  }`}
+                >
+                  <div className="mx-4">
+                    <h3 className="font-normal">{projects.name}</h3>
+                    <div className="mt-2">
+                      <div className="font-semibold">
+                        Technology Used: {projects.stack}
+                      </div>
+                      <div className="mt-2 text-sm">{projects.description}</div>
+                      <div className="mt-4">
+                        <Link href={projects.href}>
+                          <div
+                            className={
+                              resolvedTheme === "dark"
+                                ? `white-btn inline-flex items-center rounded-lg px-4 py-2 hover:bg-transparent hover:text-white`
+                                : `black-btn inline-flex items-center rounded-lg px-4 py-2 hover:bg-transparent hover:text-black`
+                            }
+                          >
+                            Visit site
+                          </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </section>

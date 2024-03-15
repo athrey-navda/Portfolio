@@ -26,15 +26,15 @@ export default function EducationComponent() {
     <Link href="./education">
       <h2 className="text-3xl font-bold py-12 sm:text-4xl">Education</h2>
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8 bg-stone-300 dark:bg-stone-700 mt-3 py-4">
-        <div className="px-2">
+        <div className="px-2 hover:bg-opacity-90">
           <h3 className="font-semibold">
             George Mason University - Fairfax, Viginia, United States
           </h3>
           <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-y-8 lg:gap-x-8">
             {gmu.map((gmu) => (
               <div key={gmu.name} className="border-t border-gray-200 pt-4">
-                <dt className="font-medium">{gmu.name}</dt>
-                <dd className="mt-2 text-sm">{gmu.description}</dd>
+                <dt className="text-xl">{gmu.name}</dt>
+                <dd className="mt-2 text-md">{gmu.description}</dd>
               </div>
             ))}
           </div>
@@ -42,7 +42,7 @@ export default function EducationComponent() {
         <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
           <div
             className="rounded-lg overflow-hidden"
-            style={{ height: "30rem", overflow: "hidden" }}
+            style={{ height: "25rem", overflow: "hidden" }}
           >
             <img
               src="https://cec.gmu.edu/sites/g/files/yyqcgq471/files/styles/large/public/2022-08/Generic-thumnbail-image.jpg"
@@ -60,22 +60,22 @@ export default function EducationComponent() {
           <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-y-8 lg:gap-x-8">
             {vtu.map((vtu) => (
               <div key={vtu.name} className="border-t border-gray-200 pt-4">
-                <dt className="font-medium">{vtu.name}</dt>
-                <dd className="mt-2 text-sm">{vtu.description}</dd>
+                <dt className="text-xl">{vtu.name}</dt>
+                <dd className="mt-2 text-md">{vtu.description}</dd>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8 lg:order-1">
+        <div className="flex justify-center items-center lg:order-1">
           <div
             className="rounded-lg overflow-hidden"
-            style={{ height: "30rem", overflow: "hidden" }}
+            style={{ height: "25rem", overflow: "hidden" }}
           >
             <img
-              src="/images/homepage/vtu.jpeg"
+              src="https://upload.wikimedia.org/wikipedia/en/a/a0/Visvesvaraya_Technological_University_logo.png"
               alt="VTU"
-              className="w-full h-full object-cover"
+              className="h-full object-cover"
             />
           </div>
         </div>

@@ -4,7 +4,7 @@ export default function SkillsComponent() {
   return (
     <Link href="./skills">
       <h2 className="text-3xl font-bold py-12 sm:text-4xl">Skills</h2>
-      <div className="mx-auto max-w-2xl  items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-teal-100 dark:bg-teal-950">
+      <div className="mx-auto max-w-2xl  items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-stone-100 dark:bg-teal-950">
         <div>
           <div className="text-xl font-bold">Technical Skills</div>
           <div className="mt-2">
@@ -30,7 +30,7 @@ export default function SkillsComponent() {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-2xl  items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-teal-100 dark:bg-teal-950">
+      <div className="mx-auto max-w-2xl  items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:px-8 mt-3 py-4 bg-stone-100 dark:bg-teal-950">
         <div>
           <div className="text-xl font-bold">Leadership Involvement</div>
           <div className="mt-2">

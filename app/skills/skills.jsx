@@ -10,20 +10,20 @@ export default function SkillsComponent() {
           <div className="mt-2">
             <div className="mt-2 text-sm">
               <span className="font-bold">Programming Languages: </span>
-              JavaScript, Python, Java, C, C+
+              JavaScript, Python, Java, C, C++
             </div>
             <div className="mt-2 text-sm">
               <span className="font-bold">Technologies: </span>
-              Next.js, React, NodeJS, Express.js, Redux, HTML, CSS, Tailwind
-              CSS, Bootstrap, Material UI, Sass, Spring Boot, JWT, OAuth,
-              RESTful APIs, WebSocket’s (Firebase), AJAX.
+              React, Next.js, NodeJS, Express.js, Redux, HTML, CSS, Tailwind
+              CSS, Bootstrap, Material UI, Sass, JWT, OAuth, RESTful APIs,
+              WebSocket’s, Firebase, PHP, Laravel, AJAX, Wordpress, JQuery.
             </div>
             <div className="mt-2 text-sm">
               <span className="font-bold">Databases: </span>
               MySQL, PostgreSQL, MongoDB Software
             </div>
             <div className="mt-2 text-sm">
-              <span className="font-bold">Web Tools: </span>
+              <span className="font-bold">Tools: </span>
               VS Code, Git, Postman, Jenkins, Kubernetes, Ansible, Amazon EC2,
               Figma, Jira, React DevTools
             </div>

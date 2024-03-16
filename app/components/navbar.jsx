@@ -43,8 +43,8 @@ export default function Navbar() {
                   className="h-auto w-28"
                   src={
                     resolvedTheme === "dark"
-                      ? "./images/logo/athrey-high-resolution-logo-white-transparent.png"
-                      : "./images/logo/athrey-high-resolution-logo-black-transparent.png"
+                      ? "/images/logo/athrey-high-resolution-logo-white-transparent.png"
+                      : "/images/logo/athrey-high-resolution-logo-black-transparent.png"
                   }
                   alt=""
                 />

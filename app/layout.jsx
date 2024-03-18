@@ -4,8 +4,8 @@ import { Providers } from "./provider";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import Loading from "./loading";
 import { Suspense, useEffect, useState } from "react";
+import Loading from "./loading";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -13,11 +13,16 @@ export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Adjust the delay as needed
+    const pathName = window.location.pathname;
+    if (pathName === "/") {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000); // Adjust the delay as needed
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   const metadata = {

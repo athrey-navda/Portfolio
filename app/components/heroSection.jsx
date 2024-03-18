@@ -11,16 +11,40 @@ export default function HeroSection() {
   const [isShowing, setIsShowing] = useState(false);
   const [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 800);
 
+  const [isEffect, setIsEffect] = useState(false);
+  const [, , resetIsEffect] = useTimeoutFn(() => setIsEffect(true), 800);
+
+  const textLines = [
+    "Crafting Code!",
+    "Exploring Worlds!",
+    "Cooking Creations!",
+    "Grooving to the Beat!",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [loopType, setLoopType] = useState("individual");
+
   useEffect(() => {
     resetIsShowing();
   }, []);
 
-  const [isEffect, setIsEffect] = useState(false);
-  const [, , resetIsEffect] = useTimeoutFn(() => setIsEffect(true), 800);
-
   useEffect(() => {
     resetIsEffect();
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentIndex < textLines.length - 1 && loopType === "individual") {
+        setCurrentIndex((prevIndex) => prevIndex + 1);
+      } else if (currentIndex === textLines.length - 1) {
+        setLoopType("individual");
+        setCurrentIndex(0);
+      }
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex, loopType, textLines]);
+
   return (
     <div className="overflow-hidden">
       <div className="mx-auto max-w-7xl mt-18">
@@ -29,10 +53,10 @@ export default function HeroSection() {
             <Transition
               as={Fragment}
               show={isEffect}
-              enter="transition ease-in-out duration-300 transform"
+              enter="transition ease-in-out duration-1000 transform"
               enterFrom="-translate-x-full"
               enterTo="translate-x-0"
-              leave="transition ease-in-out duration-300 transform"
+              leave="transition ease-in-out duration-1000 transform"
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
@@ -45,17 +69,12 @@ export default function HeroSection() {
                     It's Byndoor Athrey Navda
                   </div>
 
-                  <div className="mt-14 text-base sm:text-lg lg:text-xl leading-6 font-bold text-gray-600 dark:text-white">
-                    Crafting Code
-                  </div>
-                  <div className="text-base sm:text-lg lg:text-xl leading-6 font-bold text-gray-600 dark:text-white">
-                    Exploring Worlds
-                  </div>
-                  <div className="text-base sm:text-lg lg:text-xl leading-6 font-bold text-gray-600 dark:text-white">
-                    Cooking Creations
-                  </div>
-                  <div className="text-base sm:text-lg lg:text-xl leading-6 font-bold text-gray-600 dark:text-white">
-                    Grooving to the Beat!
+                  <div className="my-12">
+                    {loopType === "individual" && (
+                      <div className="text-base sm:text-lg lg:text-xl leading-6 font-bold text-gray-600 dark:text-white">
+                        {textLines[currentIndex]}
+                      </div>
+                    )}
                   </div>
 
                   <div className="mt-14 text-base sm:text-lg lg:text-xl leading-6 text-gray-600 dark:text-white">
@@ -172,10 +191,10 @@ export default function HeroSection() {
             <Transition
               as={Fragment}
               show={isShowing}
-              enter="transform transition duration-[600ms]"
+              enter="transform transition duration-[1000ms]"
               enterFrom="opacity-0 rotate-[-180deg] scale-50"
               enterTo="opacity-100 rotate-0 scale-100"
-              leave="transform duration-200 transition ease-in-out"
+              leave="transform duration-1000 transition ease-in-out"
               leaveFrom="opacity-100 rotate-0 scale-100 "
               leaveTo="opacity-0 scale-95 "
             >

@@ -1,21 +1,34 @@
+"use client";
 import { Quicksand } from "next/font/google";
 import { Providers } from "./provider";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Loading from "./loading";
+import { Suspense, useEffect, useState } from "react";
+
 const quicksand = Quicksand({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Athrey",
-  description:
-    "Crafting Code, Exploring Worlds, Cooking Creations, and Grooving to the Beat!",
-};
-
 export default function RootLayout({ children }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Adjust the delay as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const metadata = {
+    title: "Athrey",
+    description:
+      "Crafting Code, Exploring Worlds, Cooking Creations, and Grooving to the Beat!",
+  };
+
   return (
     <html lang="en">
       <head>
-        {/* Insert your script here */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -30,13 +43,23 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
         <link rel="shortcut icon" href="/images/logo/favicon.ico" />
       </head>
       <body className={quicksand.className}>
         <Providers>
-          <Navbar />
-          {children}
-          <Footer />
+          <Suspense fallback={<Loading />}>
+            {loading ? (
+              <Loading />
+            ) : (
+              <>
+                <Navbar />
+                <div>{children}</div>
+                <Footer />
+              </>
+            )}
+          </Suspense>
         </Providers>
       </body>
     </html>

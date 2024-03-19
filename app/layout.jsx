@@ -17,8 +17,7 @@ export default function RootLayout({ children }) {
     if (pathName === "/") {
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 2000); // Adjust the delay as needed
-
+      }, 2000);
       return () => clearTimeout(timer);
     } else {
       setLoading(false);

@@ -1,5 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -61,16 +62,16 @@ export default function Footer() {
                     Skills
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="/contact-me" className="text-md font-semibold">
-                    Contact Me
+                <li>
+                  <Link href="/fun" className="text-md font-semibold">
+                    Fun Game
                   </Link>
                 </li>
                 <li>
                   <Link href="/about-me" className="text-md font-semibold">
                     About me
                   </Link>
-                </li> */}
+                </li>
               </ul>
             </div>
             <div>
@@ -105,20 +106,23 @@ export default function Footer() {
         <div className="sm:flex sm:items-center sm:justify-evenly">
           <div className="text-md sm:text-center">
             © 2024{" "}
-            <Link href="./" className="font-bold">
+            <Link href="/" className="font-bold">
               - Athrey
             </Link>
           </div>
           <div>
-            <Link href="./">
-              <img
+            <Link href="/">
+              <Image
                 className="h-auto w-28"
                 src={
                   resolvedTheme === "dark"
-                    ? "./images/logo/athrey-high-resolution-logo-black-transparent.png"
-                    : "./images/logo/athrey-high-resolution-logo-white-transparent.png"
+                    ? "/images/logo/athrey-high-resolution-logo-black-transparent.png"
+                    : "/images/logo/athrey-high-resolution-logo-white-transparent.png"
                 }
                 alt=""
+                width={120}
+                height={120}
+                placeholder="empty"
               />
             </Link>
           </div>

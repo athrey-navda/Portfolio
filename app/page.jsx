@@ -2,6 +2,7 @@
 import HeroSection from "./components/heroSection";
 import EducationComponent from "./education/education";
 import ExperienceComponent from "./experience/experience";
+import Fun from "./fun/page";
 import ProjectsComponent from "./projects/projects";
 import SkillsComponent from "./skills/skills";
 import { useEffect } from "react";
@@ -74,20 +75,24 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="education" className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="education" className="d-block px-6 py-8 lg:px-8">
           <EducationComponent />
         </section>
 
-        <section id="experience" className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="experience" className="d-block px-6 py-8 lg:px-8">
           <ExperienceComponent />
         </section>
 
-        <section id="projects" className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="projects" className="d-block px-6 py-8 lg:px-8">
           <ProjectsComponent />
         </section>
 
-        <section id="skills" className="d-block px-6 py-8 sm:py-8 lg:px-8">
+        <section id="skills" className="d-block px-6 py-8 lg:px-8">
           <SkillsComponent />
+        </section>
+
+        <section id="fun" className="d-block px-6 py-2 lg:px-8">
+          <Fun />
         </section>
       </div>
     </div>

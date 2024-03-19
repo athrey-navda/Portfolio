@@ -12,7 +12,7 @@ const navigation = [
   { name: "Skills", id: "skills" },
   // { name: "About me", id: "about-me" },
   // { name: "Contact me", id: "contact-me" },
-  // { name: "Fun", id: "fun" },
+  { name: "Fun-Game", id: "fun" },
 ];
 
 export default function Navbar() {
@@ -131,8 +131,8 @@ export default function Navbar() {
                   className="h-auto w-28"
                   src={
                     resolvedTheme === "dark"
-                      ? "./images/logo/athrey-high-resolution-logo-white-transparent.png"
-                      : "./images/logo/athrey-high-resolution-logo-black-transparent.png"
+                      ? "/images/logo/athrey-high-resolution-logo-white-transparent.png"
+                      : "/images/logo/athrey-high-resolution-logo-black-transparent.png"
                   }
                   alt=""
                 />

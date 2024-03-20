@@ -13,6 +13,7 @@ export default function Tictactoe() {
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [isAgainstComputer, setIsAgainstComputer] = useState(false);
 
   const startGame = () => {
     setGameStarted(true);
@@ -51,6 +52,20 @@ export default function Tictactoe() {
     startGame();
   };
 
+  const handleBack = () => {
+    setGameStarted(false);
+  };
+
+  const toggleAgainstHuman = () => {
+    setIsAgainstComputer(false);
+    startGame();
+  };
+
+  const toggleAgainstComputer = () => {
+    setIsAgainstComputer((prev) => !prev);
+    startGame();
+  };
+
   useEffect(() => {
     const winner = calculateWinner(boardHistory[stepNumber]);
     if (winner) {
@@ -68,6 +83,16 @@ export default function Tictactoe() {
       });
     }
   }, [showConfetti]);
+
+  useEffect(() => {
+    if (isAgainstComputer && !xIsNext) {
+      const timer = setTimeout(() => {
+        makeComputerMove();
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [xIsNext, isAgainstComputer]);
 
   const calculateWinner = (squares) => {
     const lines = [
@@ -93,6 +118,29 @@ export default function Tictactoe() {
     return null;
   };
 
+  const getRandomMove = (board) => {
+    const availableMoves = [];
+    for (let i = 0; i < board.length; i++) {
+      if (board[i] === null) {
+        availableMoves.push(i);
+      }
+    }
+    const randomIndex = Math.floor(Math.random() * availableMoves.length);
+    return availableMoves[randomIndex];
+  };
+
+  const makeComputerMove = () => {
+    const currentBoard = boardHistory[stepNumber];
+    const newBoard = [...currentBoard];
+
+    const computerMove = getRandomMove(newBoard);
+    newBoard[computerMove] = "O";
+
+    setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
+    setStepNumber((prevStep) => prevStep + 1);
+    setXIsNext(true);
+  };
+
   const currentBoard = boardHistory[stepNumber];
   const winner = calculateWinner(currentBoard);
 
@@ -101,7 +149,9 @@ export default function Tictactoe() {
       Winner: <span className="text-2xl">{winner}</span>
     </div>
   ) : stepNumber === 9 ? (
-    <div className="font-bold">Draw</div>
+    <div className="font-bold">
+      Result : <span className="text-2xl">Draw</span>
+    </div>
   ) : (
     <div className="font-bold">
       Next player: <span className="text-2xl">{xIsNext ? "X" : "O"}</span>
@@ -116,7 +166,7 @@ export default function Tictactoe() {
             <h1 className="text-3xl font-bold mb-5 text-center">Tic Tac Toe</h1>
           </div>
           <div>
-            {!gameStarted && (
+            {(!gameStarted || winner || stepNumber === 9) && (
               <div className="text-center">
                 <button
                   className={
@@ -124,65 +174,95 @@ export default function Tictactoe() {
                       ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
                       : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
                   }
-                  onClick={startGame}
+                  onClick={toggleAgainstHuman}
                 >
-                  Start Game
+                  Human v/s Human
+                </button>
+                <button
+                  className={
+                    resolvedTheme === "dark"
+                      ? `white-btn rounded-lg px-2 ml-2 hover:bg-transparent hover:text-white`
+                      : `black-btn rounded-lg px-2 ml-2 hover:bg-transparent hover:text-black`
+                  }
+                  onClick={toggleAgainstComputer}
+                >
+                  Human v/s Computer
                 </button>
               </div>
             )}
             {gameStarted && !winner && (
               <>
                 <div>
-                  <div className="">
+                  <div className="p-5 text-center">
                     <div className="status my-5">{status}</div>
                   </div>
-                  <div className="board grid grid-cols-3 gap-1 sm:gap-2 lg:gap-2">
-                    {currentBoard.map((cell, i) => (
-                      <div
-                        key={i}
-                        className="bg-black-gray hover:bg-white border border-black dark:border-white shadow-lg h-12 lg:h-16 w-12 lg:w-16 flex items-center justify-center cursor-pointer text-xl font-bold text-white"
-                        onClick={() => handleClick(i)}
-                      >
-                        {cell}
-                      </div>
-                    ))}
-                  </div>
+                  {!winner && stepNumber !== 9 && (
+                    <div className="board grid grid-cols-3 gap-1 sm:gap-2 lg:gap-2">
+                      {currentBoard.map((cell, i) => (
+                        <div
+                          key={i}
+                          className="bg-black-gray hover:bg-white border border-black dark:border-white shadow-lg h-12 lg:h-16 w-12 lg:w-16 flex items-center justify-center cursor-pointer text-xl font-bold text-white"
+                          onClick={() => handleClick(i)}
+                        >
+                          {cell}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                <div className="py-5 text-center">
-                  <button
-                    onClick={handleUndo}
-                    disabled={stepNumber === 0}
-                    className={
-                      resolvedTheme === "dark"
-                        ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
-                        : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
-                    }
-                  >
-                    Undo
-                  </button>
+                <div className="flex items-center justify-between">
+                  <div className="flex my-5">
+                    <button
+                      onClick={handleBack}
+                      className={
+                        resolvedTheme === "dark"
+                          ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
+                          : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                      }
+                    >
+                      Back
+                    </button>
+                  </div>
+                  {stepNumber != 9 && (
+                    <div className="flex my-5">
+                      <button
+                        onClick={handleUndo}
+                        disabled={stepNumber === 0}
+                        className={
+                          resolvedTheme === "dark"
+                            ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
+                            : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                        }
+                      >
+                        Undo
+                      </button>
+                    </div>
+                  )}
+
+                  <div className="flex my-5">
+                    <button
+                      onClick={handleRestart}
+                      className={
+                        resolvedTheme === "dark"
+                          ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
+                          : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                      }
+                    >
+                      Restart
+                    </button>
+                  </div>
                 </div>
               </>
             )}
-            {(winner || stepNumber === 9) && (
-              <div className="py-5 text-center">
-                {winner && (
+            <div className="py-5 text-center">
+              {winner && (
+                <div>
                   <div className="font-bold mb-5">
                     Winner: <span className="text-2xl">{winner}</span>
                   </div>
-                )}
-                {stepNumber === 9 && <div className="font-bold mb-5">Draw</div>}
-                <button
-                  onClick={handleRestart}
-                  className={
-                    resolvedTheme === "dark"
-                      ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
-                      : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
-                  }
-                >
-                  Restart
-                </button>
-              </div>
-            )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ const games = [
     imageSrc:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/CD_ComingSoon.svg/1772px-CD_ComingSoon.svg.png",
     imageAlt: "Coming Soon",
-    description: "",
+    description: "#",
   },
 ];
 export default function Fun() {

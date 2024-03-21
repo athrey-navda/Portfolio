@@ -41,6 +41,56 @@ export default function Tictactoe() {
     setXIsNext(!xIsNext);
   };
 
+  const makeComputerMove = () => {
+    const currentBoard = boardHistory[stepNumber];
+    const newBoard = [...currentBoard];
+
+    for (let i = 0; i < newBoard.length; i++) {
+      if (newBoard[i] === null) {
+        newBoard[i] = "O";
+        if (calculateWinner(newBoard) === "O") {
+          setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
+          setStepNumber((prevStep) => prevStep + 1);
+          setXIsNext(true);
+          return;
+        }
+        newBoard[i] = null;
+      }
+    }
+
+    for (let i = 0; i < newBoard.length; i++) {
+      if (newBoard[i] === null) {
+        newBoard[i] = "X";
+        if (calculateWinner(newBoard) === "X") {
+          newBoard[i] = "O";
+          setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
+          setStepNumber((prevStep) => prevStep + 1);
+          setXIsNext(true);
+          return;
+        }
+        newBoard[i] = null;
+      }
+    }
+
+    const computerMove = getRandomMove(newBoard);
+    newBoard[computerMove] = "O";
+
+    setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
+    setStepNumber((prevStep) => prevStep + 1);
+    setXIsNext(true);
+  };
+
+  const getRandomMove = (board) => {
+    const availableMoves = [];
+    for (let i = 0; i < board.length; i++) {
+      if (board[i] === null) {
+        availableMoves.push(i);
+      }
+    }
+    const randomIndex = Math.floor(Math.random() * availableMoves.length);
+    return availableMoves[randomIndex];
+  };
+
   const handleUndo = () => {
     if (stepNumber === 0) return;
 
@@ -62,7 +112,7 @@ export default function Tictactoe() {
   };
 
   const toggleAgainstComputer = () => {
-    setIsAgainstComputer((prev) => !prev);
+    setIsAgainstComputer(true);
     startGame();
   };
 
@@ -85,10 +135,10 @@ export default function Tictactoe() {
   }, [showConfetti]);
 
   useEffect(() => {
-    if (isAgainstComputer && !xIsNext) {
+    if (isAgainstComputer && !xIsNext && stepNumber !== 9) {
       const timer = setTimeout(() => {
         makeComputerMove();
-      }, 500);
+      }, 250);
 
       return () => clearTimeout(timer);
     }
@@ -116,29 +166,6 @@ export default function Tictactoe() {
       }
     }
     return null;
-  };
-
-  const getRandomMove = (board) => {
-    const availableMoves = [];
-    for (let i = 0; i < board.length; i++) {
-      if (board[i] === null) {
-        availableMoves.push(i);
-      }
-    }
-    const randomIndex = Math.floor(Math.random() * availableMoves.length);
-    return availableMoves[randomIndex];
-  };
-
-  const makeComputerMove = () => {
-    const currentBoard = boardHistory[stepNumber];
-    const newBoard = [...currentBoard];
-
-    const computerMove = getRandomMove(newBoard);
-    newBoard[computerMove] = "O";
-
-    setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
-    setStepNumber((prevStep) => prevStep + 1);
-    setXIsNext(true);
   };
 
   const currentBoard = boardHistory[stepNumber];

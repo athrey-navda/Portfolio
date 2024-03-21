@@ -82,9 +82,8 @@ export default function ProjectsComponent() {
             <div className="mx-auto max-w-2xl lg:max-w-7xl ">
               <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">
                 {projects.map((project) => (
-                  <div className="my-4">
+                  <div className="my-4" key={project.id}>
                     <div
-                      key={project.id}
                       className={`group relative group-hover:opacity-75 hover:p-2 rounded-lg ${
                         resolvedTheme === "dark"
                           ? `hover:bg-slate-300 hover:text-black`

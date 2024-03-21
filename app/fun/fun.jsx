@@ -37,7 +37,9 @@ export default function Fun() {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold py-14 lg:py-6 sm:text-4xl">Games</h2>
+      <h2 className="text-3xl font-bold py-14 lg:py-6 sm:text-4xl">
+        Games developed by me
+      </h2>
       <div className="text-black dark:text-white bg-white dark:bg-black">
         <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-20 lg:pt-4 lg:px-24">
           <div className="mx-auto max-w-2xl lg:max-w-7xl ">

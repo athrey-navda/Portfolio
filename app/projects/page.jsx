@@ -106,7 +106,7 @@ export default function Projects() {
             {projects.map((projects) => (
               <div
                 key={projects.id}
-                className="mx-auto grid grid-cols-1 items-center  gap-y-16  lg:grid-cols-2  bg-gray-400 dark:bg-gray-900 mt-4"
+                className="mx-auto grid grid-cols-1 items-center lg:grid-cols-2  bg-gray-400 dark:bg-gray-900 mt-4 sm:mt-0"
               >
                 <div
                   className={`order-1 ${
@@ -136,7 +136,7 @@ export default function Projects() {
                         Technology Used: {projects.stack}
                       </div>
                       <div className="mt-2 text-sm">{projects.description}</div>
-                      <div className="mt-4">
+                      <div className="my-4">
                         <Link href={projects.href}>
                           <div
                             className={

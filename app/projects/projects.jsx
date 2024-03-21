@@ -82,28 +82,35 @@ export default function ProjectsComponent() {
             <div className="mx-auto max-w-2xl lg:max-w-7xl ">
               <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
                 {projects.map((project) => (
-                  <div
-                    key={project.id}
-                    className={`group relative group-hover:opacity-75 hover:p-2 rounded-lg ${
-                      resolvedTheme === "dark"
-                        ? `hover:bg-slate-300 hover:text-black`
-                        : `hover:bg-slate-900 hover:text-white`
-                    }`}
-                  >
-                    <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none p-2 lg:h-80">
-                      <img
-                        src={project.imageSrc}
-                        alt={project.imageAlt}
-                        className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                      />
-                    </div>
-                    <div className="mt-4 flex justify-center">
-                      <div>
-                        <h3 className="text-xl my-2">{project.name}</h3>
+                  <div>
+                    <div
+                      key={project.id}
+                      className={`group relative group-hover:opacity-75 hover:p-2 rounded-lg ${
+                        resolvedTheme === "dark"
+                          ? `hover:bg-slate-300 hover:text-black`
+                          : `hover:bg-slate-900 hover:text-white`
+                      }`}
+                      style={{
+                        height: "35rem",
+                        width: "20rem",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none p-2 lg:h-80">
+                        <img
+                          src={project.imageSrc}
+                          alt={project.imageAlt}
+                          className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                        />
                       </div>
+                      <div className="mt-4 flex justify-center">
+                        <div>
+                          <h3 className="text-xl my-2">{project.name}</h3>
+                        </div>
+                      </div>
+                      <div className="text-md font-bold">{project.stack}</div>
+                      <div className="font-light ">{project.description}</div>
                     </div>
-                    <div className="text-md font-bold">{project.stack}</div>
-                    <div className="font-light ">{project.description}</div>
                     <div className="mt-3 flex justify-center">
                       <Link href={project.href}>
                         <button

@@ -80,9 +80,9 @@ export default function ProjectsComponent() {
         <div className="md:container md:mx-auto flex min-h-screen flex-col items-center justify-between">
           <section className="d-block px-4 py-8 sm:px-6 sm:py-6 lg:px-4">
             <div className="mx-auto max-w-2xl lg:max-w-7xl ">
-              <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+              <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 lg:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">
                 {projects.map((project) => (
-                  <div>
+                  <div className="my-4">
                     <div
                       key={project.id}
                       className={`group relative group-hover:opacity-75 hover:p-2 rounded-lg ${

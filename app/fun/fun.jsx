@@ -43,7 +43,7 @@ export default function Fun() {
       <div className="text-black dark:text-white bg-white dark:bg-black">
         <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-20 lg:pt-4 lg:px-24">
           <div className="mx-auto max-w-2xl lg:max-w-7xl ">
-            <div className="mt-6 my-14 grid grid-cols-1 gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-18">
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10  xl:grid-cols-3 xl:gap-x-8">
               {games.map((game) => (
                 <div key={game.id}>
                   <div
@@ -71,7 +71,9 @@ export default function Fun() {
                       </div>
                     </div>
                     <div className="text-md font-bold">{game.stack}</div>
-                    <div className="font-light ">{game.description}</div>
+                    <div className="font-light mx-5 text-center">
+                      {game.description}
+                    </div>
                   </div>
                   <div className="mt-3 flex justify-center">
                     <Link href={game.href}>

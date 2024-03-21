@@ -202,9 +202,7 @@ export default function HeroSection() {
                 <img
                   src="/images/homepage/herosectionImage.jpg"
                   alt="ProfilePic"
-                  className="w-full max-w-sm md:max-w-none rounded-full shadow-xl ring-1 ring-gray-400/10"
-                  width={350}
-                  height={350}
+                  className="w-full object-cover object-center rounded-full shadow-xl ring-1 ring-gray-400/10"
                 />
               </div>
             </Transition>

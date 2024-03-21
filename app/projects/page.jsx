@@ -106,11 +106,11 @@ export default function Projects() {
             {projects.map((projects) => (
               <div
                 key={projects.id}
-                className="mx-auto grid grid-cols-1 items-center lg:grid-cols-2  bg-gray-400 dark:bg-gray-900 mt-4 sm:mt-0"
+                className="mx-auto grid grid-cols-1 items-center sm:grid-cols-2  bg-gray-400 dark:bg-gray-900 mt-4 sm:mt-0"
               >
                 <div
                   className={`order-1 ${
-                    projects.id % 2 === 0 ? "md:order-1" : "md:order-2"
+                    projects.id % 2 === 0 ? "sm:order-1" : "sm:order-2"
                   }`}
                 >
                   <div
@@ -126,7 +126,7 @@ export default function Projects() {
                 </div>
                 <div
                   className={`order-2 ${
-                    projects.id % 2 === 0 ? "md:order-2" : "md:order-1"
+                    projects.id % 2 === 0 ? "sm:order-2" : "sm:order-1"
                   }`}
                 >
                   <div className="mx-4">

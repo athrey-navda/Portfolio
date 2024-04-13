@@ -111,7 +111,7 @@ export default function FunLayout({ children }) {
   );
 
   return (
-    <div style={{ position: "relative", width: "100vw", height: "100vh" }}>
+    <div style={{ position: "relative" }}>
       {init && particlesOptions && (
         <Particles
           id="tsparticles"

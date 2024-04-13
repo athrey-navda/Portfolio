@@ -188,7 +188,7 @@ export default function Tictactoe() {
   return (
     <div className="mx-auto w-full max-w-md my-20 sm:my-4 flex min-h-screen justify-center items-center lg:max-w-7xl lg:px-8">
       <div className="flex flex-col">
-        <div className="bg-stone-300 dark:bg-stone-700 p-5 lg:p-10 w-full">
+        <div className="bg-transparent dark:bg-transaprent p-5 lg:p-10 w-full">
           <div>
             <h1 className="text-3xl font-bold mb-5 text-center">Tic Tac Toe</h1>
           </div>

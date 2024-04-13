@@ -126,7 +126,7 @@ export default function Footer() {
               />
             </Link>
           </div>
-          <div className="flex mt-4 sm:justify-center sm:m-4">
+          <div className="sm:flex mt-4 sm:justify-center sm:m-4">
             <Link
               href="mailto:bnavda@gmu.edu"
               target="_blank"
@@ -203,7 +203,7 @@ export default function Footer() {
 
               <span className="sr-only">Instagram</span>
             </Link>
-            <div className="mx-3">
+            <div className="sm:mx-3">
               <Link href="/file/ByndoorAthreyNavda_Resume.pdf" target="_blank">
                 <button
                   className={

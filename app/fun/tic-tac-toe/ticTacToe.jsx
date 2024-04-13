@@ -198,8 +198,8 @@ export default function Tictactoe() {
                 <button
                   className={
                     resolvedTheme === "dark"
-                      ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
-                      : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                      ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                      : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
                   }
                   onClick={toggleAgainstHuman}
                 >
@@ -208,8 +208,8 @@ export default function Tictactoe() {
                 <button
                   className={
                     resolvedTheme === "dark"
-                      ? `white-btn rounded-lg px-2 ml-2 hover:bg-transparent hover:text-white`
-                      : `black-btn rounded-lg px-2 ml-2 hover:bg-transparent hover:text-black`
+                      ? `white-btn rounded-lg px-2 mt-2 ml-2 hover:bg-transparent hover:text-white`
+                      : `black-btn rounded-lg px-2 mt-2 ml-2 hover:bg-transparent hover:text-black`
                   }
                   onClick={toggleAgainstComputer}
                 >
@@ -237,14 +237,14 @@ export default function Tictactoe() {
                     </div>
                   )}
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="sm:flex items-center justify-between">
                   <div className="flex my-5">
                     <button
                       onClick={handleBack}
                       className={
                         resolvedTheme === "dark"
-                          ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
-                          : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                          ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                          : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
                       }
                     >
                       Back
@@ -257,8 +257,8 @@ export default function Tictactoe() {
                         disabled={stepNumber === 0}
                         className={
                           resolvedTheme === "dark"
-                            ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
-                            : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                            ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                            : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
                         }
                       >
                         Undo
@@ -271,8 +271,8 @@ export default function Tictactoe() {
                       onClick={handleRestart}
                       className={
                         resolvedTheme === "dark"
-                          ? `white-btn rounded-lg px-2 hover:bg-transparent hover:text-white`
-                          : `black-btn rounded-lg px-2 hover:bg-transparent hover:text-black`
+                          ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                          : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
                       }
                     >
                       Restart

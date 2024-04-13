@@ -36,7 +36,7 @@ export default function FunLayout({ children }) {
   }, [resolvedTheme]);
 
   const particlesLoaded = (container) => {
-    console.log(container);
+    // console.log(container);
   };
 
   const options = useMemo(

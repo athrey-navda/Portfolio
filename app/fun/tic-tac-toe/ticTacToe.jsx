@@ -5,9 +5,7 @@ import confetti from "canvas-confetti";
 
 export default function Tictactoe() {
   const { resolvedTheme } = useTheme();
-
   const initialBoard = Array(9).fill(null);
-
   const [gameStarted, setGameStarted] = useState(false);
   const [boardHistory, setBoardHistory] = useState([initialBoard]);
   const [stepNumber, setStepNumber] = useState(0);

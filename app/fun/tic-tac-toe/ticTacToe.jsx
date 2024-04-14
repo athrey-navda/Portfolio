@@ -87,7 +87,6 @@ export default function Tictactoe() {
         move.score = result.score;
       }
 
-      // Reset the spot to empty
       board[availableMoves[i]] = null;
 
       moves.push(move);

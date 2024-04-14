@@ -42,51 +42,81 @@ export default function Tictactoe() {
   const makeComputerMove = () => {
     const currentBoard = boardHistory[stepNumber];
     const newBoard = [...currentBoard];
+    const computerSymbol = "O";
 
-    for (let i = 0; i < newBoard.length; i++) {
-      if (newBoard[i] === null) {
-        newBoard[i] = "O";
-        if (calculateWinner(newBoard) === "O") {
-          setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
-          setStepNumber((prevStep) => prevStep + 1);
-          setXIsNext(true);
-          return;
-        }
-        newBoard[i] = null;
-      }
-    }
-
-    for (let i = 0; i < newBoard.length; i++) {
-      if (newBoard[i] === null) {
-        newBoard[i] = "X";
-        if (calculateWinner(newBoard) === "X") {
-          newBoard[i] = "O";
-          setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
-          setStepNumber((prevStep) => prevStep + 1);
-          setXIsNext(true);
-          return;
-        }
-        newBoard[i] = null;
-      }
-    }
-
-    const computerMove = getRandomMove(newBoard);
-    newBoard[computerMove] = "O";
+    const bestMove = minimax(newBoard, computerSymbol).index;
+    newBoard[bestMove] = computerSymbol;
 
     setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
     setStepNumber((prevStep) => prevStep + 1);
     setXIsNext(true);
   };
 
-  const getRandomMove = (board) => {
+  const minimax = (board, player) => {
+    const humanPlayer = "X";
+    const computerSymbol = "O";
+
+    const winner = calculateWinner(board);
+    if (winner === computerSymbol) {
+      return { score: 10 };
+    } else if (winner === humanPlayer) {
+      return { score: -10 };
+    } else if (isBoardFull(board)) {
+      return { score: 0 };
+    }
+
     const availableMoves = [];
     for (let i = 0; i < board.length; i++) {
       if (board[i] === null) {
         availableMoves.push(i);
       }
     }
-    const randomIndex = Math.floor(Math.random() * availableMoves.length);
-    return availableMoves[randomIndex];
+
+    const moves = [];
+
+    for (let i = 0; i < availableMoves.length; i++) {
+      const move = {};
+      move.index = availableMoves[i];
+      board[availableMoves[i]] = player;
+
+      if (player === computerSymbol) {
+        const result = minimax(board, humanPlayer);
+        move.score = result.score;
+      } else {
+        const result = minimax(board, computerSymbol);
+        move.score = result.score;
+      }
+
+      // Reset the spot to empty
+      board[availableMoves[i]] = null;
+
+      moves.push(move);
+    }
+
+    let bestMove;
+    if (player === computerSymbol) {
+      let bestScore = -Infinity;
+      for (let i = 0; i < moves.length; i++) {
+        if (moves[i].score > bestScore) {
+          bestScore = moves[i].score;
+          bestMove = i;
+        }
+      }
+    } else {
+      let bestScore = Infinity;
+      for (let i = 0; i < moves.length; i++) {
+        if (moves[i].score < bestScore) {
+          bestScore = moves[i].score;
+          bestMove = i;
+        }
+      }
+    }
+
+    return moves[bestMove];
+  };
+
+  const isBoardFull = (board) => {
+    return board.every((cell) => cell !== null);
   };
 
   const handleUndo = () => {

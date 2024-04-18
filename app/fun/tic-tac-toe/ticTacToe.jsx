@@ -1,7 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTheme } from "next-themes";
 import confetti from "canvas-confetti";
+import allGameDataFetch from "@/app/api/allGameDataFetch";
+import updateGameData from "@/app/api/updateGameData";
 
 export default function Tictactoe() {
   const { resolvedTheme } = useTheme();
@@ -12,13 +14,59 @@ export default function Tictactoe() {
   const [xIsNext, setXIsNext] = useState(true);
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAgainstComputer, setIsAgainstComputer] = useState(false);
+  const [ticTacToeData, setTicTacToeData] = useState(null);
+  const [ticTacToeCount, setsetTicTacToeCount] = useState(0);
 
-  const startGame = () => {
+  const fetchData = useCallback(async () => {
+    try {
+      const jsonData = await allGameDataFetch();
+      setTicTacToeData(jsonData);
+
+      if (jsonData && jsonData.games) {
+        let total = 0;
+        jsonData.games.forEach((game) => {
+          if (game.name === "tic-tac-toe") {
+            Object.values(game.count).forEach((count) => {
+              total += count;
+            });
+          }
+        });
+        setsetTicTacToeCount(total);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const startGame = async () => {
     setGameStarted(true);
     setBoardHistory([initialBoard]);
     setStepNumber(0);
     setXIsNext(true);
     setShowConfetti(false);
+
+    if (ticTacToeData) {
+      const todayDate = new Date().toLocaleDateString();
+      const ticTacToeGame = ticTacToeData.games.find(
+        (game) => game.name === "tic-tac-toe"
+      );
+      if (ticTacToeGame) {
+        if (ticTacToeGame.count[todayDate]) {
+          ticTacToeGame.count[todayDate] += 1;
+        } else {
+          ticTacToeGame.count[todayDate] = 1;
+        }
+
+        setTicTacToeData({ ...ticTacToeData });
+
+        await updateGameData("tic-tac-toe", 1);
+        fetchData();
+      }
+    }
   };
 
   const handleClick = (i) => {
@@ -216,6 +264,9 @@ export default function Tictactoe() {
     <div className="mx-auto w-full max-w-md my-20 sm:my-4 flex min-h-screen justify-center items-center lg:max-w-7xl lg:px-8">
       <div className="flex flex-col">
         <div className="bg-transparent dark:bg-transaprent p-5 lg:p-10 w-full">
+          <div className="text-center ">
+            Total Tic Tac Toe Game: {ticTacToeCount}
+          </div>
           <div>
             <h1 className="text-3xl font-bold mb-5 text-center">Tic Tac Toe</h1>
           </div>

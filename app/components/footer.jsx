@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  const { setTheme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <footer className="bg-black dark:bg-white text-white dark:text-black">

@@ -22,7 +22,7 @@ const games = [
     imageSrc: "https://upload.wikimedia.org/wikipedia/en/b/ba/Cnl03.jpg",
     imageAlt: "Snake and Ladder",
     description:
-      "Snakes and ladders is a board game for two or more players regarded today as a worldwide classic.[1] The game originated in ancient India as Moksha Patam, and was brought to the United Kingdom in the 1890s. It is played on a game board with numbered, gridded squares.",
+      "Snakes and ladders is a board game for two or more players regarded today as a worldwide classic. The game originated in ancient India as Moksha Patam, and was brought to the United Kingdom in the 1890s. It is played on a game board with numbered, gridded squares.",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const games = [
     description: "#",
   },
 ];
-export default function Fun() {
+export default function FunComponent() {
   const [isMounted, setIsMounted] = useState(false);
   const { resolvedTheme } = useTheme();
 
@@ -52,9 +52,9 @@ export default function Fun() {
       <div className="text-black dark:text-white bg-white dark:bg-black">
         <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-20 lg:pt-4 lg:px-24">
           <div className="mx-auto max-w-2xl lg:max-w-7xl ">
-            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10  xl:grid-cols-3 xl:gap-x-8">
+            <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">
               {games.map((game) => (
-                <div key={game.id}>
+                <div key={game.id} className="mx-6">
                   <div
                     className={`group relative group-hover:opacity-75 hover:p-2 rounded-lg ${
                       resolvedTheme === "dark"

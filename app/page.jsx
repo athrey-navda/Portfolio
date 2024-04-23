@@ -2,7 +2,7 @@
 import HeroSection from "./components/heroSection";
 import EducationComponent from "./education/education";
 import ExperienceComponent from "./experience/experience";
-import Fun from "./fun/page";
+import FunComponent from "./fun/fun";
 import ProjectsComponent from "./projects/projects";
 import SkillsComponent from "./skills/skills";
 import { useEffect } from "react";
@@ -92,7 +92,7 @@ export default function Home() {
         </section>
 
         <section id="fun" className="d-block px-6 py-2 lg:px-8">
-          <Fun />
+          <FunComponent />
         </section>
       </div>
     </div>

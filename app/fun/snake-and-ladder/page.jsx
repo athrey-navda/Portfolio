@@ -1,13 +1,25 @@
+import BreadCrumbs from "@/app/components/breadCrumbs";
 import SnakesAndLadders from "./snakeAndLadder";
 
+const breadcrumbItems = [
+  { key: "home", label: "Home", href: "/" },
+  { key: "fun", label: "Fun", href: "/fun" },
+  { key: "tic-tac-toe", label: "Tic Tac Toe", href: "/fun/tic-tac-toe" },
+  {
+    key: "snake-and-ladder",
+    label: "Snake and Ladder",
+    href: "/fun/snake-and-ladder",
+  },
+];
 export default function AboutMe() {
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
-      <div className="md:container md:mx-auto flex min-h-screen flex-col items-center justify-between">
-        <section className="d-block px-6 py-18 sm:py-12 lg:px-8">
-          <SnakesAndLadders />
-        </section>
-      </div>
+      <section className="d-block px-6 sm:py-4 lg:px-24 min-h-screen">
+        <div className="p-2 mt-24">
+          <BreadCrumbs items={breadcrumbItems} />
+        </div>
+        <SnakesAndLadders />
+      </section>
     </div>
   );
 }

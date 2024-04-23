@@ -11,6 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@nextui-org/breadcrumbs": "^2.0.6",
+    "@nextui-org/react": "^2.3.3",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.3.0",
     "canvas-confetti": "^1.9.2",

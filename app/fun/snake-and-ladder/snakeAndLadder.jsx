@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useTheme } from "next-themes";
 import updateGameData from "@/app/api/updateGameData";
 import allGameDataFetch from "../../api/allGameDataFetch";
@@ -14,14 +14,15 @@ export default function SnakesAndLadders() {
   const [message, setMessage] = useState("");
   const [eachTurn, setEachTurn] = useState("");
   const [currentPlayer, setCurrentPlayer] = useState(1);
-  const [snakeAndLadderCount, setSnakeAndLadderCount] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
   const [snakeAndLadderGameData, setSnakeAndLadderGameData] = useState(null);
+  const [snakeAndLadderCount, setSnakeAndLadderCount] = useState(0);
 
   const fetchData = useCallback(async () => {
     try {
       const jsonData = await allGameDataFetch();
       setSnakeAndLadderGameData(jsonData);
+
       if (jsonData && jsonData.games) {
         let total = 0;
         jsonData.games.forEach((game) => {
@@ -62,11 +63,13 @@ export default function SnakesAndLadders() {
 
   const startGame = async () => {
     setGameStarted(true);
+
     if (snakeAndLadderGameData) {
       const todayDate = new Date().toLocaleDateString();
       const snakeAndLadderGame = snakeAndLadderGameData.games.find(
         (game) => game.name === "snake-and-ladder"
       );
+
       if (snakeAndLadderGame) {
         if (snakeAndLadderGame.count[todayDate]) {
           snakeAndLadderGame.count[todayDate] += 1;
@@ -77,6 +80,7 @@ export default function SnakesAndLadders() {
         setSnakeAndLadderGameData({ ...snakeAndLadderGameData });
 
         await updateGameData("snake-and-ladder", 1);
+        fetchData();
       }
     }
   };
@@ -231,69 +235,71 @@ export default function SnakesAndLadders() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-md my-20 sm:my-4 flex min-h-screen justify-center items-center lg:max-w-7xl lg:px-8">
-      <div className="flex flex-col">
-        <div className="container mx-auto">
-          <div className="text-center ">
-            Total Snake and Ladder Game: {snakeAndLadderCount}
-          </div>
-          <h1 className="text-3xl font-bold mb-4 text-center">
-            Snake and Ladder Game
-          </h1>
-          <div>{renderGrid()}</div>
-          {!gameStarted && (
-            <div className="flex justify-center mt-4">
-              <button
-                onClick={startGame}
-                className={
-                  resolvedTheme === "dark"
-                    ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
-                    : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
-                }
-              >
-                Start Game
-              </button>
+    <>
+      <div className="mx-auto w-full max-w-md flex my-4 justify-center items-center lg:max-w-7xl lg:px-8">
+        <div className="flex flex-col">
+          <div className="container mx-auto">
+            <div className="text-center ">
+              Total Snake and Ladder Game: {snakeAndLadderCount}
             </div>
-          )}
-          {gameStarted && (
-            <>
-              <div className="flex justify-center mt-4 gap-x-4">
+            <h1 className="text-3xl font-bold mb-4 text-center">
+              Snake and Ladder Game
+            </h1>
+            <div>{renderGrid()}</div>
+            {!gameStarted && (
+              <div className="flex justify-center mt-4">
                 <button
-                  onClick={movePlayer}
+                  onClick={startGame}
                   className={
                     resolvedTheme === "dark"
                       ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
                       : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
                   }
-                  disabled={isGameOver}
                 >
-                  Roll Dice
+                  Start Game
                 </button>
+              </div>
+            )}
+            {gameStarted && (
+              <>
+                <div className="flex justify-center mt-4 gap-x-4">
+                  <button
+                    onClick={movePlayer}
+                    className={
+                      resolvedTheme === "dark"
+                        ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                        : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
+                    }
+                    disabled={isGameOver}
+                  >
+                    Roll Dice
+                  </button>
 
-                <button
-                  onClick={resetGame}
-                  className={
-                    resolvedTheme === "dark"
-                      ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
-                      : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
-                  }
-                >
-                  Reset Game
-                </button>
-              </div>
-              <div className="mt-4 text-center">
-                {isGameOver
-                  ? "Game Over! Player wins!"
-                  : diceRoll
-                  ? eachTurn && <div className="text-center">{eachTurn}</div>
-                  : "Click 'Roll Dice' to start"}
-              </div>
-            </>
-          )}
+                  <button
+                    onClick={resetGame}
+                    className={
+                      resolvedTheme === "dark"
+                        ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                        : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
+                    }
+                  >
+                    Reset Game
+                  </button>
+                </div>
+                <div className="mt-4 text-center">
+                  {isGameOver
+                    ? "Game Over! Player wins!"
+                    : diceRoll
+                    ? eachTurn && <div className="text-center">{eachTurn}</div>
+                    : "Click 'Roll Dice' to start"}
+                </div>
+              </>
+            )}
+          </div>
+
+          <div>{message && <div className="text-center">{message}</div>}</div>
         </div>
-
-        <div>{message && <div className="text-center">{message}</div>}</div>
       </div>
-    </div>
+    </>
   );
 }

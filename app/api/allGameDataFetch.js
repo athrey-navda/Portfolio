@@ -2,7 +2,7 @@
 import fs from "fs";
 import path from "path";
 
-const gameCountFilePath = path.resolve("gameCount.json");
+const gameCountFilePath = path.join(process.cwd(), "gameCount.json");
 
 export default async function allGameDataFetch() {
   try {

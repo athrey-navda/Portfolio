@@ -20,7 +20,6 @@ export default function Tictactoe() {
   const fetchData = useCallback(async () => {
     try {
       const jsonData = await allGameDataFetch();
-      console.log(jsonData);
       setTicTacToeData(jsonData);
 
       if (jsonData && jsonData.games) {

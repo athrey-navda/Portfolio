@@ -1,8 +1,13 @@
 "use server";
-import fs from "fs";
+import { promises as fs } from "fs";
 import path from "path";
 
-const gameCountFilePath = path.join(process.cwd(), "gameCount.json");
+const gameCountFilePath = path.join(
+  process.cwd(),
+  "public",
+  "data",
+  "gameCount.json"
+);
 
 export default async function updateGameData(gameName, count) {
   try {

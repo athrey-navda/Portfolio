@@ -12,6 +12,7 @@ export default async function Page() {
     return data;
   } catch {
     console.error("Error reading game count file:", error);
-    return null;
+
+    throw error;
   }
 }

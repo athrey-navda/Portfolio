@@ -1,16 +1,20 @@
 "use server";
-import { promises as fs } from "fs";
+import fs from "fs";
+import path from "path";
 
-export default async function Page() {
+export default async function allGameDataFetch() {
   try {
-    const file = await fs.readFile(
-      process.cwd() + "/public/data/gameCount.json",
-      "utf8"
+    const gameCountFilePath = path.join(
+      process.cwd(),
+      "public",
+      "data",
+      "gameCount.json"
     );
-    const data = JSON.parse(file);
+    const file = fs.readFileSync(gameCountFilePath, "utf8");
+    const parsedData = JSON.parse(file);
 
-    return data;
-  } catch {
+    return parsedData;
+  } catch (error) {
     console.error("Error reading game count file:", error);
 
     throw error;

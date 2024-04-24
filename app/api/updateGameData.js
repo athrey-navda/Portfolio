@@ -8,7 +8,7 @@ export default async function updateGameData(gameName, count) {
       "utf8"
     );
     const gameData = JSON.parse(file);
-    console.log(gameData);
+
     const updatingGame = gameData.games.find((game) => game.name === gameName);
 
     if (updatingGame) {

@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    outputFileTracingIncludes: {
-      "/api/*": ["./public/data/gameCount.json"],
-    },
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;

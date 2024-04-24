@@ -8,7 +8,7 @@ export default async function Page() {
       "utf8"
     );
     const data = JSON.parse(file);
-    console.log(data);
+
     return data;
   } catch {
     console.error("Error reading game count file:", error);

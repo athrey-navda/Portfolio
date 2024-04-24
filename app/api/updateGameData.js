@@ -1,19 +1,14 @@
 "use server";
 import { promises as fs } from "fs";
-import path from "path";
-
-const gameCountFilePath = path.join(
-  process.cwd(),
-  "public",
-  "data",
-  "gameCount.json"
-);
 
 export default async function updateGameData(gameName, count) {
   try {
-    const jsonData = await fs.promises.readFile(gameCountFilePath, "utf8");
-    const gameData = JSON.parse(jsonData);
-
+    const file = await fs.readFile(
+      process.cwd() + "/public/data/gameCount.json",
+      "utf8"
+    );
+    const gameData = JSON.parse(file);
+    console.log(gameData);
     const updatingGame = gameData.games.find((game) => game.name === gameName);
 
     if (updatingGame) {
@@ -25,8 +20,8 @@ export default async function updateGameData(gameName, count) {
       }
     }
 
-    await fs.promises.writeFile(
-      gameCountFilePath,
+    await fs.writeFile(
+      process.cwd() + "/public/data/gameCount.json",
       JSON.stringify(gameData, null, 2),
       "utf8"
     );

@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/allGameDataFetch.js": {
-      "includeFiles": "public/data/gameCount.json"
-    }
-  }
-}

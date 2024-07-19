@@ -10,7 +10,7 @@ const projects = [
     href: "http://rapidcloudify.com",
     imageSrc: "/images/homepage/rapidcloudify.png",
     imageAlt: "Rapid Cloudify",
-    stack: "React, React-Bootstrap, Formik, Yup, Python, Ansible, AWS EC2",
+    stack: "React, Nextjs, Tailwind, JWT, OAuth, Python, Ansible, AWS",
     description:
       "Automated AWS deployment for ReactJS, Node.js, and Python apps, cutting manual effort by 70% and accelerating cycles by 50% for small-scale industries. Crafted a robust CI/CD pipeline utilizing GitHub Webhooks to automate code updates, ensuring an impressive uptime of 99.9% and seamless scalability in real-time. Implemented Ansible for IaC, reducing AWS setup times by 60% and operational costs by 40%, while enhancing client control through a user-friendly interface.",
   },

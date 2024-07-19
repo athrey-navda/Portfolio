@@ -25,29 +25,29 @@ export default function ExperienceComponent() {
               </p>
               <div className="mt-2">
                 <div className="inline font-semibold">Jul 2022 - Jan 2023</div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Pioneered the design and implementation of the Universal
                   Booking System leveraging React - Next.js (pageRouter) with
                   Tailwind CSS and other animation effects for front-end used
                   Headless UI, Tailwind Components for UI coomponents
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Back-end with Node.js, ExpressJS for API’s, MySQL to handle
                   database, JWT and OAuth technologies to create a secure
                   application with sophisticated user hierarchy with 4 levels
                   and credit management for booking.
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Guided a cohesive team in the early stages of a startup,
                   fostering cross-functional collaboration for product
                   development aligned with business objectives.
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Directed and facilitated scrum meetings for product life cycle
                   management, resulting in a 25% decrease in development
                   timelines and a 30% increase in product quality.
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Embarked the journey as a novice software developer,
                   progressively evolving expertise and knowledge within the
                   startup ecosystem, ultimately achieving the role of a
@@ -61,13 +61,13 @@ export default function ExperienceComponent() {
               </p>
               <div className="mt-2">
                 <div className="inline font-semibold">Sep 2019 - Jul 2022</div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Elevated operational efficiency as an entry-level engineer by
                   actively engaging in the development of a 3 to 4 applications,
                   showcasing a consistent commitment to continuous learning and
                   innovative solutions.
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Spearheaded the creation of an Inventory management
                   application using Node, Express.js for back-end API’s with
                   MySQL, HTML, JS Bootstrap CSS for UI, resulting in a 20%
@@ -75,18 +75,18 @@ export default function ExperienceComponent() {
                   underscored my ability to address operational challenges
                   through technological solutions.
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Drastically enhanced the company’s online presence by
                   developing website for ClayWorks and Spotch following Figma
                   designs, using HTML, Javacscript and Bootstrapp CSS which lead
                   to a substantial 30% increase in company’s online presence.
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Directed and facilitated scrum meetings for product life cycle
                   management, resulting in a 25% decrease in development
                   timelines and a 30% increase in product quality.
                 </div>
-                <div className="text-md mt-2">
+                <div className="text-md mt-2 hover:font-bold hover:p-1">
                   Played a pivotal role in managing 3 legacy systems such as
                   MRBS, Space calculator, showcasing versatility and
                   adaptability during the early stages of my career.
@@ -116,15 +116,15 @@ export default function ExperienceComponent() {
             </p>
             <div className="mt-2">
               <div className="inline font-semibold">Jun 2018 - Aug 2018</div>
-              <div className="text-md mt-2">
+              <div className="text-md mt-2 hover:font-bold hover:p-1">
                 Led the design and development of a Home Automation project
                 using Machine Learning and Alexa Skillset.
               </div>
-              <div className="text-md mt-2">
+              <div className="text-md mt-2 hover:font-bold hover:p-1">
                 Implementation of voice command control in Alexa, leading to a
                 30% increase in user engagement.
               </div>
-              <div className="text-md mt-2">
+              <div className="text-md mt-2 hover:font-bold hover:p-1">
                 Optimization of DynamoDB usage and customization of API calls,
                 reducing system response time by 50% and enhancing user
                 satisfaction.

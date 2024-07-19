@@ -9,7 +9,7 @@ const projects = [
     href: "http://rapidcloudify.com",
     imageSrc: "/images/homepage/rapidcloudify.png",
     imageAlt: "Rapid Cloudify",
-    stack: "React, React-Bootstrap, Formik, Yup, Python, Ansible, AWS EC2",
+    stack: "React, Nextjs, Tailwind, JWT, OAuth, Python, Ansible, AWS",
     description:
       "Automated AWS deployment for ReactJS, Node.js, and Python apps",
   },
@@ -19,7 +19,7 @@ const projects = [
     href: "https://portfolio-rho-swart.vercel.app/",
     imageSrc: "/images/logo/athrey-high-resolution-logo-white.png",
     imageAlt: "Rapid Cloudify",
-    stack: "React with Nextjs (App Router), Tailwind CSS",
+    stack: "React with Nextjs (App Router), Redux, States, Tailwind CSS",
     description: "An introductory site to my profile",
   },
   {
@@ -65,7 +65,7 @@ const projects = [
 
 export default function ProjectsComponent() {
   const [isMounted, setIsMounted] = useState(false);
-  const { setTheme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setIsMounted(true);

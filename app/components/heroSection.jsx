@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 
 export default function HeroSection() {
-  const { setTheme, resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   const [isShowing, setIsShowing] = useState(false);
   const [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 800);

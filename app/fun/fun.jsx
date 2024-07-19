@@ -26,6 +26,15 @@ const games = [
   },
   {
     id: 3,
+    name: "Snake and Ladder with Redux",
+    href: "/fun/snake-and-ladder-redux/",
+    imageSrc: "https://upload.wikimedia.org/wikipedia/en/b/ba/Cnl03.jpg",
+    imageAlt: "Snake and Ladder",
+    description:
+      "Snakes and ladders is a board game for two or more players regarded today as a worldwide classic. The game originated in ancient India as Moksha Patam, and was brought to the United Kingdom in the 1890s. It is played on a game board with numbered, gridded squares.",
+  },
+  {
+    id: 4,
     name: "Coming Soon",
     href: "#",
     imageSrc:

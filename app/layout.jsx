@@ -6,6 +6,8 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { Suspense, useEffect, useState } from "react";
 import Loading from "./loading";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -52,19 +54,21 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/images/logo/favicon.ico" />
       </head>
       <body className={quicksand.className}>
-        <Providers>
-          <Suspense fallback={<Loading />}>
-            {loading ? (
-              <Loading />
-            ) : (
-              <>
-                <Navbar />
-                <div>{children}</div>
-                <Footer />
-              </>
-            )}
-          </Suspense>
-        </Providers>
+        <Provider store={store}>
+          <Providers>
+            <Suspense fallback={<Loading />}>
+              {loading ? (
+                <Loading />
+              ) : (
+                <>
+                  <Navbar />
+                  <div>{children}</div>
+                  <Footer />
+                </>
+              )}
+            </Suspense>
+          </Providers>
+        </Provider>
       </body>
     </html>
   );

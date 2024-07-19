@@ -1,24 +1,24 @@
 import BreadCrumbs from "@/app/components/breadCrumbs";
-import SnakesAndLadders from "./snakeAndLadder";
+import SnakesAndLaddersRedux from "./snakeAndLadder-redux";
 
 const breadcrumbItems = [
   { key: "home", label: "Home", href: "/" },
   { key: "fun", label: "Fun", href: "/fun" },
-  { key: "tic-tac-toe", label: "Tic Tac Toe", href: "/fun/tic-tac-toe" },
+
   {
-    key: "snake-and-ladder",
-    label: "Snake and Ladder",
-    href: "/fun/snake-and-ladder",
+    key: "snake-and-ladder-redux",
+    label: "Snake and Ladder with Redux",
+    href: "/fun/snake-and-ladder-redux",
   },
 ];
-export default function SnakeandLadderHome() {
+export default function SnakeandLadderReduxHome() {
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
       <section className="d-block px-6 sm:py-4 lg:px-24 min-h-screen">
         <div className="p-2 mt-24">
           <BreadCrumbs items={breadcrumbItems} />
         </div>
-        <SnakesAndLadders />
+        <SnakesAndLaddersRedux />
       </section>
     </div>
   );

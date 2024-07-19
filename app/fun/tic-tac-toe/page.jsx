@@ -12,7 +12,7 @@ const breadcrumbItems = [
     href: "/fun/snake-and-ladder",
   },
 ];
-export default function AboutMe() {
+export default function TicTacToeHome() {
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
       <section className="d-block px-6 sm:py-4 lg:px-24 min-h-screen">

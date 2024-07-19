@@ -4,12 +4,6 @@ import FunComponent from "./fun";
 const breadcrumbItems = [
   { key: "home", label: "Home", href: "/" },
   { key: "fun", label: "Fun", href: "/fun" },
-  { key: "tic-tac-toe", label: "Tic Tac Toe", href: "/fun/tic-tac-toe" },
-  {
-    key: "snake-and-ladder",
-    label: "Snake and Ladder",
-    href: "/fun/snake-and-ladder",
-  },
 ];
 export default function Fun() {
   return (

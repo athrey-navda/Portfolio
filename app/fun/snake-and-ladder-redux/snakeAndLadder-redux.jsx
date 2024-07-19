@@ -1,47 +1,71 @@
 "use client";
-import React, { useState, useEffect, useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useTheme } from "next-themes";
-import updateGameData from "@/app/api/updateGameData";
-import allGameDataFetch from "../../api/allGameDataFetch";
+import { useEffect, useCallback } from "react";
 
-export default function SnakesAndLadders() {
+import {
+  setGameStarted,
+  setSnakeAndLadderGameData,
+  setPlayerPosition,
+  setDiceRoll,
+  setDiceRollAgain,
+  setIsGameOver,
+  setMessage,
+  setEachTurn,
+  setCurrentPlayer,
+} from "@/app/store/gameSlice.jsx";
+
+import updateGameData from "@/app/api/updateGameData";
+import allGameDataFetch from "@/app/api/allGameDataFetch";
+
+const SnakesAndLaddersRedux = () => {
   const { resolvedTheme } = useTheme();
-  const [player1Position, setPlayer1Position] = useState(0);
-  const [player2Position, setPlayer2Position] = useState(0);
-  const [diceRoll, setDiceRoll] = useState(null);
-  const [setDiceRollAgain] = useState(false);
-  const [isGameOver, setIsGameOver] = useState(false);
-  const [message, setMessage] = useState("");
-  const [eachTurn, setEachTurn] = useState("");
-  const [currentPlayer, setCurrentPlayer] = useState(1);
-  const [gameStarted, setGameStarted] = useState(false);
-  const [snakeAndLadderGameData, setSnakeAndLadderGameData] = useState(null);
-  const [snakeAndLadderCount, setSnakeAndLadderCount] = useState(0);
+  const dispatch = useDispatch();
+  const {
+    snakeAndLadderGameData,
+    gameStarted,
+    player1Position,
+    player2Position,
+    diceRoll,
+    isGameOver,
+    message,
+    eachTurn,
+    currentPlayer,
+  } = useSelector((state) => state.snakeAndLadder);
 
   const fetchData = useCallback(async () => {
     try {
       const jsonData = await allGameDataFetch();
-      setSnakeAndLadderGameData(jsonData);
+      console.log("Fetched Data:", jsonData);
 
       if (jsonData && jsonData.games) {
-        let total = 0;
-        jsonData.games.forEach((game) => {
-          if (game.name === "snake-and-ladder") {
-            Object.values(game.count).forEach((count) => {
-              total += count;
-            });
-          }
-        });
-        setSnakeAndLadderCount(total);
+        const snakeAndLadderGame = jsonData.games.find(
+          (game) => game.name === "snake-and-ladder"
+        );
+
+        if (snakeAndLadderGame) {
+          let total = 0;
+          Object.values(snakeAndLadderGame.count).forEach((count) => {
+            total += count;
+          });
+          console.log("Total Game Count:", total);
+
+          dispatch(setSnakeAndLadderGameData(jsonData));
+          dispatch(setGameStarted(true));
+        } else {
+          console.warn("Snake and Ladder game not found in data.");
+        }
+      } else {
+        console.warn("Invalid data structure:", jsonData);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const SnakesAndLadders = {
     14: 4,
@@ -57,34 +81,40 @@ export default function SnakesAndLadders() {
     97: 33,
   };
 
-  useEffect(() => {
-    renderGrid();
-  }, [player1Position, player2Position]);
-
   const startGame = async () => {
-    setGameStarted(true);
+    dispatch(setGameStarted(true));
 
-    if (snakeAndLadderGameData !== null && snakeAndLadderGameData.games) {
+    if (snakeAndLadderGameData && snakeAndLadderGameData.games) {
       const todayDate = new Date().toLocaleDateString();
-      console.log(snakeAndLadderGameData);
-
-      const snakeAndLadderGame = snakeAndLadderGameData.games.find(
+      const updatedGameData = { ...snakeAndLadderGameData };
+      const snakeAndLadderGame = updatedGameData.games.find(
         (game) => game.name === "snake-and-ladder"
       );
 
       if (snakeAndLadderGame) {
-        if (snakeAndLadderGame.count[todayDate]) {
-          snakeAndLadderGame.count[todayDate] += 1;
+        const updatedCount = { ...snakeAndLadderGame.count };
+
+        if (updatedCount[todayDate]) {
+          updatedCount[todayDate] += 1;
         } else {
-          snakeAndLadderGame.count[todayDate] = 1;
+          updatedCount[todayDate] = 1;
         }
 
-        setSnakeAndLadderGameData({
-          ...snakeAndLadderGameData,
-          games: snakeAndLadderGameData.games.map((game) =>
-            game.name === "snake-and-ladder" ? snakeAndLadderGame : game
-          ),
-        });
+        const updatedSnakeAndLadderGame = {
+          ...snakeAndLadderGame,
+          count: updatedCount,
+        };
+
+        const updatedGames = updatedGameData.games.map((game) =>
+          game.name === "snake-and-ladder" ? updatedSnakeAndLadderGame : game
+        );
+
+        dispatch(
+          setSnakeAndLadderGameData({
+            ...updatedGameData,
+            games: updatedGames,
+          })
+        );
 
         try {
           await updateGameData("snake-and-ladder", 1);
@@ -98,7 +128,7 @@ export default function SnakesAndLadders() {
 
   const rollDice = () => {
     const roll = Math.floor(Math.random() * 6) + 1;
-    setDiceRoll(roll);
+    dispatch(setDiceRoll(roll));
     return roll;
   };
 
@@ -108,14 +138,16 @@ export default function SnakesAndLadders() {
     const roll = rollDice();
 
     if (roll === 6) {
-      setDiceRollAgain(true);
+      dispatch(setDiceRollAgain(true));
     }
 
     let newPosition =
       currentPlayer === 1 ? player1Position + roll : player2Position + roll;
 
-    setEachTurn(
-      `Player ${currentPlayer}  rolled ${roll} and moved to ${newPosition}!`
+    dispatch(
+      setEachTurn(
+        `Player ${currentPlayer} rolled ${roll} and moved to ${newPosition}!`
+      )
     );
 
     let finalPosition = newPosition;
@@ -124,38 +156,40 @@ export default function SnakesAndLadders() {
       const newPositionType =
         SnakesAndLadders[newPosition] < newPosition ? "snake" : "ladder";
       finalPosition = SnakesAndLadders[newPosition];
-      setMessage(`Player ${currentPlayer} encountered a ${newPositionType}!`);
+      dispatch(
+        setMessage(`Player ${currentPlayer} encountered a ${newPositionType}!`)
+      );
     } else {
-      setMessage("");
+      dispatch(setMessage(""));
     }
 
-    if (currentPlayer === 1) {
-      setPlayer1Position(finalPosition);
-    } else {
-      setPlayer2Position(finalPosition);
-    }
+    dispatch(
+      setPlayerPosition({ player: currentPlayer, position: finalPosition })
+    );
 
     if (finalPosition >= 100) {
-      setIsGameOver(true);
+      dispatch(setIsGameOver(true));
     }
 
-    setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
+    dispatch(setCurrentPlayer(currentPlayer === 1 ? 2 : 1));
   };
 
   const resetGame = () => {
-    setGameStarted(false);
-    setPlayer1Position(0);
-    setPlayer2Position(0);
-    setDiceRoll(null);
-    setIsGameOver(false);
-    setMessage("");
-    setCurrentPlayer(1);
+    dispatch(setGameStarted(false));
+    dispatch(setPlayerPosition({ player: 1, position: 0 }));
+    dispatch(setPlayerPosition({ player: 2, position: 0 }));
+    dispatch(setDiceRoll(null));
+    dispatch(setIsGameOver(false));
+    dispatch(setMessage(""));
+    dispatch(setCurrentPlayer(1));
+    dispatch(setDiceRollAgain(false));
+    dispatch(setEachTurn(""));
   };
 
   const renderGrid = () => {
-    let cells = [];
     const rows = 10;
     const cols = 10;
+    let cells = [];
 
     function printSnakingNumbers(rows, cols) {
       for (let row = 1; row <= rows; row++) {
@@ -171,7 +205,6 @@ export default function SnakesAndLadders() {
         }
         cells.push(rowData);
       }
-
       cells.reverse();
     }
 
@@ -194,7 +227,6 @@ export default function SnakesAndLadders() {
               if (Number(end) === cell) isLadderEnd = true;
             }
           });
-
           return (
             <div
               key={colIndex}
@@ -229,7 +261,7 @@ export default function SnakesAndLadders() {
                 </div>
               )}
               {cell === player2Position && (
-                <div className="absolute w-4 h-4 bg-black text-black rounded-full text-xs flex justify-center items-center">
+                <div className="absolute w-4 h-4 bg-black text-white rounded-full text-xs flex justify-center items-center">
                   Player 2
                 </div>
               )}
@@ -252,7 +284,12 @@ export default function SnakesAndLadders() {
         <div className="flex flex-col">
           <div className="container mx-auto">
             <div className="text-center ">
-              Total Snake and Ladder Game: {snakeAndLadderCount}
+              Total Snake and Ladder Game:{" "}
+              {Object.values(
+                snakeAndLadderGameData?.games?.find(
+                  (game) => game.name === "snake-and-ladder"
+                )?.count || {}
+              ).reduce((total, count) => total + count, 0)}
             </div>
             <h1 className="text-3xl font-bold mb-4 text-center">
               Snake and Ladder Game
@@ -286,7 +323,6 @@ export default function SnakesAndLadders() {
                   >
                     Roll Dice
                   </button>
-
                   <button
                     onClick={resetGame}
                     className={
@@ -298,20 +334,21 @@ export default function SnakesAndLadders() {
                     Reset Game
                   </button>
                 </div>
-                <div className="mt-4 text-center">
-                  {isGameOver
-                    ? "Game Over! Player wins!"
-                    : diceRoll
-                    ? eachTurn && <div className="text-center">{eachTurn}</div>
-                    : "Click 'Roll Dice' to start"}
+                <div className="text-center mt-4">
+                  <p>Player 1 Position: {player1Position}</p>
+                  <p>Player 2 Position: {player2Position}</p>
+                  <p>{diceRoll && <>Dice Roll: {diceRoll}</>}</p>
+                  <p>{eachTurn}</p>
+                  <p>{message}</p>
+                  {isGameOver && <p>Game Over! Player {currentPlayer} wins!</p>}
                 </div>
               </>
             )}
           </div>
-
-          <div>{message && <div className="text-center">{message}</div>}</div>
         </div>
       </div>
     </>
   );
-}
+};
+
+export default SnakesAndLaddersRedux;

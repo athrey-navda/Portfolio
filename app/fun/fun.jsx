@@ -55,9 +55,37 @@ export default function FunComponent() {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold py-14 lg:py-6 sm:text-4xl">
-        Games developed by me
-      </h2>
+      <div className="md:flex md:justify-between">
+        <div className="text-3xl font-bold py-14 lg:py-6 sm:text-4xl">
+          Games developed by me
+        </div>
+        <div>
+          <Link href="/fun/game-chart">
+            <button>
+              <div className="flex items-center text-3xl font-bold py-14 lg:py-6 sm:text-4xl hover:bg-gray-400 hover:rounded-xl hover:p-2">
+                Games Chart
+                <span className="ml-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </button>
+          </Link>
+        </div>
+      </div>
+
       <div className="text-black dark:text-white bg-white dark:bg-black">
         <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-20 lg:pt-4 lg:px-24">
           <div className="mx-auto max-w-2xl lg:max-w-7xl ">

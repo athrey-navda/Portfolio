@@ -115,6 +115,14 @@ const frontendTechnologies = [
       "https://upload.wikimedia.org/wikipedia/commons/c/c5/Html5_dise%C3%B1o_web.png?20180726103553",
     imageAlt: "C++",
   },
+  {
+    id: 10,
+    name: "Chart.js",
+
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/240px-Chart.js_logo.svg.png",
+    imageAlt: "Chart",
+  },
 ];
 
 const backendTechnologies = [

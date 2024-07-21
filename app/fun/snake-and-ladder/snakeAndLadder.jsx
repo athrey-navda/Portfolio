@@ -9,7 +9,7 @@ export default function SnakesAndLadders() {
   const [player1Position, setPlayer1Position] = useState(0);
   const [player2Position, setPlayer2Position] = useState(0);
   const [diceRoll, setDiceRoll] = useState(null);
-  const [setDiceRollAgain] = useState(false);
+  const [diceRollAgain, setDiceRollAgain] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [message, setMessage] = useState("");
   const [eachTurn, setEachTurn] = useState("");
@@ -105,41 +105,84 @@ export default function SnakesAndLadders() {
   const movePlayer = () => {
     if (isGameOver) return;
 
-    const roll = rollDice();
+    if (diceRollAgain) {
+      const roll = rollDice();
 
-    if (roll === 6) {
-      setDiceRollAgain(true);
-    }
+      if (roll === 6) {
+        setDiceRollAgain(true);
+      } else {
+        setDiceRollAgain(false);
+      }
 
-    let newPosition =
-      currentPlayer === 1 ? player1Position + roll : player2Position + roll;
+      let newPosition =
+        currentPlayer === 1 ? player1Position + roll : player2Position + roll;
 
-    setEachTurn(
-      `Player ${currentPlayer}  rolled ${roll} and moved to ${newPosition}!`
-    );
+      setEachTurn(
+        `Player ${currentPlayer} rolled ${roll} and moved to ${newPosition}!`
+      );
 
-    let finalPosition = newPosition;
+      let finalPosition = newPosition;
 
-    if (SnakesAndLadders[newPosition]) {
-      const newPositionType =
-        SnakesAndLadders[newPosition] < newPosition ? "snake" : "ladder";
-      finalPosition = SnakesAndLadders[newPosition];
-      setMessage(`Player ${currentPlayer} encountered a ${newPositionType}!`);
+      if (SnakesAndLadders[newPosition]) {
+        const newPositionType =
+          SnakesAndLadders[newPosition] < newPosition ? "snake" : "ladder";
+        finalPosition = SnakesAndLadders[newPosition];
+        setMessage(`Player ${currentPlayer} encountered a ${newPositionType}!`);
+      } else {
+        setMessage("");
+      }
+
+      if (currentPlayer === 1) {
+        setPlayer1Position(finalPosition);
+      } else {
+        setPlayer2Position(finalPosition);
+      }
+
+      if (finalPosition >= 100) {
+        setIsGameOver(true);
+      }
+
+      setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
     } else {
-      setMessage("");
-    }
+      // First roll of the turn
+      const roll = rollDice();
 
-    if (currentPlayer === 1) {
-      setPlayer1Position(finalPosition);
-    } else {
-      setPlayer2Position(finalPosition);
-    }
+      if (roll === 6) {
+        setDiceRollAgain(true);
+      } else {
+        setDiceRollAgain(false);
+      }
 
-    if (finalPosition >= 100) {
-      setIsGameOver(true);
-    }
+      let newPosition =
+        currentPlayer === 1 ? player1Position + roll : player2Position + roll;
 
-    setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
+      setEachTurn(
+        `Player ${currentPlayer} rolled ${roll} and moved to ${newPosition}!`
+      );
+
+      let finalPosition = newPosition;
+
+      if (SnakesAndLadders[newPosition]) {
+        const newPositionType =
+          SnakesAndLadders[newPosition] < newPosition ? "snake" : "ladder";
+        finalPosition = SnakesAndLadders[newPosition];
+        setMessage(`Player ${currentPlayer} encountered a ${newPositionType}!`);
+      } else {
+        setMessage("");
+      }
+
+      if (currentPlayer === 1) {
+        setPlayer1Position(finalPosition);
+      } else {
+        setPlayer2Position(finalPosition);
+      }
+
+      if (finalPosition >= 100) {
+        setIsGameOver(true);
+      }
+
+      setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
+    }
   };
 
   const resetGame = () => {

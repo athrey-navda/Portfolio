@@ -19,7 +19,7 @@ const projects = [
     href: "https://portfolio-rho-swart.vercel.app/",
     imageSrc: "/images/logo/athrey-high-resolution-logo-white.png",
     imageAlt: "Rapid Cloudify",
-    stack: "React with Nextjs (App Router), Redux, States, Tailwind CSS",
+    stack: "React with Nextjs (App Router), Redux,  States, Tailwind CSS",
     description: "An introductory site to my profile",
   },
   {

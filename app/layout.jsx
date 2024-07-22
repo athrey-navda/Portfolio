@@ -8,6 +8,7 @@ import { Suspense, useEffect, useState } from "react";
 import Loading from "./loading";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import MouseTracker from "./components/mouseTracker";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
                 <Loading />
               ) : (
                 <>
+                  <MouseTracker />
                   <Navbar />
                   <div>{children}</div>
                   <Footer />

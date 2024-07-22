@@ -87,7 +87,7 @@ export default function HeroSection() {
                     Graduating Dec '24.
                   </div>
                   <div>
-                    <div className="flex mt-4 sm:justify-between sm:mt-10">
+                    <div className="sm:flex mt-4 sm:justify-between sm:mt-10">
                       <Link
                         href="mailto:bnavda@gmu.edu"
                         target="_blank"

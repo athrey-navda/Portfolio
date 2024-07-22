@@ -15,7 +15,7 @@ const programmingLanguages = [
     name: "TypeScript",
 
     imageSrc:
-      "  https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png",
     imageAlt: "Ts",
   },
   {

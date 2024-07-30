@@ -30,7 +30,7 @@ export default function MouseTracker() {
 
 const getGradientColor = () => {
   if (document.documentElement.classList.contains("dark")) {
-    return "rgba(255, 105, 180, 0.7) 0%, rgba(255, 105, 180, 0) 10%";
+    return "rgba(255, 105, 180, 0.7) 0%, rgba(255, 105, 180, 0) 2%";
   }
-  return "rgba(135, 206, 250, 0.7) 0%, rgba(135, 206, 250, 0) 10%";
+  return "rgba(135, 206, 250, 0.7) 0%, rgba(135, 206, 250, 0) 2%";
 };

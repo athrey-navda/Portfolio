@@ -23,6 +23,16 @@ const projects = [
     description: "An introductory site to my profile",
   },
   {
+    id: 7,
+    name: "Customer ticket management",
+    href: "github.com/athrey-navda/rayca-backend",
+    imageSrc: "/images/homepage/customer_ticket.jpeg",
+    imageAlt: "Customer ticket",
+    stack: "Node.js, Express.js, GraphQL, JWT, Oauth and Socket.io",
+    description:
+      "Evolved a Node.js microservice for managing customer support tickets ",
+  },
+  {
     id: 3,
     name: "Universal Booking System",
     href: "https://book.clayworks.space",
@@ -51,15 +61,6 @@ const projects = [
     imageAlt: "ClayWorks",
     stack: "JS, HTML, Bootstrap",
     description: "ClayWorks Company Website",
-  },
-  {
-    id: 6,
-    name: "Spotch",
-    href: "https://spotch.works",
-    imageSrc: "https://spotch.works/assets/website/spotch/S3/S3-1.webp",
-    imageAlt: "Spotch",
-    stack: "JS, HTML, Bootstrap",
-    description: "Spotch Company Website",
   },
 ];
 

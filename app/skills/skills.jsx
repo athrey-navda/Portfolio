@@ -185,6 +185,15 @@ const backendTechnologies = [
       "https://img.godotassetlibrary.com/TX7pKOrfKcNirXf3vKfgG7P3_gq9IjIYda_KEHlP6rU/rs:fit:1920:1080:0/g:no/aHR0cHM6Ly9maXJlYmFzZS5nb29nbGUuY29tL3N0YXRpYy9pbWFnZXMvYnJhbmQtZ3VpZGVsaW5lcy9sb2dvLWxvZ29tYXJrLnBuZw.webp",
     imageAlt: "Firebase",
   },
+
+  {
+    id: 9,
+    name: "Socket.io",
+
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/240px-Socket-io.svg.png",
+    imageAlt: "Socket.io",
+  },
 ];
 
 const databaseTech = [

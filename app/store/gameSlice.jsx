@@ -13,6 +13,7 @@ const gameReducer = createSlice({
     message: "",
     eachTurn: "",
     currentPlayer: 1,
+    error: null,
   },
   reducers: {
     setGameStarted(state, action) {
@@ -47,6 +48,9 @@ const gameReducer = createSlice({
     setCurrentPlayer(state, action) {
       state.currentPlayer = action.payload;
     },
+    setError(state, action) {
+      state.error = action.payload;
+    },
   },
 });
 
@@ -60,6 +64,7 @@ export const {
   setMessage,
   setEachTurn,
   setCurrentPlayer,
+  setError,
 } = gameReducer.actions;
 
 export default gameReducer.reducer;

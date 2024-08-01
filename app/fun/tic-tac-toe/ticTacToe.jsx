@@ -2,8 +2,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTheme } from "next-themes";
 import confetti from "canvas-confetti";
-import allGameDataFetch from "@/app/api/allGameDataFetch";
-import updateGameData from "@/app/api/updateGameData";
 
 export default function Tictactoe() {
   const { resolvedTheme } = useTheme();
@@ -15,11 +13,15 @@ export default function Tictactoe() {
   const [showConfetti, setShowConfetti] = useState(false);
   const [isAgainstComputer, setIsAgainstComputer] = useState(false);
   const [ticTacToeData, setTicTacToeData] = useState(null);
-  const [ticTacToeCount, setsetTicTacToeCount] = useState(0);
+  const [ticTacToeCount, setTicTacToeCount] = useState(0);
 
   const fetchData = useCallback(async () => {
     try {
-      const jsonData = await allGameDataFetch();
+      const response = await fetch("/api/gameData");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const jsonData = await response.json();
       setTicTacToeData(jsonData);
 
       if (jsonData && jsonData.games) {
@@ -31,7 +33,7 @@ export default function Tictactoe() {
             });
           }
         });
-        setsetTicTacToeCount(total);
+        setTicTacToeCount(total);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -54,6 +56,7 @@ export default function Tictactoe() {
       const ticTacToeGame = ticTacToeData.games.find(
         (game) => game.name === "tic-tac-toe"
       );
+
       if (ticTacToeGame) {
         if (ticTacToeGame.count[todayDate]) {
           ticTacToeGame.count[todayDate] += 1;
@@ -63,8 +66,20 @@ export default function Tictactoe() {
 
         setTicTacToeData({ ...ticTacToeData });
 
-        await updateGameData("tic-tac-toe", 1);
-        fetchData();
+        try {
+          const response = await fetch("/api/updateGameData", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ gameName: "tic-tac-toe", count: 1 }),
+          });
+
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          await fetchData();
+        } catch (error) {
+          console.error("Error updating game data:", error);
+        }
       }
     }
   };

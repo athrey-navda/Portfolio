@@ -16,7 +16,6 @@ import {
 } from "@/app/store/gameSlice.jsx";
 
 import updateGameData from "@/app/api/updateGameData";
-import allGameDataFetch from "@/app/api/allGameDataFetch";
 
 const SnakesAndLaddersRedux = () => {
   const { resolvedTheme } = useTheme();
@@ -35,7 +34,11 @@ const SnakesAndLaddersRedux = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const jsonData = await allGameDataFetch();
+      const response = await fetch("/api/gameData");
+      if (!response.ok) {
+        throw new Error("Network response was not ok.");
+      }
+      const jsonData = await response.json();
       console.log("Fetched Data:", jsonData);
 
       if (jsonData && jsonData.games) {
@@ -82,42 +85,31 @@ const SnakesAndLaddersRedux = () => {
   };
 
   const startGame = async () => {
-    dispatch(setGameStarted(true));
+    setGameStarted(true);
 
-    if (snakeAndLadderGameData && snakeAndLadderGameData.games) {
+    if (snakeAndLadderGameData !== null && snakeAndLadderGameData.games) {
       const todayDate = new Date().toLocaleDateString();
-      const updatedGameData = { ...snakeAndLadderGameData };
-      const snakeAndLadderGame = updatedGameData.games.find(
+      const snakeAndLadderGame = snakeAndLadderGameData.games.find(
         (game) => game.name === "snake-and-ladder"
       );
 
       if (snakeAndLadderGame) {
-        const updatedCount = { ...snakeAndLadderGame.count };
-
-        if (updatedCount[todayDate]) {
-          updatedCount[todayDate] += 1;
+        if (snakeAndLadderGame.count[todayDate]) {
+          snakeAndLadderGame.count[todayDate] += 1;
         } else {
-          updatedCount[todayDate] = 1;
+          snakeAndLadderGame.count[todayDate] = 1;
         }
 
-        const updatedSnakeAndLadderGame = {
-          ...snakeAndLadderGame,
-          count: updatedCount,
-        };
-
-        const updatedGames = updatedGameData.games.map((game) =>
-          game.name === "snake-and-ladder" ? updatedSnakeAndLadderGame : game
-        );
-
-        dispatch(
-          setSnakeAndLadderGameData({
-            ...updatedGameData,
-            games: updatedGames,
-          })
-        );
+        setSnakeAndLadderGameData({
+          ...snakeAndLadderGameData,
+          games: snakeAndLadderGameData.games.map((game) =>
+            game.name === "snake-and-ladder" ? snakeAndLadderGame : game
+          ),
+        });
 
         try {
-          await updateGameData("snake-and-ladder", 1);
+          const result = await updateGameData("snake-and-ladder", 1);
+          console.log("API result:", result);
           fetchData();
         } catch (error) {
           console.error("Error updating game data:", error);

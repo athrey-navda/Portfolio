@@ -85,7 +85,7 @@ const SnakesAndLaddersRedux = () => {
   };
 
   const startGame = async () => {
-    setGameStarted(true);
+    dispatch(setGameStarted(true));
 
     if (snakeAndLadderGameData !== null && snakeAndLadderGameData.games) {
       const todayDate = new Date().toLocaleDateString();
@@ -94,23 +94,41 @@ const SnakesAndLaddersRedux = () => {
       );
 
       if (snakeAndLadderGame) {
-        if (snakeAndLadderGame.count[todayDate]) {
-          snakeAndLadderGame.count[todayDate] += 1;
-        } else {
-          snakeAndLadderGame.count[todayDate] = 1;
-        }
+        const updatedCount = {
+          ...snakeAndLadderGame.count,
+          [todayDate]: (snakeAndLadderGame.count[todayDate] || 0) + 1,
+        };
 
-        setSnakeAndLadderGameData({
-          ...snakeAndLadderGameData,
-          games: snakeAndLadderGameData.games.map((game) =>
-            game.name === "snake-and-ladder" ? snakeAndLadderGame : game
-          ),
-        });
+        const updatedGame = {
+          ...snakeAndLadderGame,
+          count: updatedCount,
+        };
+
+        const updatedGames = snakeAndLadderGameData.games.map((game) =>
+          game.name === "snake-and-ladder" ? updatedGame : game
+        );
+
+        dispatch(
+          setSnakeAndLadderGameData({
+            ...snakeAndLadderGameData,
+            games: updatedGames,
+          })
+        );
 
         try {
-          const result = await updateGameData("snake-and-ladder", 1);
-          console.log("API result:", result);
-          fetchData();
+          const response = await fetch("/api/updateGameData", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              gameName: "snake-and-ladder",
+              count: 1,
+            }),
+          });
+
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          await fetchData();
         } catch (error) {
           console.error("Error updating game data:", error);
         }

@@ -42,7 +42,7 @@ export async function POST(request) {
       });
     }
   } catch (error) {
-    console.error("Error updating game data:", error);
+    console.error("Error updating game data:", error.message);
     return new Response(JSON.stringify({ message: "Internal Server Error" }), {
       status: 500,
     });

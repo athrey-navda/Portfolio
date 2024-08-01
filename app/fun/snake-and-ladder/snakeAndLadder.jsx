@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import { useTheme } from "next-themes";
-import updateGameData from "@/app/api/updateGameData";
 
 export default function SnakesAndLadders() {
   const { resolvedTheme } = useTheme();
@@ -24,7 +23,7 @@ export default function SnakesAndLadders() {
         throw new Error("Network response was not ok");
       }
       const jsonData = await response.json();
-      setSnakeAndLadderCount(jsonData);
+      setSnakeAndLadderGameData(jsonData);
 
       if (jsonData && jsonData.games) {
         let total = 0;
@@ -66,7 +65,6 @@ export default function SnakesAndLadders() {
 
   const startGame = async () => {
     setGameStarted(true);
-
     if (snakeAndLadderGameData !== null && snakeAndLadderGameData.games) {
       const todayDate = new Date().toLocaleDateString();
       console.log(snakeAndLadderGameData);
@@ -93,7 +91,7 @@ export default function SnakesAndLadders() {
           const response = await fetch("/api/updateGameData", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ gameName: "tic-tac-toe", count: 1 }),
+            body: JSON.stringify({ gameName: "snake-and-ladder", count: 1 }),
           });
 
           if (!response.ok) {

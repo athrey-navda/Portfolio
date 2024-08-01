@@ -15,7 +15,7 @@ import {
   setCurrentPlayer,
 } from "@/app/store/gameSlice.jsx";
 
-import updateGameData from "@/app/api/updateGameData";
+// import updateGameData from "@/app/api/updateGameData";
 
 const SnakesAndLaddersRedux = () => {
   const { resolvedTheme } = useTheme();

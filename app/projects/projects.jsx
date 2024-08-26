@@ -25,12 +25,13 @@ const projects = [
   {
     id: 7,
     name: "Customer ticket management",
-    href: "github.com/athrey-navda/rayca-backend",
+    href: "https://github.com/athrey-navda/ticket-management",
     imageSrc: "/images/homepage/customer_ticket.jpeg",
     imageAlt: "Customer ticket",
-    stack: "Node.js, Express.js, GraphQL, JWT, Oauth and Socket.io",
+    stack:
+      "Angular, Node.js, Express.js, CSS, MongoDB, JWT, Oauth and Socket.io",
     description:
-      "Evolved a Node.js microservice for managing customer support tickets ",
+      "An customer ticket monitoring application with user, support staff and admin interface.",
   },
   {
     id: 3,

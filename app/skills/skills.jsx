@@ -68,6 +68,14 @@ const frontendTechnologies = [
     imageAlt: "Java",
   },
   {
+    id: 11,
+    name: "Angular",
+
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
+    imageAlt: "Java",
+  },
+  {
     id: 4,
     name: "Tailwind",
 

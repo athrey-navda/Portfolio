@@ -95,8 +95,8 @@ export default function ExperienceComponent() {
             <div className="mt-2">
               <div className="inline font-semibold">Jun 2018 - Aug 2018</div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                • Architected a home automation tool with AWS Lambda, LLM, &
-                Alexa Skills, enhancing application speed by 30%.
+                Architected a home automation tool with AWS Lambda, LLM, & Alexa
+                Skills, enhancing application speed by 30%.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                 Optimized system performance by 50% using DynamoDB and tailored

@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "img.godotassetlibrary.com",
       },
+      {
+        protocol: "https",
+        hostname: "rapidcloudify.com",
+      },
     ],
   },
 };

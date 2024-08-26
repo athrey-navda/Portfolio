@@ -5,7 +5,7 @@ const gmu = [
   {
     name: "Coursework",
     description:
-      "Analysis of Algorithms, User Interface and Experience (UI-UX) Development , Information Security Theory, Software Testing, Software Project Management.",
+      "Analysis of Algorithms, User Interface and Experience (UI-UX) Development , Database management, Information Security Theory, Software Testing, Software Project Management.",
   },
   { name: "Duration", description: "Jan 2023 to Dec 2024" },
   { name: "GPA", description: "3.89/4.0" },

@@ -189,7 +189,7 @@ export default function HeroSection() {
                       </Link>
                       <div className="mx-3">
                         <Link
-                          href="/file/ByndoorAthreyNavda_Resume.pdf"
+                          href="/file/Resume_ByndoorAthreyNavda.pdf"
                           target="_blank"
                         >
                           <button

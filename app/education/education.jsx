@@ -8,7 +8,7 @@ const gmu = [
       "Analysis of Algorithms, User Interface and Experience (UI-UX) Development , Database management, Information Security Theory, Software Testing, Software Project Management.",
   },
   { name: "Duration", description: "Jan 2023 to Dec 2024" },
-  { name: "GPA", description: "3.89/4.0" },
+  { name: "GPA", description: "3.7/4.0" },
 ];
 const vtu = [
   { name: "Majors", description: "BE in Information Science" },

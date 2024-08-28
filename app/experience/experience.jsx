@@ -26,8 +26,12 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Jul 2022 - Jan 2023</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Designed a Universal Booking System using React, Next.js,
-                  TypeScript, Tailwind, and Headless UI.
+                  Designed a SaaS product Universal Booking System of a system
+                  with 4 interfaces user, admin, client, master.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  Led the implmentation using React, Next.js, Tailwind, Headless
+                  UI and Chartjs for visualization.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Built backend services with Node.js, Express.js, and MySQL,
@@ -38,8 +42,8 @@ export default function ExperienceComponent() {
                   code quality throughout development.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Led a team of 4 engineers, coordinating with UX, sales &
-                  marketing teams to align development for business.
+                  Coordinated with UX, sales & marketing teams to align
+                  development for business.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Directed scrum meetings, improving quality and reducing
@@ -58,8 +62,12 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Sep 2019 - Jul 2022</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Spearheaded the creation of an inventory application using
-                  Node, Express & MySQL, reducing wastage by 26%.
+                  Spearheaded the creation of a internal Invementory system with
+                  4 interfaces such as user, admin, vendor, master.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  Created using Node, Express & MySQL, with daily stock updates
+                  to team which reduced wastage by 26%.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Boosted online presence by 30% through agile development of

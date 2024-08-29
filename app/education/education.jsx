@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const gmu = [
   { name: "Majors", description: "MS in Computer Science" },
   {
@@ -23,7 +21,7 @@ const vtu = [
 
 export default function EducationComponent() {
   return (
-    <Link href="./education">
+    <div>
       <h2 className="text-3xl font-bold py-12 sm:text-4xl">Education</h2>
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8 bg-stone-300 dark:bg-stone-700 mt-3 py-4">
         <div className="px-2 hover:bg-opacity-90">
@@ -80,6 +78,6 @@ export default function EducationComponent() {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

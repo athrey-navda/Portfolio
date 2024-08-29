@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 export default function ExperienceComponent() {
   return (
-    <Link href="./experience">
+    <div>
       <h2 className="text-3xl font-bold py-8 sm:text-4xl">Experience</h2>
       <div className="overflow-hidden py-4 sm:py-4 bg-slate-200 dark:bg-zinc-800 mt-3">
         <div className="mx-auto px-6 lg:px-8">
@@ -26,12 +24,20 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Jul 2022 - Jan 2023</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Designed a SaaS product Universal Booking System of a system
-                  with 4 interfaces user, admin, client, master.
+                  Designed & implemented a booking System a SaaS product with 4
+                  interfaces such as user, admin, client, master.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Led the implmentation using React, Next.js, Tailwind, Headless
-                  UI and Chartjs for visualization.
+                  Enabled end-user to customize booking types such as online
+                  conferences, meeting rooms, parking spots, and food,offering a
+                  highly adaptable SaaS solution with flexible APIs that handle
+                  multiple time zones & booking scenarios.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  Integrated payment solutions which supported cards, UPI & user
+                  credits, along with coupon feature. Led the implmentation
+                  using React, Next.js, Redux, Tailwind, Headless UI and Chartjs
+                  for visualization.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Built backend services with Node.js, Express.js, and MySQL,
@@ -42,16 +48,16 @@ export default function ExperienceComponent() {
                   code quality throughout development.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Coordinated with UX, sales & marketing teams to align
-                  development for business.
+                  Aligned development with UX, sales, and marketing, boosting
+                  revenue by 25% through improved user experience.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Directed scrum meetings, improving quality and reducing
-                  development timelines by 10%, achieving an early launch.
+                  Directed scrum meetings which helped in reducing development
+                  timelines by 10%, achieving an early launch.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Implemented innovative data experiences and integrated
-                  3rd-party applications within the MVC framework.
+                  3rd-party applications within this MVC framework.
                 </div>
               </div>
             </div>
@@ -114,6 +120,6 @@ export default function ExperienceComponent() {
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

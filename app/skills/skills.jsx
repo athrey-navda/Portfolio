@@ -336,6 +336,21 @@ const toolsTech = [
     imageSrc: "/images/skills/jira.png",
     imageAlt: "Kubernetes",
   },
+  {
+    id: 5,
+    name: "Cypress",
+
+    imageSrc: "/images/skills/cypress.jpeg",
+    imageAlt: "Cypress",
+  },
+  {
+    id: 6,
+    name: "Mocha",
+
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mocha_logo.svg/200px-Mocha_logo.svg.png",
+    imageAlt: "Mocha",
+  },
 ];
 
 export default function SkillsComponent() {

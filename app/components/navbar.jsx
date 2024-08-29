@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
-      <header className="absolute inset-x-0 top-0 z-50">
+      <header className="sticky top-0 z-50 bg-white dark:bg-black">
         <nav
           className="flex items-center justify-between p-3 lg:px-8"
           aria-label="Global"

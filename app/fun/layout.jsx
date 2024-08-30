@@ -46,7 +46,7 @@ export default function FunLayout({ children }) {
           value: "transparent",
         },
       },
-      fpsLimit: 90,
+      fpsLimit: 110,
       interactivity: {
         events: {
           onClick: {
@@ -60,11 +60,11 @@ export default function FunLayout({ children }) {
         },
         modes: {
           push: {
-            quantity: 4,
+            quantity: 2,
           },
           repulse: {
             distance: 200,
-            duration: 0.4,
+            duration: 1,
           },
         },
       },
@@ -74,7 +74,7 @@ export default function FunLayout({ children }) {
         },
         links: {
           value: resolvedTheme === "dark" ? "#ffffff" : "#000000",
-          distance: 150,
+          distance: 300,
           enable: true,
           opacity: 0.5,
           width: 2,
@@ -93,16 +93,16 @@ export default function FunLayout({ children }) {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 5,
         },
         opacity: {
-          value: 0.5,
+          value: 0.2,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 0.5, max: 1 },
         },
       },
       detectRetina: true,

@@ -15,8 +15,6 @@ import {
   setCurrentPlayer,
 } from "@/app/store/gameSlice.jsx";
 
-// import updateGameData from "@/app/api/updateGameData";
-
 const SnakesAndLaddersRedux = () => {
   const { resolvedTheme } = useTheme();
   const dispatch = useDispatch();
@@ -39,25 +37,23 @@ const SnakesAndLaddersRedux = () => {
         throw new Error("Network response was not ok.");
       }
       const jsonData = await response.json();
-      console.log("Fetched Data:", jsonData);
 
-      if (jsonData && jsonData.games) {
-        const snakeAndLadderGame = jsonData.games.find(
+      if (jsonData && Array.isArray(jsonData)) {
+        const snakeAndLadderGame = jsonData.find(
           (game) => game.name === "snake-and-ladder"
         );
 
         if (snakeAndLadderGame) {
-          let total = 0;
-          Object.values(snakeAndLadderGame.count).forEach((count) => {
-            total += count;
-          });
-          console.log("Total Game Count:", total);
-
-          dispatch(setSnakeAndLadderGameData(jsonData));
-          dispatch(setGameStarted(true));
+          let total = Object.values(snakeAndLadderGame.count).reduce(
+            (acc, curr) => acc + curr,
+            0
+          );
         } else {
           console.warn("Snake and Ladder game not found in data.");
         }
+
+        dispatch(setSnakeAndLadderGameData(jsonData));
+        dispatch(setGameStarted(true));
       } else {
         console.warn("Invalid data structure:", jsonData);
       }
@@ -87,9 +83,9 @@ const SnakesAndLaddersRedux = () => {
   const startGame = async () => {
     dispatch(setGameStarted(true));
 
-    if (snakeAndLadderGameData !== null && snakeAndLadderGameData.games) {
+    if (snakeAndLadderGameData && Array.isArray(snakeAndLadderGameData)) {
       const todayDate = new Date().toLocaleDateString();
-      const snakeAndLadderGame = snakeAndLadderGameData.games.find(
+      const snakeAndLadderGame = snakeAndLadderGameData?.find(
         (game) => game.name === "snake-and-ladder"
       );
 
@@ -104,7 +100,7 @@ const SnakesAndLaddersRedux = () => {
           count: updatedCount,
         };
 
-        const updatedGames = snakeAndLadderGameData.games.map((game) =>
+        const updatedGames = snakeAndLadderGameData?.map((game) =>
           game.name === "snake-and-ladder" ? updatedGame : game
         );
 
@@ -128,11 +124,16 @@ const SnakesAndLaddersRedux = () => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
+
           await fetchData();
         } catch (error) {
           console.error("Error updating game data:", error);
         }
+      } else {
+        console.error("Snake and Ladder game data not found.");
       }
+    } else {
+      console.error("Snake and Ladder game data is not available.");
     }
   };
 
@@ -290,17 +291,27 @@ const SnakesAndLaddersRedux = () => {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-md flex my-4 justify-center items-center lg:max-w-7xl lg:px-8">
+      <div className="mx-auto w-full max-w-md flex my-4 justify-center items-center lg:max-w-7xl lg:px-8 bg-gray-600 dark:bg-gray-200 text-white dark:text-black">
         <div className="flex flex-col">
           <div className="container mx-auto">
-            <div className="text-center ">
+            <div className="text-center">
               Total Snake and Ladder Game:{" "}
-              {Object.values(
-                snakeAndLadderGameData?.games?.find(
-                  (game) => game.name === "snake-and-ladder"
-                )?.count || {}
-              ).reduce((total, count) => total + count, 0)}
+              {(() => {
+                if (Array.isArray(snakeAndLadderGameData)) {
+                  const snakeAndLadderGame = snakeAndLadderGameData?.find(
+                    (game) => game.name === "snake-and-ladder"
+                  );
+                  if (snakeAndLadderGame) {
+                    return Object.values(snakeAndLadderGame.count).reduce(
+                      (total, count) => total + count,
+                      0
+                    );
+                  }
+                  return 0;
+                }
+              })()}
             </div>
+
             <h1 className="text-3xl font-bold mb-4 text-center">
               Snake and Ladder Game
             </h1>
@@ -311,8 +322,8 @@ const SnakesAndLaddersRedux = () => {
                   onClick={startGame}
                   className={
                     resolvedTheme === "dark"
-                      ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
-                      : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
+                      ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-gray-700`
+                      : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-gray-400`
                   }
                 >
                   Start Game

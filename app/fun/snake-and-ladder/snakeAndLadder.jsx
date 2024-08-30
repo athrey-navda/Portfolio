@@ -25,17 +25,19 @@ export default function SnakesAndLadders() {
       const jsonData = await response.json();
       setSnakeAndLadderGameData(jsonData);
 
-      if (jsonData && jsonData.games) {
-        let total = 0;
-        jsonData.games.forEach((game) => {
+      let total = 0;
+
+      if (Array.isArray(jsonData)) {
+        jsonData.forEach((game) => {
           if (game.name === "snake-and-ladder") {
             Object.values(game.count).forEach((count) => {
               total += count;
             });
           }
         });
-        setSnakeAndLadderCount(total);
       }
+
+      setSnakeAndLadderCount(total);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -65,27 +67,25 @@ export default function SnakesAndLadders() {
 
   const startGame = async () => {
     setGameStarted(true);
-    if (snakeAndLadderGameData !== null && snakeAndLadderGameData.games) {
-      const todayDate = new Date().toLocaleDateString();
-      console.log(snakeAndLadderGameData);
 
-      const snakeAndLadderGame = snakeAndLadderGameData.games.find(
+    if (snakeAndLadderGameData && Array.isArray(snakeAndLadderGameData)) {
+      const todayDate = new Date().toLocaleDateString();
+
+      const snakeAndLadderGame = snakeAndLadderGameData.find(
         (game) => game.name === "snake-and-ladder"
       );
 
       if (snakeAndLadderGame) {
-        if (snakeAndLadderGame.count[todayDate]) {
-          snakeAndLadderGame.count[todayDate] += 1;
-        } else {
-          snakeAndLadderGame.count[todayDate] = 1;
-        }
+        snakeAndLadderGame.count = snakeAndLadderGame.count || {};
 
-        setSnakeAndLadderGameData({
-          ...snakeAndLadderGameData,
-          games: snakeAndLadderGameData.games.map((game) =>
+        snakeAndLadderGame.count[todayDate] =
+          (snakeAndLadderGame.count[todayDate] || 0) + 1;
+
+        setSnakeAndLadderGameData((prevData) =>
+          prevData.map((game) =>
             game.name === "snake-and-ladder" ? snakeAndLadderGame : game
-          ),
-        });
+          )
+        );
 
         try {
           const response = await fetch("/api/updateGameData", {
@@ -101,7 +101,11 @@ export default function SnakesAndLadders() {
         } catch (error) {
           console.error("Error updating game data:", error);
         }
+      } else {
+        console.error("Snake and Ladder game data not found.");
       }
+    } else {
+      console.error("Snake and Ladder game data is not available.");
     }
   };
 
@@ -127,7 +131,7 @@ export default function SnakesAndLadders() {
         currentPlayer === 1 ? player1Position + roll : player2Position + roll;
 
       setEachTurn(
-        `Player ${currentPlayer} rolled ${roll} and moved to ${newPosition}!`
+        `Player ${currentPlayer} rolled ${roll} and moved to ${newPosition}! Now next player`
       );
 
       let finalPosition = newPosition;
@@ -153,7 +157,6 @@ export default function SnakesAndLadders() {
 
       setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
     } else {
-      // First roll of the turn
       const roll = rollDice();
 
       if (roll === 6) {
@@ -166,7 +169,7 @@ export default function SnakesAndLadders() {
         currentPlayer === 1 ? player1Position + roll : player2Position + roll;
 
       setEachTurn(
-        `Player ${currentPlayer} rolled ${roll} and moved to ${newPosition}!`
+        `Player ${currentPlayer} rolled ${roll} and moved to ${newPosition}! Now next player `
       );
 
       let finalPosition = newPosition;
@@ -301,22 +304,22 @@ export default function SnakesAndLadders() {
   return (
     <>
       <div className="mx-auto w-full max-w-md flex my-4 justify-center items-center lg:max-w-7xl lg:px-8">
-        <div className="flex flex-col">
-          <div className="container mx-auto">
-            <div className="text-center ">
+        <div className="flex flex-col bg-gray-600 dark:bg-gray-300">
+          <div className="container mx-auto p-5">
+            <div className="text-center text-white dark:text-black">
               Total Snake and Ladder Game: {snakeAndLadderCount}
             </div>
-            <h1 className="text-3xl font-bold mb-4 text-center">
+            <h1 className="text-3xl font-bold mb-4 text-center text-white dark:text-black">
               Snake and Ladder Game
             </h1>
             <div>{renderGrid()}</div>
             {!gameStarted && (
-              <div className="flex justify-center mt-4">
+              <div className="flex justify-center mt-4 text-white dark:text-black">
                 <button
                   onClick={startGame}
                   className={
                     resolvedTheme === "dark"
-                      ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                      ? `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white `
                       : `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
                   }
                 >
@@ -326,7 +329,7 @@ export default function SnakesAndLadders() {
             )}
             {gameStarted && (
               <>
-                <div className="flex justify-center mt-4 gap-x-4">
+                <div className="flex justify-center mt-4 gap-x-4 text-white dark:text-black">
                   <button
                     onClick={movePlayer}
                     className={
@@ -350,7 +353,10 @@ export default function SnakesAndLadders() {
                     Reset Game
                   </button>
                 </div>
-                <div className="mt-4 text-center">
+                <div className="my-2 text-white dark:text-black">
+                  {message && <div className="text-center">{message}</div>}
+                </div>
+                <div className="mt-4 text-center text-white dark:text-black">
                   {isGameOver
                     ? "Game Over! Player wins!"
                     : diceRoll
@@ -360,8 +366,6 @@ export default function SnakesAndLadders() {
               </>
             )}
           </div>
-
-          <div>{message && <div className="text-center">{message}</div>}</div>
         </div>
       </div>
     </>

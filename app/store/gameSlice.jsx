@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const gameReducer = createSlice({
   name: "snakeAndLadder",
   initialState: {
-    snakeAndLadderGameData: null,
+    snakeAndLadderGameData: [],
     gameStarted: false,
     player1Position: 0,
     player2Position: 0,

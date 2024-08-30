@@ -24,17 +24,19 @@ export default function Tictactoe() {
       const jsonData = await response.json();
       setTicTacToeData(jsonData);
 
-      if (jsonData && jsonData.games) {
-        let total = 0;
-        jsonData.games.forEach((game) => {
+      let total = 0;
+
+      if (Array.isArray(jsonData)) {
+        jsonData.forEach((game) => {
           if (game.name === "tic-tac-toe") {
             Object.values(game.count).forEach((count) => {
               total += count;
             });
           }
         });
-        setTicTacToeCount(total);
       }
+
+      setTicTacToeCount(total);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -53,18 +55,15 @@ export default function Tictactoe() {
 
     if (ticTacToeData) {
       const todayDate = new Date().toLocaleDateString();
-      const ticTacToeGame = ticTacToeData.games.find(
+      const ticTacToeGame = ticTacToeData.find(
         (game) => game.name === "tic-tac-toe"
       );
 
       if (ticTacToeGame) {
-        if (ticTacToeGame.count[todayDate]) {
-          ticTacToeGame.count[todayDate] += 1;
-        } else {
-          ticTacToeGame.count[todayDate] = 1;
-        }
-
-        setTicTacToeData({ ...ticTacToeData });
+        ticTacToeGame.count = ticTacToeGame.count || {};
+        ticTacToeGame.count[todayDate] =
+          (ticTacToeGame.count[todayDate] || 0) + 1;
+        setTicTacToeData([...ticTacToeData]);
 
         try {
           const response = await fetch("/api/updateGameData", {
@@ -80,7 +79,11 @@ export default function Tictactoe() {
         } catch (error) {
           console.error("Error updating game data:", error);
         }
+      } else {
+        console.error("Tic-tac-toe game data not found.");
       }
+    } else {
+      console.error("Tic-tac-toe data is not available.");
     }
   };
 

@@ -1,4 +1,3 @@
-"use server";
 import { promises as fs } from "fs";
 import path from "path";
 
@@ -9,9 +8,9 @@ const gameCountFilePath = path.join(
   "gameCount.json"
 );
 
-export async function POST(request) {
+export async function POST(req, res) {
   try {
-    const { gameName, count } = await request.json();
+    const { gameName, count } = await req.json();
     console.log(`Updating game data for ${gameName} with count ${count}`);
 
     const file = await fs.readFile(gameCountFilePath, "utf8");

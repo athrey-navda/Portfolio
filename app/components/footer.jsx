@@ -204,7 +204,7 @@ export default function Footer() {
               <span className="sr-only">Instagram</span>
             </Link>
             <div className="sm:mx-3">
-              <Link href="/file/ByndoorAthreyNavda_Resume.pdf" target="_blank">
+              <Link href="/file/Resume_ByndoorAthreyNavda.pdf" target="_blank">
                 <button
                   className={
                     resolvedTheme === "white"

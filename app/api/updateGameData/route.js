@@ -24,10 +24,12 @@ export async function POST(req) {
       });
     }
 
-    const todayDate = new Date().toLocaleDateString();
+    const todayDate = new Date().toISOString().split("T")[0];
     const currentCount = gameData.count || {};
 
     currentCount[todayDate] = (currentCount[todayDate] || 0) + 1;
+
+    console.log("Updating with currentCount:", currentCount);
 
     const { error: updateError } = await supabase
       .from("game_counts")
@@ -35,6 +37,7 @@ export async function POST(req) {
       .eq("name", gameName);
 
     if (updateError) {
+      console.error("Update error:", updateError);
       throw new Error(updateError.message);
     }
 

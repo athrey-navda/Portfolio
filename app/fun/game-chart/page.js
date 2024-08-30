@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
   PointElement,
+  Filler,
 } from "chart.js";
 
 ChartJS.register(
@@ -19,28 +20,27 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  PointElement
+  PointElement,
+  Filler
 );
 
 const GameChart = () => {
   const [chartData, setChartData] = useState({ labels: [], datasets: [] });
 
   useEffect(() => {
-    fetch("/data/gameCount.json")
+    fetch("/api/gameData/")
       .then((response) => response.json())
       .then((data) => {
         const dates = Array.from(
           new Set([
-            ...Object.keys(data.games[0].count),
-            ...Object.keys(data.games[1].count),
+            ...Object.keys(data[0]?.count || {}),
+            ...Object.keys(data[1]?.count || {}),
           ])
         ).sort();
 
-        const ticTacToeData = dates.map(
-          (date) => data.games[0].count[date] || 0
-        );
+        const ticTacToeData = dates.map((date) => data[0]?.count[date] || 0);
         const snakeAndLadderData = dates.map(
-          (date) => data.games[1].count[date] || 0
+          (date) => data[1]?.count[date] || 0
         );
 
         setChartData({
@@ -62,6 +62,9 @@ const GameChart = () => {
             },
           ],
         });
+      })
+      .catch((error) => {
+        console.error("Error fetching game data:", error);
       });
   }, []);
 

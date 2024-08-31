@@ -14,6 +14,8 @@ export async function GET() {
       throw new Error(error.message);
     }
 
+    console.log(games);
+
     return new Response(JSON.stringify(games), {
       status: 200,
       headers: { "Content-Type": "application/json" },

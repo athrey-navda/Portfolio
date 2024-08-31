@@ -27,13 +27,15 @@ export default function Tictactoe() {
       let total = 0;
 
       if (Array.isArray(jsonData)) {
-        jsonData.forEach((game) => {
-          if (game.name === "tic-tac-toe") {
-            Object.values(game.count).forEach((count) => {
-              total += count;
-            });
-          }
-        });
+        const ticTacToeGame = jsonData.find(
+          (game) => game.name === "tic-tac-toe"
+        );
+        if (ticTacToeGame) {
+          total = Object.values(ticTacToeGame.count).reduce(
+            (acc, count) => acc + count,
+            0
+          );
+        }
       }
 
       setTicTacToeCount(total);

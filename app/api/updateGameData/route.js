@@ -1,52 +1,40 @@
-"use server";
-import { createClient } from "@supabase/supabase-js";
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-export async function POST(req) {
+export async function GET() {
   try {
-    const { gameName } = await req.json();
-
-    console.log(`Updating game data for ${gameName}`);
-
-    const { data: gameData, error: fetchError } = await supabase
+    const { data: games, error } = await supabase
       .from("game_counts")
-      .select("count")
-      .eq("name", gameName)
-      .single();
-
-    if (fetchError || !gameData) {
-      console.log(`Game ${gameName} not found.`);
-      return new Response(JSON.stringify({ message: "Game not found" }), {
-        status: 404,
-      });
+      .select("*");
+    if (error) {
+      throw new Error(error.message);
     }
 
-    const todayDate = new Date().toISOString().split("T")[0];
-    const currentCount = gameData.count || {};
+    console.log(games);
 
-    currentCount[todayDate] = (currentCount[todayDate] || 0) + 1;
-
-    console.log("Updating with currentCount:", currentCount);
-
-    const { error: updateError } = await supabase
-      .from("game_counts")
-      .update({ count: currentCount })
-      .eq("name", gameName);
-
-    if (updateError) {
-      console.error("Update error:", updateError);
-      throw new Error(updateError.message);
-    }
-
-    console.log(`Game data updated successfully.`);
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } catch (error) {
-    console.error("Error updating game data:", error.message);
-    return new Response(JSON.stringify({ message: "Internal Server Error" }), {
-      status: 500,
+    return new Response(JSON.stringify(games), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control":
+          "no-store, no-cache, must-revalidate, proxy-revalidate",
+        Expires: "0",
+        Pragma: "no-cache",
+        "Surrogate-Control": "no-store",
+      },
     });
+  } catch (error) {
+    console.error("Error fetching game count data:", error.message);
+    return new Response(
+      JSON.stringify({ message: "Error fetching game count data" }),
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control":
+            "no-store, no-cache, must-revalidate, proxy-revalidate",
+          Expires: "0",
+          Pragma: "no-cache",
+          "Surrogate-Control": "no-store",
+        },
+      }
+    );
   }
 }

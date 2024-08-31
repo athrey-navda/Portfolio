@@ -17,7 +17,7 @@ export default function Tictactoe() {
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch("/api/gameData");
+      const response = await fetch("/api/gameData", { cache: "no-store" });
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

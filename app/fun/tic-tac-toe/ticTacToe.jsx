@@ -39,6 +39,7 @@ export default function Tictactoe() {
       }
 
       setTicTacToeCount(total);
+      console.log(total);
     } catch (error) {
       console.error("Error fetching data:", error);
     }

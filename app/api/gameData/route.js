@@ -28,7 +28,7 @@ export async function GET() {
       },
     });
   } catch (error) {
-    console.error("Error fetching game count data:", error.message);
+    console.error("Error fetching game count data here:", error.message);
     return new Response(
       JSON.stringify({ message: "Error fetching game count data" }),
       {

@@ -4,6 +4,48 @@ export default function ExperienceComponent() {
       <h2 className="text-3xl font-bold py-8 sm:text-4xl">Experience</h2>
       <div className="overflow-hidden py-4 sm:py-4 bg-slate-200 dark:bg-zinc-800 mt-3">
         <div className="mx-auto px-6 lg:px-8">
+          <div className="flex justify-start gap-x-6">
+            <div className="flex items-center  gap-x-6">
+              <img
+                className="h-16 w-48"
+                src="/images/homepage/gedc_logo.png"
+                alt="gedc_logo"
+              />
+            </div>
+            <div className="flex items-center gap-x-6">
+              <img
+                className="h-16 w-48"
+                src="/images/homepage/ifees_logo.png"
+                alt="ifees_logo"
+              />
+            </div>
+          </div>
+          <h2 className="text-base font-semibold leading-7 mt-4">
+            International Federation of Engineering Education Societies (IFEES)
+            and Global Engineering Deans Council (GEDC)
+          </h2>
+          <div className="mt-4 space-y-8 text-base leading-7 lg:max-w-none">
+            <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              International Program Associate
+            </p>
+            <div className="mt-2">
+              <div className="inline font-semibold">Aug 2024 - present</div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                Constructing a social media platform for community utilizing
+                Next.js, Python, Flask, Bootstrap and Oauth. ion across devices.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                Conceptualizing and crafting intuitive websites for both
+                entities, featuring a custom architecture and CMS-like
+                functionality for flexible content management, ensuring seamless
+                navigat
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="overflow-hidden py-4 sm:py-4 bg-slate-200 dark:bg-zinc-800 mt-3">
+        <div className="mx-auto px-6 lg:px-8">
           <div>
             <div className="flex items-center gap-x-6">
               <img

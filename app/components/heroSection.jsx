@@ -220,7 +220,7 @@ export default function HeroSection() {
               leaveFrom="opacity-100 rotate-0 scale-100 "
               leaveTo="opacity-0 scale-95 "
             >
-              <div className="flex justify-center mt-8">
+              <div className="flex justify-center items-center mt-8">
                 <img
                   src="/images/homepage/herosectionImage.jpg"
                   alt="ProfilePic"

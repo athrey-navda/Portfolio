@@ -55,8 +55,8 @@ export default function Home() {
 
   return (
     <div className="text-black dark:text-white bg-white dark:bg-black">
-      <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-24 lg:px-24">
-        <section className="d-block px-6 py-14 sm:py-18 lg:px-8">
+      <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 lg:px-24">
+        <section className="d-block px-6 py-14 sm:py-4 lg:px-8">
           <HeroSection />
         </section>
 

@@ -57,7 +57,7 @@ export default function FunComponent() {
     <div>
       <div className="md:flex md:justify-between">
         <div className="text-3xl font-bold py-14 lg:py-6 sm:text-4xl">
-          Games developed by me
+          Games
         </div>
         <div>
           <Link href="/fun/game-chart">

@@ -10,9 +10,8 @@ const navigation = [
   { name: "Experience", id: "experience" },
   { name: "Projects", id: "projects" },
   { name: "Skills", id: "skills" },
-  // { name: "About me", id: "about-me" },
-  // { name: "Contact me", id: "contact-me" },
   { name: "Fun-Game", id: "fun" },
+  { name: "Blog", url: "https://my-blog-brown-zeta.vercel.app/" },
 ];
 
 export default function Navbar() {
@@ -76,12 +75,17 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={
-                  window.location.pathname === "/"
+                  item.url
+                    ? item.url
+                    : window.location.pathname === "/"
                     ? `#${item.id}`
                     : `/${item.id}`
                 }
                 onClick={(e) => {
-                  if (window.location.pathname !== "/") {
+                  if (item.url) {
+                    e.preventDefault();
+                    window.open(item.url, "_blank");
+                  } else if (window.location.pathname !== "/") {
                     e.preventDefault();
                     window.location.href = `/${item.id}`;
                   }
@@ -177,12 +181,17 @@ export default function Navbar() {
                     <a
                       key={item.name}
                       href={
-                        window.location.pathname === "/"
+                        item.url
+                          ? item.url
+                          : window.location.pathname === "/"
                           ? `#${item.id}`
                           : `/${item.id}`
                       }
                       onClick={(e) => {
-                        if (window.location.pathname !== "/") {
+                        if (item.url) {
+                          e.preventDefault();
+                          window.open(item.url, "_blank");
+                        } else if (window.location.pathname !== "/") {
                           e.preventDefault();
                           window.location.href = `/${item.id}`;
                         }

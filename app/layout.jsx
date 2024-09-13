@@ -14,6 +14,18 @@ const quicksand = Quicksand({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const pathName = window.location.pathname;
@@ -62,8 +74,7 @@ export default function RootLayout({ children }) {
                 <Loading />
               ) : (
                 <>
-                  <MouseTracker />
-                  <Navbar />
+                  {!isMobile && <MouseTracker />} <Navbar />
                   <div>{children}</div>
                   <Footer />
                 </>

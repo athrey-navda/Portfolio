@@ -23,7 +23,7 @@ const projects = [
     description: "An introductory site to my profile",
   },
   {
-    id: 7,
+    id: 3,
     name: "Customer ticket management",
     href: "https://github.com/athrey-navda/ticket-management",
     imageSrc: "/images/homepage/customer_ticket.jpeg",
@@ -33,8 +33,18 @@ const projects = [
     description:
       "An customer ticket monitoring application with user, support staff and admin interface.",
   },
+
   {
-    id: 3,
+    id: 4,
+    name: "My Blogs",
+    href: "https://my-blog-brown-zeta.vercel.app/",
+    imageSrc: "/images/logo/athrey-high-resolution-logo-white.png",
+    imageAlt: "My Blog",
+    stack: "React, GraphQL, Material UI, OAuth, JWT",
+    description: "My blog site",
+  },
+  {
+    id: 5,
     name: "Universal Booking System",
     href: "https://book.clayworks.space",
     imageSrc:
@@ -45,7 +55,7 @@ const projects = [
     description: "Booking System for different booking types",
   },
   {
-    id: 4,
+    id: 6,
     name: "Inventory Management System",
     href: "https://ims.clayworks.co/docs",
     imageSrc: "/images/homepage/ims.jpg",
@@ -53,15 +63,6 @@ const projects = [
     stack: "Node, Express.js, MySQL, HTML, JS, Bootstrap CSS",
     description:
       "Inventory Management Application to manage inventory within co-working spaces",
-  },
-  {
-    id: 5,
-    name: "ClayWorks",
-    href: "https://clayworks.space",
-    imageSrc: "https://clayworks.space/assets/website/fbm/build-1.jpg",
-    imageAlt: "ClayWorks",
-    stack: "JS, HTML, Bootstrap",
-    description: "ClayWorks Company Website",
   },
 ];
 

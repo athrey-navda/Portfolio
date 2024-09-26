@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useTheme } from "next-themes";
@@ -8,6 +8,8 @@ export default function FunLayout({ children }) {
   const [init, setInit] = useState(false);
   const { resolvedTheme } = useTheme();
   const [particlesOptions, setParticlesOptions] = useState(null);
+  const effectToggleRef = useRef(true);
+  const toggleEffectTimerRef = useRef(null);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -18,28 +20,83 @@ export default function FunLayout({ children }) {
 
   useEffect(() => {
     if (resolvedTheme) {
-      const updatedOptions = {
-        ...options,
-        particles: {
-          ...options.particles,
-          color: {
-            value: resolvedTheme === "dark" ? "#ffffff" : "#000000",
-          },
-          links: {
-            ...options.particles.links,
-            value: resolvedTheme === "dark" ? "#ffffff" : "#000000",
-          },
-        },
-      };
+      const updatedOptions = effectToggleRef.current
+        ? fireflyEffectOptions
+        : normalEffectOptions;
       setParticlesOptions(updatedOptions);
     }
   }, [resolvedTheme]);
 
-  const particlesLoaded = (container) => {
-    // console.log(container);
-  };
+  useEffect(() => {
+    toggleEffectTimerRef.current = setInterval(() => {
+      effectToggleRef.current = !effectToggleRef.current;
+      const updatedOptions = effectToggleRef.current
+        ? fireflyEffectOptions
+        : normalEffectOptions;
+      setParticlesOptions(updatedOptions);
+    }, 10000);
 
-  const options = useMemo(
+    return () => clearInterval(toggleEffectTimerRef.current);
+  }, []);
+
+  const fireflyEffectOptions = useMemo(
+    () => ({
+      background: {
+        color: {
+          value: "transparent",
+        },
+      },
+      fpsLimit: 60,
+      particles: {
+        color: {
+          value: "#ffdd55",
+        },
+        links: {
+          enable: false,
+        },
+        move: {
+          enable: true,
+          speed: 0.5,
+          direction: "none",
+          random: true,
+          straight: false,
+          outModes: {
+            default: "bounce",
+          },
+        },
+        number: {
+          density: {
+            enable: true,
+            area: 800,
+          },
+          value: 30,
+        },
+        opacity: {
+          value: { min: 1, max: 3 },
+          animation: {
+            enable: true,
+            speed: 1,
+            sync: false,
+          },
+        },
+        size: {
+          value: { min: 1, max: 3 },
+          animation: {
+            enable: true,
+            speed: 5,
+            sync: false,
+          },
+        },
+        shape: {
+          type: "circle",
+        },
+      },
+      detectRetina: true,
+    }),
+    [resolvedTheme]
+  );
+
+  const normalEffectOptions = useMemo(
     () => ({
       background: {
         color: {
@@ -73,7 +130,7 @@ export default function FunLayout({ children }) {
           value: resolvedTheme === "dark" ? "#ffffff" : "#000000",
         },
         links: {
-          value: resolvedTheme === "dark" ? "#ffffff" : "#000000",
+          color: resolvedTheme === "dark" ? "#ffffff" : "#000000",
           distance: 300,
           enable: true,
           opacity: 0.5,
@@ -115,7 +172,6 @@ export default function FunLayout({ children }) {
       {init && particlesOptions && (
         <Particles
           id="tsparticles"
-          particlesLoaded={particlesLoaded}
           options={particlesOptions}
           style={{
             position: "fixed",

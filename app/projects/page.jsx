@@ -69,8 +69,8 @@ const projects = [
   {
     id: 6,
     name: "Spotch",
-    href: "https://spotch.works",
-    imageSrc: "https://spotch.works/assets/website/spotch/S3/S3-1.webp",
+    href: "http://spotch.works",
+    imageSrc: "http://spotch.works/assets/website/spotch/S3/S3-1.webp",
     imageAlt: "Spotch",
     stack: "JS, HTML, Bootstrap",
     description:
@@ -80,8 +80,7 @@ const projects = [
     id: 7,
     name: "Spotch Blog - Wordpress",
     href: "blog.spotch.works",
-    imageSrc:
-      "https://blog.spotch.works/wp-content/uploads/2021/05/home-s3-1.jpg",
+    imageSrc: "http://spotch.works/assets/website/spotch/S3/S3-1.webp",
     imageAlt: "Spotch Blog",
     stack: "Wordpress, PHP, CSS",
     description:

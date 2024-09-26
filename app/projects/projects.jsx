@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     name: "Rapid Cloudify",
     href: "http://rapidcloudify.com",
-    imageSrc: "https://rapidcloudify.com/images/cloud.png",
+    imageSrc: "/images/homepage/rapidCloudifyfavicon.png",
     imageAlt: "Rapid Cloudify",
     stack: "React, Nextjs, Tailwind, JWT, OAuth, Python, Ansible, AWS",
     description:

@@ -14,7 +14,6 @@ export default function Tictactoe() {
   const [isAgainstComputer, setIsAgainstComputer] = useState(false);
   const [ticTacToeData, setTicTacToeData] = useState(null);
   const [ticTacToeCount, setTicTacToeCount] = useState(0);
-  const [isPlayerTurn, setIsPlayerTurn] = useState(true);
 
   const fetchData = useCallback(async () => {
     try {
@@ -56,7 +55,6 @@ export default function Tictactoe() {
     setStepNumber(0);
     setXIsNext(true);
     setShowConfetti(false);
-    setIsPlayerTurn(true);
 
     if (ticTacToeData) {
       const todayDate = new Date().toLocaleDateString();
@@ -93,7 +91,7 @@ export default function Tictactoe() {
   };
 
   const handleClick = (i) => {
-    if (!gameStarted || !isPlayerTurn) return;
+    if (!gameStarted) return;
 
     const newHistory = boardHistory.slice(0, stepNumber + 1);
     const currentBoard = newHistory[newHistory.length - 1];
@@ -108,7 +106,6 @@ export default function Tictactoe() {
     setBoardHistory(newHistory.concat([newBoard]));
     setStepNumber(newHistory.length);
     setXIsNext(!xIsNext);
-    setIsPlayerTurn(false);
   };
 
   const makeComputerMove = () => {
@@ -122,7 +119,6 @@ export default function Tictactoe() {
     setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
     setStepNumber((prevStep) => prevStep + 1);
     setXIsNext(true);
-    setIsPlayerTurn(true);
   };
 
   const minimax = (board, player) => {

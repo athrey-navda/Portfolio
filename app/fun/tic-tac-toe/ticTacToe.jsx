@@ -14,6 +14,7 @@ export default function Tictactoe() {
   const [isAgainstComputer, setIsAgainstComputer] = useState(false);
   const [ticTacToeData, setTicTacToeData] = useState(null);
   const [ticTacToeCount, setTicTacToeCount] = useState(0);
+  const [gameDifficulty, setGameDifficulty] = useState("Normal");
 
   const fetchData = useCallback(async () => {
     try {
@@ -48,6 +49,10 @@ export default function Tictactoe() {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const handleDifficultyChange = (level) => {
+    setGameDifficulty(level);
+  };
 
   const startGame = async () => {
     setGameStarted(true);
@@ -100,7 +105,6 @@ export default function Tictactoe() {
     if (calculateWinner(newBoard) || newBoard[i]) {
       return;
     }
-
     newBoard[i] = xIsNext ? "X" : "O";
 
     setBoardHistory(newHistory.concat([newBoard]));
@@ -113,12 +117,88 @@ export default function Tictactoe() {
     const newBoard = [...currentBoard];
     const computerSymbol = "O";
 
-    const bestMove = minimax(newBoard, computerSymbol).index;
+    let bestMove;
+    if (gameDifficulty === "Easy") {
+      bestMove = makeEasyMove(newBoard, computerSymbol).index;
+    } else if (gameDifficulty === "Normal") {
+      bestMove = makeNormalMove(newBoard, computerSymbol).index;
+    } else if (gameDifficulty === "Hard") {
+      bestMove = minimax(newBoard, computerSymbol).index;
+    }
+
     newBoard[bestMove] = computerSymbol;
 
     setBoardHistory((prevHistory) => [...prevHistory, newBoard]);
     setStepNumber((prevStep) => prevStep + 1);
     setXIsNext(true);
+  };
+
+  const makeEasyMove = (board, player) => {
+    const humanPlayer = "X";
+    const computerSymbol = "O";
+
+    const winner = calculateWinner(board);
+    if (winner === computerSymbol) {
+      return { score: 10 };
+    } else if (winner === humanPlayer) {
+      return { score: -10 };
+    } else if (isBoardFull(board)) {
+      return { score: 0 };
+    }
+
+    const currentBoard = boardHistory[stepNumber];
+    const availableMoves = currentBoard
+      .map((cell, index) => (cell === null ? index : null))
+      .filter((index) => index !== null);
+
+    const moves = [];
+
+    const randomMove =
+      availableMoves[Math.floor(Math.random() * availableMoves.length)];
+    const newBoard = [...currentBoard];
+    newBoard[randomMove] = computerSymbol;
+
+    return { index: randomMove };
+  };
+
+  const makeNormalMove = (board, player) => {
+    const humanPlayer = "X";
+    const computerSymbol = "O";
+
+    const winner = calculateWinner(board);
+    if (winner === computerSymbol) {
+      return { score: 10 };
+    } else if (winner === humanPlayer) {
+      return { score: -10 };
+    } else if (isBoardFull(board)) {
+      return { score: 0 };
+    }
+
+    const currentBoard = boardHistory[stepNumber];
+    const availableMoves = currentBoard
+      .map((cell, index) => (cell === null ? index : null))
+      .filter((index) => index !== null);
+
+    let randomMove;
+
+    const makeStrategicMove = Math.random() > 0.5;
+
+    if (makeStrategicMove) {
+      const bestMove = minimax(currentBoard, computerSymbol).index;
+      if (availableMoves.includes(bestMove)) {
+        randomMove = bestMove;
+      }
+    }
+
+    if (randomMove === undefined) {
+      randomMove =
+        availableMoves[Math.floor(Math.random() * availableMoves.length)];
+    }
+
+    const newBoard = [...currentBoard];
+    newBoard[randomMove] = computerSymbol;
+
+    return { index: randomMove };
   };
 
   const minimax = (board, player) => {
@@ -286,7 +366,7 @@ export default function Tictactoe() {
       <div className="mx-auto w-full max-w-md my-4 flex justify-center items-center lg:max-w-7xl lg:px-8">
         <div className="flex flex-col">
           <div className="bg-transparent dark:bg-transaprent p-5 lg:p-10 w-full">
-            <div className="text-center ">
+            <div className="text-center">
               Total Tic Tac Toe Game: {ticTacToeCount}
             </div>
             <div>
@@ -319,7 +399,71 @@ export default function Tictactoe() {
                   </button>
                 </div>
               )}
-              {gameStarted && !winner && (
+
+              {gameStarted && !winner && gameDifficulty && (
+                <div className="text-center">
+                  <p className="font-bold mb-1">Select Difficulty Level:</p>
+
+                  <button
+                    onClick={() => handleDifficultyChange("Easy")}
+                    className={
+                      resolvedTheme === "dark"
+                        ? `rounded-lg px-2 mt-2 hover:bg-white hover:text-black ${
+                            gameDifficulty === "Easy"
+                              ? "bg-green-500 border-green-700"
+                              : ""
+                          }`
+                        : `rounded-lg px-2 mt-2 hover:bg-black hover:text-white ${
+                            gameDifficulty === "Easy"
+                              ? "bg-green-500 border-green-700"
+                              : ""
+                          }`
+                    }
+                  >
+                    Easy
+                  </button>
+
+                  <button
+                    onClick={() => handleDifficultyChange("Normal")}
+                    className={
+                      resolvedTheme === "dark"
+                        ? `rounded-lg px-2 mt-2 hover:bg-white hover:text-black ${
+                            gameDifficulty === "Normal"
+                              ? "bg-yellow-500 border-yellow-700"
+                              : ""
+                          }`
+                        : `rounded-lg px-2 mt-2 hover:bg-black hover:text-white ${
+                            gameDifficulty === "Normal"
+                              ? "bg-yellow-500 border-yellow-700"
+                              : ""
+                          }`
+                    }
+                  >
+                    Normal
+                  </button>
+
+                  <button
+                    onClick={() => handleDifficultyChange("Hard")}
+                    className={
+                      resolvedTheme === "dark"
+                        ? `rounded-lg px-2 mt-2 hover:bg-white hover:text-black ${
+                            gameDifficulty === "Hard"
+                              ? "bg-red-500 border-red-700"
+                              : ""
+                          }`
+                        : `rounded-lg px-2 mt-2 hover:bg-black hover:text-white ${
+                            gameDifficulty === "Hard"
+                              ? "bg-red-500 border-red-700"
+                              : ""
+                          }`
+                    }
+                  >
+                    Hard
+                  </button>
+                </div>
+              )}
+
+              {gameStarted && gameDifficulty && !winner && (
                 <>
                   <div>
                     <div className="p-5 text-center">

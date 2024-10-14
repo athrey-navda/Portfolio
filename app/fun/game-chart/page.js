@@ -51,7 +51,7 @@ const GameChart = () => {
         const snakeAndLadderData = dates.map(
           (date) => data[1]?.count[date] || 0
         );
-
+        console.log(data);
         setChartData({
           labels: dates,
           datasets: [

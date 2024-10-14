@@ -53,7 +53,7 @@ export default function EducationComponent() {
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 sm:px-6 lg:max-w-7xl lg:grid-cols-2 lg:px-8 bg-stone-300 dark:bg-stone-700 mt-3 py-4">
         <div className="px-2 lg:order-2">
           <h3 className="font-semibold">
-            Visveswaraya Technological University - Kalburgi, Karnataka, India
+            Visveswaraya Technological University - Belgaum, Karnataka, India
           </h3>
           <div className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 sm:gap-y-8 lg:gap-x-8">
             {vtu.map((vtu) => (

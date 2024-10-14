@@ -62,7 +62,7 @@ export default function FunComponent() {
         <div>
           <Link href="/fun/game-chart">
             <button>
-              <div className="flex items-center text-3xl font-bold py-14 lg:py-6 sm:text-4xl hover:bg-gray-400 hover:rounded-xl hover:p-2">
+              <div className="flex items-center text-3xl font-bold py-14 lg:py-6 sm:text-4xl hover:bg-gray-400 hover:rounded-xl">
                 Games Chart
                 <span className="ml-3">
                   <svg

@@ -1,3 +1,6 @@
+import { Linden_Hill } from "next/font/google";
+import Link from "next/link";
+
 export default function ExperienceComponent() {
   return (
     <div>
@@ -21,8 +24,14 @@ export default function ExperienceComponent() {
             </div>
           </div>
           <h2 className="text-base font-semibold leading-7 mt-4">
-            International Federation of Engineering Education Societies (IFEES)
-            and Global Engineering Deans Council (GEDC)
+            <Link href="https://www.ifees.net">
+              International Federation of Engineering Education Societies
+              (IFEES)
+            </Link>
+            and{" "}
+            <Link href="https://www.gedcouncil.org/">
+              Global Engineering Deans Council (GEDC)
+            </Link>
           </h2>
           <div className="mt-4 space-y-8 text-base leading-7 lg:max-w-none">
             <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -55,7 +64,10 @@ export default function ExperienceComponent() {
               />
             </div>
             <h2 className="text-base font-semibold leading-7 mt-4">
-              ClayWorks Spaces Technologies Private Limited - Bengaluru - India
+              <Link href="https://www.clayworks.space">
+                ClayWorks Spaces Technologies Private Limited - Bengaluru -
+                India
+              </Link>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap gap-6">

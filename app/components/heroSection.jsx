@@ -1,9 +1,8 @@
-"use client";
+import { Dialog, Transition } from "@headlessui/react";
+import { useTheme } from "next-themes";
+import Link from "next/link";
 import { Fragment, useState, useEffect } from "react";
 import { useTimeoutFn } from "react-use";
-import { Transition } from "@headlessui/react";
-import Link from "next/link";
-import { useTheme } from "next-themes";
 
 export default function HeroSection() {
   const { resolvedTheme } = useTheme();
@@ -45,6 +44,17 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [currentIndex, loopType, textLines]);
 
+  // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function closeModal() {
+    setIsModalOpen(false);
+  }
+
+  function openModal() {
+    setIsModalOpen(true);
+  }
+
   return (
     <div className="overflow-hidden">
       <div className="mx-auto max-w-7xl">
@@ -78,13 +88,19 @@ export default function HeroSection() {
                   </div>
 
                   <div className="mt-14 text-base sm:text-lg lg:text-xl leading-6 text-gray-600 dark:text-white">
-                    Experienced Software Engineer.
+                    Experienced Full stack / Software Engineer.
                   </div>
                   <div className="text-base sm:text-lg lg:text-xl leading-6 text-gray-600 dark:text-white">
                     MS in Computer Science at George Mason University.
                   </div>
                   <div className="text-base sm:text-lg lg:text-xl leading-6 text-gray-600 dark:text-white">
-                    Graduating Dec '24.
+                    Graduating Dec '24.{" "}
+                  </div>
+                  <div
+                    onClick={openModal}
+                    className="text-indigo-600 cursor-pointer hover:text-indigo-800 my-2"
+                  >
+                    Click to see short introduction
                   </div>
                   <div>
                     <div className="sm:flex mt-4 sm:justify-between sm:mt-10">
@@ -209,6 +225,118 @@ export default function HeroSection() {
                       </div>
                     </div>
                   </div>
+                  {/* Modal Code */}
+                  <Transition appear show={isModalOpen} as={Fragment}>
+                    <Dialog as="div" className="relative" onClose={closeModal}>
+                      <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                      >
+                        <div className="fixed inset-0 bg-black bg-opacity-25" />
+                      </Transition.Child>
+
+                      <div className="fixed inset-0 overflow-y-auto">
+                        <div className="flex min-h-full items-center justify-center p-4 text-center">
+                          <Transition.Child
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0 scale-95"
+                            enterTo="opacity-100 scale-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100 scale-100"
+                            leaveTo="opacity-0 scale-95"
+                          >
+                            <Dialog.Panel className="w-full max-w-2xl transform overflow-hidden rounded-2xl bg-black dark:bg-white p-6 text-left align-middle shadow-xl transition-all">
+                              <div className="px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+                                <div className="mt-24">
+                                  <div className="flex justify-end">
+                                    <button onClick={closeModal}>
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="grey"
+                                        className="size-6"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          d="M6 18 18 6M6 6l12 12"
+                                        />
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <div className="text-xl font-bold text-white dark:text-black">
+                                    A little brief about me
+                                  </div>
+                                </div>
+
+                                <div className="my-0 sm:my-2">
+                                  <div className="text-md text-white dark:text-black text-justify">
+                                    As a results-driven software engineer with 4
+                                    years of experience, I specialize in
+                                    full-stack development and cloud-based
+                                    solutions. With a strong foundation in both
+                                    frontend and backend technologies, I’ve
+                                    successfully designed, developed, and
+                                    deployed scalable applications that solve
+                                    complex business challenges.
+                                  </div>
+                                  <div className="text-md text-white dark:text-black my-2 text-justify">
+                                    My expertise spans across modern frameworks
+                                    like React, Next.js, Angular on the
+                                    frontend, and Node.js, Express.js, Python
+                                    for backend architecture, combined with
+                                    robust cloud integration using AWS, GCP,
+                                    Docker, Kubernetes. I also have hands-on
+                                    experience in crafting SaaS platforms,
+                                    implementing CI/CD pipelines, and building
+                                    secure authentication systems (JWT, OAuth).
+                                  </div>
+                                  <div className="text-md text-white dark:text-black my-2 text-justify">
+                                    Currently pursuing a Masters in Computer
+                                    Science at George Mason University, I
+                                    continue to deepen my knowledge in data
+                                    structures, algorithms, and software project
+                                    management, while leveraging industry
+                                    experience to lead impactful projects.
+                                    Driven by innovation, I’m passionate about
+                                    working in fast-paced, startup environments
+                                    where I can contribute to building something
+                                    from the ground up. Let’s connect if you’re
+                                    looking for someone who thrives in
+                                    collaborative settings, enjoys solving
+                                    challenging problems, and delivers real
+                                    value through technology.
+                                  </div>
+                                </div>
+
+                                <div className="my-4">
+                                  <button
+                                    className={
+                                      resolvedTheme === "dark"
+                                        ? `black-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-black`
+                                        : `white-btn rounded-lg px-2 mt-2 hover:bg-transparent hover:text-white`
+                                    }
+                                    onClick={closeModal}
+                                  >
+                                    {" "}
+                                    Close
+                                  </button>
+                                </div>
+                              </div>
+                            </Dialog.Panel>
+                          </Transition.Child>
+                        </div>
+                      </div>
+                    </Dialog>
+                  </Transition>
                 </div>
               </div>
             </Transition>

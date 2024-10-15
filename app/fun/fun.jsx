@@ -43,6 +43,7 @@ const games = [
     description: "#",
   },
 ];
+
 export default function FunComponent() {
   const [isMounted, setIsMounted] = useState(false);
   const { resolvedTheme } = useTheme();
@@ -87,11 +88,11 @@ export default function FunComponent() {
       </div>
 
       <div className="text-black dark:text-white bg-white dark:bg-black">
-        <div className="md:container-xl md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-20 lg:pt-4 lg:px-24">
+        <div className="md:container xl:md:mx-auto flex min-h-screen flex-col items-center justify-between p-2 pt-20 lg:pt-4 lg:px-24">
           <div className="mx-auto max-w-2xl lg:max-w-7xl ">
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-8">
               {games.map((game) => (
-                <div key={game.id} className="mx-6">
+                <div key={game.id} className="mx-auto">
                   <div
                     className={`group relative group-hover:opacity-75 hover:p-2 rounded-lg ${
                       resolvedTheme === "dark"
@@ -99,8 +100,8 @@ export default function FunComponent() {
                         : `hover:bg-slate-900 hover:text-white`
                     }`}
                     style={{
-                      height: "40rem",
-                      width: "20rem",
+                      height: "100%",
+                      maxWidth: "20rem",
                       overflow: "hidden",
                     }}
                   >
@@ -113,10 +114,11 @@ export default function FunComponent() {
                     </div>
                     <div className="mt-4 flex justify-center">
                       <div>
-                        <h3 className="text-xl my-2">{game.name}</h3>
+                        <h3 className="text-xl my-2 text-center">
+                          {game.name}
+                        </h3>
                       </div>
                     </div>
-                    <div className="text-md font-bold">{game.stack}</div>
                     <div className="font-light mx-5 text-center">
                       {game.description}
                     </div>

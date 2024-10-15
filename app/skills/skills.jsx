@@ -363,7 +363,7 @@ export default function SkillsComponent() {
             <div>
               {" "}
               <div className="font-bold">Programming Languages: </div>
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {programmingLanguages.map((languages) => (
                   <div key={languages.id}>
                     <div className="my-2 flex justify-center">
@@ -387,7 +387,7 @@ export default function SkillsComponent() {
             </div>
             <div>
               <div className="font-bold">Frontend Dev : </div>
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {frontendTechnologies.map((frontend) => (
                   <div key={frontend.id}>
                     <div className="my-2 flex justify-center">
@@ -411,7 +411,7 @@ export default function SkillsComponent() {
             </div>
             <div>
               <div className="font-bold">Backend Dev : </div>
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {backendTechnologies.map((backend) => (
                   <div key={backend.id}>
                     <div className="my-2 flex justify-center">
@@ -435,7 +435,7 @@ export default function SkillsComponent() {
             </div>
             <div>
               <div className="font-bold">Database : </div>
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {databaseTech.map((database) => (
                   <div key={database.id}>
                     <div className="my-2 flex justify-center">
@@ -459,7 +459,7 @@ export default function SkillsComponent() {
             </div>
             <div>
               <div className="font-bold">Cloud : </div>
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {cloudTech.map((cloud) => (
                   <div key={cloud.id}>
                     <div className="my-2 flex justify-center">
@@ -483,7 +483,7 @@ export default function SkillsComponent() {
             </div>
             <div>
               <div className="font-bold">Security : </div>
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {security.map((sec) => (
                   <div key={sec.id}>
                     <div className="my-2 flex justify-center">
@@ -508,7 +508,7 @@ export default function SkillsComponent() {
 
             <div>
               <div className="font-bold">Containerization : </div>
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {containerization.map((container) => (
                   <div key={container.id}>
                     <div className="my-2 flex justify-center">
@@ -533,7 +533,7 @@ export default function SkillsComponent() {
             <div>
               <div className="font-bold">Tools and more : </div>
 
-              <div className="my-2 grid grid-cols-3 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
+              <div className="my-2 grid grid-cols-2 gap-x-6 sm:grid-cols-3 lg:grid-cols-6 xl:gap-x-8">
                 {toolsTech.map((tools) => (
                   <div key={tools.id}>
                     <div className="my-2 flex justify-center">

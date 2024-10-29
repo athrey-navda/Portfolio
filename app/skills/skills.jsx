@@ -41,6 +41,14 @@ const programmingLanguages = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/240px-ISO_C%2B%2B_Logo.svg.png",
     imageAlt: "C++",
   },
+  {
+    id: 6,
+    name: "PHP",
+
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1422px-PHP-logo.svg.png",
+    imageAlt: "C++",
+  },
 ];
 
 const frontendTechnologies = [
@@ -92,12 +100,12 @@ const frontendTechnologies = [
     imageAlt: "C++",
   },
   {
-    id: 6,
-    name: "PHP",
+    id: 12,
+    name: "React Native",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1422px-PHP-logo.svg.png",
-    imageAlt: "C++",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/240px-React-icon.svg.png",
+    imageAlt: "RN",
   },
   {
     id: 7,

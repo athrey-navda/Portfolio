@@ -47,9 +47,9 @@ const GameChart = () => {
           ])
         ).sort();
 
-        const ticTacToeData = dates.map((date) => data[0]?.count[date] || 0);
+        const ticTacToeData = dates.map((date) => data[1]?.count[date] || 0);
         const snakeAndLadderData = dates.map(
-          (date) => data[1]?.count[date] || 0
+          (date) => data[0]?.count[date] || 0
         );
         console.log(data);
         setChartData({

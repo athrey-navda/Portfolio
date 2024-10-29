@@ -27,7 +27,7 @@ const projects = [
   {
     id: 7,
     name: "Customer ticket management",
-    href: "github.com/athrey-navda/rayca-backend",
+    href: "https://github.com/athrey-navda/rayca-backend",
     imageSrc: "/images/homepage/customer_ticket.jpeg",
     imageAlt: "Customer ticket",
     stack: "Node.js, Express.js, GraphQL, JWT, Oauth and Socket.io",
@@ -72,7 +72,7 @@ const projects = [
     href: "http://spotch.works",
     imageSrc: "http://spotch.works/assets/website/spotch/S3/S3-1.webp",
     imageAlt: "Spotch",
-    stack: "JS, HTML, Bootstrap",
+    stack: "Java, Maven , React, IoT, JS, HTML, Bootstrap",
     description:
       "Spotch aims to be everything that you need to boost your projectsivity while working remotely. Drastically enhanced the company’s online presence by developing website for Spotch following Figma designs, using HTML, Javacscript and Bootstrapp CSS which lead to a substantial 30% increase in company’s online presence.",
   },

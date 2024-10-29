@@ -279,41 +279,43 @@ export default function HeroSection() {
 
                                 <div className="my-0 sm:my-2">
                                   <div className="text-md text-white dark:text-black text-justify">
-                                    As a results-driven software engineer with 4
-                                    years of experience, I specialize in
+                                    As a results-driven software engineer with
+                                    four years of experience, I specialize in
                                     full-stack development and cloud-based
-                                    solutions. With a strong foundation in both
-                                    frontend and backend technologies, I’ve
+                                    solutions. With a robust foundation in both
+                                    frontend and backend technologies, I have
                                     successfully designed, developed, and
-                                    deployed scalable applications that solve
+                                    deployed scalable applications that address
                                     complex business challenges.
                                   </div>
                                   <div className="text-md text-white dark:text-black my-2 text-justify">
-                                    My expertise spans across modern frameworks
-                                    like React, Next.js, Angular on the
-                                    frontend, and Node.js, Express.js, Python
-                                    for backend architecture, combined with
-                                    robust cloud integration using AWS, GCP,
-                                    Docker, Kubernetes. I also have hands-on
-                                    experience in crafting SaaS platforms,
-                                    implementing CI/CD pipelines, and building
-                                    secure authentication systems (JWT, OAuth).
+                                    My technical expertise spans modern
+                                    frameworks such as React, Next.js, and
+                                    Angular on the frontend, and Node.js,
+                                    Express.js, and Python for backend
+                                    architecture. I also excel in cloud
+                                    integration with AWS, GCP, Docker, and
+                                    Kubernetes. I have hands-on experience in
+                                    crafting SaaS platforms, implementing CI/CD
+                                    pipelines, and building secure
+                                    authentication systems using JWT and OAuth.
                                   </div>
                                   <div className="text-md text-white dark:text-black my-2 text-justify">
-                                    Currently pursuing a Masters in Computer
-                                    Science at George Mason University, I
-                                    continue to deepen my knowledge in data
-                                    structures, algorithms, and software project
-                                    management, while leveraging industry
-                                    experience to lead impactful projects.
-                                    Driven by innovation, I’m passionate about
-                                    working in fast-paced, startup environments
-                                    where I can contribute to building something
-                                    from the ground up. Let’s connect if you’re
-                                    looking for someone who thrives in
-                                    collaborative settings, enjoys solving
-                                    challenging problems, and delivers real
-                                    value through technology.
+                                    Currently pursuing a Master's in Computer
+                                    Science at George Mason University, I am
+                                    deepening my knowledge in data structures,
+                                    algorithms, and software project management.
+                                    I leverage my industry experience to lead
+                                    impactful projects and drive innovation.
+                                  </div>
+                                  <div className="text-md text-white dark:text-black my-2 text-justify">
+                                    I thrive in fast-paced environments and I am
+                                    passionate about contributing to the
+                                    development of solutions from the ground up.
+                                    If you're looking for a collaborative team
+                                    player who enjoys solving challenging
+                                    problems and delivering real value through
+                                    technology, let's connect!
                                   </div>
                                 </div>
 

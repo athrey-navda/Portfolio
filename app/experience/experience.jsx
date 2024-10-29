@@ -8,20 +8,24 @@ export default function ExperienceComponent() {
       <div className="overflow-hidden py-4 sm:py-4 bg-slate-200 dark:bg-zinc-800 mt-3">
         <div className="mx-auto px-6 lg:px-8">
           <div className="flex justify-start gap-x-6">
-            <div className="flex items-center  gap-x-6">
-              <img
-                className="h-16 w-48"
-                src="/images/homepage/gedc_logo.png"
-                alt="gedc_logo"
-              />
-            </div>
-            <div className="flex items-center gap-x-6">
-              <img
-                className="h-16 w-48"
-                src="/images/homepage/ifees_logo.png"
-                alt="ifees_logo"
-              />
-            </div>
+            <Link href="https://www.ifees.net">
+              <div className="flex items-center  gap-x-6">
+                <img
+                  className="h-16 w-48"
+                  src="/images/homepage/gedc_logo.png"
+                  alt="gedc_logo"
+                />
+              </div>
+            </Link>
+            <Link href="https://www.gedcouncil.org/">
+              <div className="flex items-center gap-x-6">
+                <img
+                  className="h-16 w-48"
+                  src="/images/homepage/ifees_logo.png"
+                  alt="ifees_logo"
+                />
+              </div>
+            </Link>
           </div>
           <h2 className="text-base font-semibold leading-7 mt-4">
             <Link href="https://www.ifees.net">
@@ -47,7 +51,7 @@ export default function ExperienceComponent() {
                 Conceptualizing and crafting intuitive websites for both
                 entities, featuring a custom architecture and CMS-like
                 functionality for flexible content management, ensuring seamless
-                navigat
+                navigation.
               </div>
             </div>
           </div>
@@ -56,13 +60,15 @@ export default function ExperienceComponent() {
       <div className="overflow-hidden py-4 sm:py-4 bg-slate-200 dark:bg-zinc-800 mt-3">
         <div className="mx-auto px-6 lg:px-8">
           <div>
-            <div className="flex items-center gap-x-6">
-              <img
-                className="h-10 w-64"
-                src="/images/homepage/clayworks.png"
-                alt="cw_logo"
-              />
-            </div>
+            <Link href="https://www.clayworks.space">
+              <div className="flex items-center gap-x-6">
+                <img
+                  className="h-10 w-64"
+                  src="/images/homepage/clayworks.png"
+                  alt="cw_logo"
+                />
+              </div>
+            </Link>
             <h2 className="text-base font-semibold leading-7 mt-4">
               <Link href="https://www.clayworks.space">
                 ClayWorks Spaces Technologies Private Limited - Bengaluru -
@@ -78,20 +84,16 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Jul 2022 - Jan 2023</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Designed & implemented a booking System a SaaS product with 4
-                  interfaces such as user, admin, client, master.
+                  Implemented algorithm design in a booking system a SaaS
+                  product with user, admin, client, master interfaces.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Enabled end-user to customize booking types such as online
-                  conferences, meeting rooms, parking spots, and food,offering a
-                  highly adaptable SaaS solution with flexible APIs that handle
-                  multiple time zones & booking scenarios.
+                  Enabled customizable booking types(cabins, meeting rooms,
+                  parking, food)via an flexible MVC and MVP patterns.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Integrated payment solutions which supported cards, UPI & user
-                  credits, along with coupon feature. Led the implmentation
-                  using React, Next.js, Redux, Tailwind, Headless UI and Chartjs
-                  for visualization.
+                  Led the implementation using React, Next.js, Redux, Tailwind,
+                  Headless UI and Chartjs for visualization.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Built backend services with Node.js, Express.js, and MySQL,
@@ -99,7 +101,11 @@ export default function ExperienceComponent() {
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Utilized Cypress and Mocha for automation testing and ensuring
-                  code quality throughout development.
+                  code quality in full stack development.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  Handled software development life cycle, from software
+                  architecture and design patterns to software deployment.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Aligned development with UX, sales, and marketing, boosting
@@ -108,10 +114,6 @@ export default function ExperienceComponent() {
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Directed scrum meetings which helped in reducing development
                   timelines by 10%, achieving an early launch.
-                </div>
-                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Implemented innovative data experiences and integrated
-                  3rd-party applications within this MVC framework.
                 </div>
               </div>
             </div>
@@ -122,20 +124,26 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Sep 2019 - Jul 2022</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Spearheaded the creation of a internal Invementory system with
-                  4 interfaces such as user, admin, vendor, master.
+                  Spearheaded the creation of an Inventory system with four
+                  interfaces such as user, admin, vendor, master.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Created using Node, Express & MySQL, with daily stock updates
-                  to team which reduced wastage by 26%.
+                  Using Node, Express & MySQL, with daily stock updates to team
+                  which reduced wastage by 26% across 10 centers.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Boosted online presence by 30% through agile development of
-                  websites using HTML, JS, PHP, and Bootstrap.
+                  Evolved smart work-pod solution Spotch with IoT integration
+                  and well-being alerts, enhancing productivity.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Managed and integrated new technology stacks into three legacy
-                  PHP systems, showcasing adaptability.
+                  Facilitated React for the frontend, Java with Maven for the
+                  backend, and Firebase for real-time WebSocket notifications,
+                  integrating a mobile app with React Native for seamless user
+                  experience, recognized by Google.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  Managed the end-to-end integration of new technology stacks
+                  into legacy PHP systems and other web development.
                 </div>
               </div>
             </div>

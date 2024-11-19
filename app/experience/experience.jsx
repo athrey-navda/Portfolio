@@ -44,14 +44,12 @@ export default function ExperienceComponent() {
             <div className="mt-2">
               <div className="inline font-semibold">Aug 2024 - present</div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Constructing a social media platform for community utilizing
-                Next.js, Python, Flask, Bootstrap and Oauth. ion across devices.
+                Constructing the product development of a community platform
+                using Next.js, Flask, Elasticsearch & OAuth.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Conceptualizing and crafting intuitive websites for both
-                entities, featuring a custom architecture and CMS-like
-                functionality for flexible content management, ensuring seamless
-                navigation.
+                Utilizing REST APIs, LLM and Elasticsearch to deliver enhanced,
+                user-friendly search functionalities.
               </div>
             </div>
           </div>

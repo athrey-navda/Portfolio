@@ -39,17 +39,21 @@ export default function ExperienceComponent() {
           </h2>
           <div className="mt-4 space-y-8 text-base leading-7 lg:max-w-none">
             <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-              International Program Associate
+              Software Developer
             </p>
             <div className="mt-2">
               <div className="inline font-semibold">Aug 2024 - present</div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Constructing the product development of a community platform
-                using Next.js, Flask, Elasticsearch & OAuth.
+                Spearheading the full stack development of a platform services
+                (CRM) using Next.js, Python & Flask for 1,000+ users.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Utilizing REST APIs, LLM and Elasticsearch to deliver enhanced,
-                user-friendly search functionalities.
+                Leveraging REST APIs, Elasticsearch, LLM and Redis to deliver
+                enhanced, better search functionalities with less latency.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                Managing the team across different timezones and while adhering
+                SDLC coding standards for these digital products.
               </div>
             </div>
           </div>
@@ -82,36 +86,50 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Jul 2022 - Jan 2023</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Implemented algorithm design in a booking system a SaaS
-                  product with user, admin, client, master interfaces.
+                  Implemented algorithm design in a book anything system a
+                  secured, scalable SaaS solution with 4 level user interface.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Enabled customizable booking types(cabins, meeting rooms,
-                  parking, food)via an flexible MVC and MVP patterns.
+                  Led the frontend implementation using React, Next.js, Redux,
+                  Tailwind, Headless UI and Chartjs for visualization.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Led the implementation using React, Next.js, Redux, Tailwind,
-                  Headless UI and Chartjs for visualization.
+                  Expert in state management, API integrations using Redux,
+                  Redux-thunk, Axios, Node.js, Express.js, and MySQL with ORM,
+                  enhancing responsiveness by 40%, while handling asynchronous
+                  actions, middleware integration, websockets.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Built backend services with Node.js, Express.js, and MySQL,
-                  integrating JWT and OAuth for secure auth.
+                  Utilized Cypress & Mocha for automation testing (TDD), Postman
+                  for API testing ensuring code quality in development.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Utilized Cypress and Mocha for automation testing and ensuring
-                  code quality in full stack development.
+                  Established CI/CD pipelines for the microservices using
+                  Jenkins achieving 60% reduction in manual deployment effort.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Handled software development life cycle, from software
-                  architecture and design patterns to software deployment.
+                  Orchestrated the software development life cycle with Jira,
+                  from software architecture & design patterns (MVC) to
+                  deployment.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Aligned development with UX, sales, and marketing, boosting
-                  revenue by 25% through improved user experience.
+                  Reduced applications loading time by 30% through optimization
+                  techniques like code splitting, code re-factoring, lazy
+                  loading, priority, memoization, reduced re-renders, dependency
+                  optimizations, debounce and throttling.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Directed scrum meetings which helped in reducing development
-                  timelines by 10%, achieving an early launch.
+                  Collaborated cross-functionally with UX, sales, & marketing to
+                  improve product features which boosted revenue by 25%.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  Directed scrum meetings, mentored juniors & conducted source
+                  code review, reduced timeline by 10% and led to early launch.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  Delivered the SaaS solution to five clients, customizing
+                  features, coordinating client calls, and ensuring timely
+                  deployment.
                 </div>
               </div>
             </div>
@@ -122,22 +140,21 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Sep 2019 - Jul 2022</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Spearheaded the creation of an Inventory system with four
-                  interfaces such as user, admin, vendor, master.
+                  Designed a technical architecture for multi-interface
+                  inventory management system with Node.js using Node-Fetch, and
+                  MySQL, featuring role-based access control, automated stock
+                  updates, & analytics, reducing wastage by 36% across 10
+                  centers.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Using Node, Express & MySQL, with daily stock updates to team
-                  which reduced wastage by 26% across 10 centers.
+                  Innovated smart work-pod solution Spotch with IoT integration
+                  aligning with regulatory compliance user safety standards.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Evolved smart work-pod solution Spotch with IoT integration
-                  and well-being alerts, enhancing productivity.
-                </div>
-                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Facilitated React for the frontend, Java with Maven for the
-                  backend, and Firebase for real-time WebSocket notifications,
-                  integrating a mobile app with React Native for seamless user
-                  experience, recognized by Google.
+                  Implemented the frontend using React, the backend with Java
+                  and SpringBoot (managed via Maven), and implemented real-time
+                  WebSocket notifications with Firebase. Furthermore, integrated
+                  mobile software development with React Native.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Managed the end-to-end integration of new technology stacks
@@ -169,12 +186,16 @@ export default function ExperienceComponent() {
             <div className="mt-2">
               <div className="inline font-semibold">Jun 2018 - Aug 2018</div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Architected a home automation tool with AWS Lambda, LLM, & Alexa
-                Skills, enhancing application speed by 30%.
+                Designed a serverless architecture using AWS Lambda, achieving
+                cost efficiency while reducing application latency by 30%.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Optimized system performance by 50% using DynamoDB and tailored
-                API calls on EC2, improving UX.
+                Optimized real-time state management with DynamoDB, cutting
+                latency by 50% through efficient indexing and queries.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                Integrated Alexa Skills Kit, LLM with AWS Lambda for seamless
+                voice commands, enhancing user interaction and feedback
               </div>
             </div>
           </div>

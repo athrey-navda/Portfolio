@@ -119,8 +119,9 @@ export default function ExperienceComponent() {
                   optimizations, debounce and throttling.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Collaborated cross-functionally with UX, sales, & marketing to
-                  improve product features which boosted revenue by 25%.
+                  Collaborated using tools like Confluenece with UX, sales, &
+                  marketing to improve product features which boosted revenue by
+                  25%.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   Directed scrum meetings, mentored juniors & conducted source

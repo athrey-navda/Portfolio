@@ -44,16 +44,49 @@ export default function ExperienceComponent() {
             <div className="mt-2">
               <div className="inline font-semibold">Aug 2024 - present</div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Spearheading the full stack development of a platform services
-                (CRM) using Next.js, Python & Flask for 1,000+ users.
+                At IFEES and GEDC, I am leading the full-stack development of a
+                robust CRM platform designed to support a growing community of
+                over 1,000 users. My role encompasses architecting scalable
+                backend services, enhancing search functionalities, and
+                optimizing user interactions to deliver a seamless experience.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Leveraging REST APIs, Elasticsearch, LLM and Redis to deliver
-                enhanced, better search functionalities with less latency.
+                <strong>
+                  Full-Stack Development & Performance Optimization:
+                </strong>{" "}
+                Spearheading the development of a CRM platform using React,
+                TypeScript, and Python, ensuring a responsive and efficient user
+                experience. Optimized frontend performance by implementing
+                Webpack, CDNs, and advanced image optimization techniques,
+                reducing load times by 35%.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                Managing the team across different timezones and while adhering
-                SDLC coding standards for these digital products.
+                <strong>Backend Architecture & API Efficiency:</strong> Designed
+                and implemented scalable backend services using Flask and
+                PostgreSQL, leading to a 25% improvement in API response times.
+                Integrated Kafka-based real-time messaging to enable seamless
+                user interactions and instant notifications.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>Advanced Search & AI Integration:</strong> Leveraging
+                LangChain, TensorFlow, Elasticsearch, and Redis, I developed
+                intelligent search functionalities that enhance accuracy and
+                minimize latency, enabling faster and more relevant results for
+                users.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>Cross-Team Collaboration & SDLC Standards:</strong>{" "}
+                Managing a distributed development team across different time
+                zones while ensuring adherence to SDLC best practices and coding
+                standards. Actively involved in code reviews, performance
+                monitoring, and iterative improvements to deliver high-quality
+                digital products.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                This project reflects my ability to architect scalable
+                solutions, optimize system performance, and integrate
+                cutting-edge AI and real-time technologies to enhance user
+                engagement.
               </div>
             </div>
           </div>
@@ -86,51 +119,62 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Jul 2022 - Jan 2023</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Implemented algorithm design in a book anything system a
-                  secured, scalable SaaS solution with 4 level user interface.
+                  At ClayWorks, I played a pivotal role in developing a
+                  scalable, secure SaaS-based booking system with a four-tier
+                  user interface, ensuring seamless functionality and an
+                  intuitive experience for users. My contributions spanned
+                  frontend architecture, API integrations, performance
+                  optimizations, automation testing, and CI/CD implementation,
+                  significantly enhancing system efficiency and user engagement.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Led the frontend implementation using React, Next.js, Redux,
-                  Tailwind, Headless UI and Chartjs for visualization.
+                  <strong>
+                    Full-Stack Development & Scalable Architecture :
+                  </strong>{" "}
+                  Engineered a secure, scalable SaaS solution by designing and
+                  implementing optimized algorithms for a "Book Anything"
+                  system. Led the frontend development using React, Next.js,
+                  TypeScript, ES6+, Tailwind, and Chart.js, ensuring a modern,
+                  responsive UI.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Expert in state management, API integrations using Redux,
-                  Redux-thunk, Axios, Node.js, Express.js, and MySQL with ORM,
-                  enhancing responsiveness by 40%, while handling asynchronous
-                  actions, middleware integration, websockets.
+                  <strong>State Management & API Integration :</strong>
+                  Developed robust state management and API integration
+                  solutions using Redux, Redux-thunk, Axios, Python (Flask), and
+                  MySQL with ORM, boosting application responsiveness by 40%.
+                  Efficiently handled asynchronous actions, middleware
+                  integrations, and WebSockets for real-time data updates.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Utilized Cypress & Mocha for automation testing (TDD), Postman
-                  for API testing ensuring code quality in development.
+                  <strong>Automation Testing & Code Quality :</strong>
+                  Ensured high code quality by implementing Test-Driven
+                  Development (TDD) with Cypress and Mocha for automation
+                  testing and Postman for API validation. This streamlined the
+                  testing process, reducing bugs and enhancing system
+                  reliability.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Established CI/CD pipelines for the microservices using
-                  Jenkins achieving 60% reduction in manual deployment effort.
+                  <strong>CI/CD & Performance Optimization :</strong>
+                  Established CI/CD pipelines using Jenkins, reducing manual
+                  deployment efforts by 60%. Optimized application performance
+                  by implementing code splitting, lazy loading, memoization,
+                  debouncing, and caching, leading to a 30% reduction in load
+                  times. Debugged and monitored performance using Chrome
+                  DevTools and DataDog.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Orchestrated the software development life cycle with Jira,
-                  from software architecture & design patterns (MVC) to
-                  deployment.
+                  <strong>Cross-Team Collaboration & Agile Leadership:</strong>
+                  Worked closely with UX, sales, and marketing teams via
+                  Confluence, refining product features that resulted in a 25%
+                  revenue increase. Led Scrum meetings, mentored junior
+                  developers, and conducted rigorous code reviews, accelerating
+                  project timelines by 10% and enabling an early product launch.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Reduced applications loading time by 30% through optimization
-                  techniques like code splitting, code re-factoring, lazy
-                  loading, priority, memoization, reduced re-renders, dependency
-                  optimizations, debounce and throttling.
-                </div>
-                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Collaborated using tools like Confluenece with UX, sales, &
-                  marketing to improve product features which boosted revenue by
-                  25%.
-                </div>
-                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Directed scrum meetings, mentored juniors & conducted source
-                  code review, reduced timeline by 10% and led to early launch.
-                </div>
-                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Delivered the SaaS solution to five clients, customizing
-                  features, coordinating client calls, and ensuring timely
-                  deployment.
+                  This experience underscores my expertise in building scalable
+                  SaaS platforms, optimizing application performance,
+                  implementing automation, and leading cross-functional teams to
+                  drive product success.
                 </div>
               </div>
             </div>
@@ -141,25 +185,64 @@ export default function ExperienceComponent() {
               <div className="mt-2">
                 <div className="inline font-semibold">Sep 2019 - Jul 2022</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Designed a technical architecture for multi-interface
-                  inventory management system with Node.js using Node-Fetch, and
-                  MySQL, featuring role-based access control, automated stock
-                  updates, & analytics, reducing wastage by 36% across 10
-                  centers.
+                  During my tenure at ClayWorks, I played a key role in
+                  designing scalable software architectures, integrating IoT
+                  solutions, and developing full-stack applications that
+                  enhanced operational efficiency and user experience. I worked
+                  across multiple projects, implementing best practices in
+                  software design, system integration, and agile development
+                  while ensuring regulatory compliance and performance
+                  optimization.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Innovated smart work-pod solution Spotch with IoT integration
-                  aligning with regulatory compliance user safety standards.
+                  <strong>
+                    Inventory Management System – Scalable Architecture &
+                    Analytics:
+                  </strong>
+                  Designed and developed a multi-interface inventory management
+                  system using React, Node.js, GraphQL, and MySQL, incorporating
+                  role-based access control, automated stock updates, and
+                  analytics dashboards. This system reduced material wastage by
+                  36% across 10 centers by streamlining inventory tracking and
+                  reporting.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Implemented the frontend using React, the backend with Java
-                  and SpringBoot (managed via Maven), and implemented real-time
-                  WebSocket notifications with Firebase. Furthermore, integrated
-                  mobile software development with React Native.
+                  <strong>
+                    Smart Work-Pod Solution – IoT & Compliance Integration:
+                  </strong>
+                  Spearheaded the development of Spotch, an innovative
+                  IoT-integrated smart work-pod solution, ensuring compliance
+                  with regulatory safety standards. This solution enabled
+                  real-time monitoring, space optimization, and seamless user
+                  experiences.
                 </div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                  Managed the end-to-end integration of new technology stacks
-                  into legacy PHP systems and other web development.
+                  <strong>Full-Stack Development & System Integration:</strong>
+                  Led the end-to-end software development life cycle (SDLC)
+                  using Jira, adhering to MVC architectural patterns from system
+                  design to deployment. Developed the frontend using React &
+                  Material-UI and the backend using Java SpringBoot, integrating
+                  real-time WebSocket notifications via Firebase. Additionally,
+                  extended mobile accessibility by implementing a React Native
+                  application.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  <strong>
+                    Legacy System Modernization & Cross-Platform Compatibility:
+                  </strong>
+                  Led the end-to-end software development life cycle (SDLC)
+                  using Jira, adhering to MVC architectural patterns from system
+                  design to deployment. Developed the frontend using React &
+                  Material-UI and the backend using Java SpringBoot, integrating
+                  real-time WebSocket notifications via Firebase. Additionally,
+                  extended mobile accessibility by implementing a React Native
+                  application.
+                </div>
+                <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                  This experience highlights my expertise in full-stack
+                  development, IoT-driven solutions, system architecture, and
+                  agile project execution, ensuring optimized workflows,
+                  enhanced system efficiency, and scalable software solutions.
                 </div>
               </div>
             </div>

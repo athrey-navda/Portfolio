@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState, useRef } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import Particles from "@tsparticles/react";
 import { useTheme } from "next-themes";
 
 export default function FunLayout({ children }) {
@@ -12,10 +11,7 @@ export default function FunLayout({ children }) {
   const toggleEffectTimerRef = useRef(null);
 
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-      setInit(true);
-    });
+    setInit(true);
   }, []);
 
   useEffect(() => {
@@ -93,7 +89,7 @@ export default function FunLayout({ children }) {
       },
       detectRetina: true,
     }),
-    [resolvedTheme]
+    [resolvedTheme],
   );
 
   const normalEffectOptions = useMemo(
@@ -164,7 +160,7 @@ export default function FunLayout({ children }) {
       },
       detectRetina: true,
     }),
-    [resolvedTheme]
+    [resolvedTheme],
   );
 
   return (

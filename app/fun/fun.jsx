@@ -35,12 +35,13 @@ const games = [
   },
   {
     id: 4,
-    name: "Coming Soon",
-    href: "#",
+    name: "Memory Card Game",
+    href: "/fun/memory-game/",
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/CD_ComingSoon.svg/1772px-CD_ComingSoon.svg.png",
-    imageAlt: "Coming Soon",
-    description: "#",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Memory_game.jpg/640px-Memory_game.jpg",
+    imageAlt: "Memory Card Game",
+    description:
+      "Test your memory by matching pairs of cards! Flip cards to reveal icons and find matching pairs. The game challenges your memory and concentration skills with colorful emoji cards.",
   },
 ];
 

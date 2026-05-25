@@ -18,6 +18,18 @@ const nextConfig = {
         protocol: "https",
         hostname: "rapidcloudify.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.python.org",
+      },
+      {
+        protocol: "https",
+        hostname: "www.oracle.com",
+      },
+      {
+        protocol: "https",
+        hostname: "angular.io",
+      },
     ],
   },
 };

@@ -5,7 +5,7 @@ const gmu = [
     description:
       "Analysis of Algorithms, User Interface and Experience (UI-UX) Development , Database management, Information Security Theory, Software Testing, Software Project Management.",
   },
-  { name: "Duration", description: "Jan 2023 to Dec 2024" },
+  { name: "Duration", description: "Jan 2023 to Dec 2024 (Graduated)" },
   { name: "GPA", description: "3.7/4.0" },
 ];
 const vtu = [
@@ -39,13 +39,13 @@ export default function EducationComponent() {
         </div>
         <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:gap-8">
           <div
-            className="rounded-lg overflow-hidden"
-            style={{ height: "25rem", overflow: "hidden" }}
+            className="rounded-lg overflow-hidden flex items-center justify-center bg-white"
+            style={{ height: "25rem" }}
           >
             <img
-              src="https://cec.gmu.edu/sites/g/files/yyqcgq471/files/styles/large/public/2022-08/Generic-thumnbail-image.jpg"
+              src="https://cec.gmu.edu/sites/default/files/Web_Logo_College_Engineering_Computing.png"
               alt="GMU"
-              className="w-full h-full object-cover"
+              className="max-w-full max-h-full object-contain"
             />
           </div>
         </div>

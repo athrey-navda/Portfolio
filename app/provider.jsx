@@ -1,16 +1,17 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-const ThemeProvider = dynamic(
-  () => import("next-themes").then((module) => module.ThemeProvider),
-  { ssr: false }
-);
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 export function Providers({ children }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <NextThemesProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+      storageKey="theme"
+    >
       {children}
-    </ThemeProvider>
+    </NextThemesProvider>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,15 +17,14 @@ const programmingLanguages = [
     name: "TypeScript",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
     imageAlt: "Ts",
   },
   {
     id: 3,
     name: "Python",
 
-    imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Python-logo.png/1093px-Python-logo.png",
+    imageSrc: "https://www.python.org/static/img/python-logo.png",
     imageAlt: "Py",
   },
   {
@@ -38,7 +39,7 @@ const programmingLanguages = [
     name: "C++",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/240px-ISO_C%2B%2B_Logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg",
     imageAlt: "C++",
   },
   {
@@ -46,7 +47,7 @@ const programmingLanguages = [
     name: "PHP",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1422px-PHP-logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
     imageAlt: "C++",
   },
 ];
@@ -57,7 +58,7 @@ const frontendTechnologies = [
     name: "React",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/React_Logo_SVG.svg/1200px-React_Logo_SVG.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg",
     imageAlt: "React",
   },
   {
@@ -79,16 +80,15 @@ const frontendTechnologies = [
     id: 11,
     name: "Angular",
 
-    imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
-    imageAlt: "Java",
+    imageSrc: "https://angular.io/assets/images/logos/angular/angular.svg",
+    imageAlt: "Angular",
   },
   {
     id: 4,
     name: "Tailwind",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
     imageAlt: "C++",
   },
   {
@@ -104,7 +104,7 @@ const frontendTechnologies = [
     name: "React Native",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/240px-React-icon.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
     imageAlt: "RN",
   },
   {
@@ -112,7 +112,7 @@ const frontendTechnologies = [
     name: "CSS",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/800px-CSS3_logo_and_wordmark.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
     imageAlt: "C++",
   },
   {
@@ -120,7 +120,7 @@ const frontendTechnologies = [
     name: "JQuery",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Jquery-icon.svg/1200px-Jquery-icon.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/83/Jquery-icon.svg",
     imageAlt: "C++",
   },
   {
@@ -128,7 +128,7 @@ const frontendTechnologies = [
     name: "HTML",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/c/c5/Html5_dise%C3%B1o_web.png?20180726103553",
+      "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
     imageAlt: "C++",
   },
   {
@@ -136,7 +136,7 @@ const frontendTechnologies = [
     name: "Chart.js",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Chart.js_logo.svg/240px-Chart.js_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/86/Chart.js_logo.svg",
     imageAlt: "Chart",
   },
 ];
@@ -161,7 +161,7 @@ const backendTechnologies = [
     name: "GraphQL",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1200px-GraphQL_Logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
     imageAlt: "GraphQL",
   },
   {
@@ -169,7 +169,7 @@ const backendTechnologies = [
     name: "JSON",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/JSON_vector_logo.svg/1200px-JSON_vector_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c9/JSON_vector_logo.svg",
     imageAlt: "JSON++",
   },
   {
@@ -207,7 +207,7 @@ const backendTechnologies = [
     name: "Socket.io",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Socket-io.svg/240px-Socket-io.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
     imageAlt: "Socket.io",
   },
 ];
@@ -218,7 +218,7 @@ const databaseTech = [
     name: "SQL",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/6/68/Oracle_SQL_Developer_logo.svg/800px-Oracle_SQL_Developer_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png",
     imageAlt: "SQL",
   },
   {
@@ -226,7 +226,7 @@ const databaseTech = [
     name: "MySQL",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Database-mysql.svg/1448px-Database-mysql.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg",
     imageAlt: "Mysql",
   },
   {
@@ -234,7 +234,7 @@ const databaseTech = [
     name: "PostgreSQL",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/240px-Postgresql_elephant.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg",
     imageAlt: "Post",
   },
   {
@@ -242,7 +242,7 @@ const databaseTech = [
     name: "MongoDB",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/1024px-Antu_mongodb.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/f/f9/Antu_mongodb.svg",
     imageAlt: "MongoDB",
   },
   {
@@ -261,7 +261,7 @@ const cloudTech = [
     name: "AWS",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/300px-Amazon_Web_Services_Logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
     imageAlt: "AWS",
   },
   {
@@ -269,8 +269,16 @@ const cloudTech = [
     name: "DigitalOcean",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DigitalOcean_logo.svg/1024px-DigitalOcean_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/f/ff/DigitalOcean_logo.svg",
     imageAlt: "DigitalOcean",
+  },
+  {
+    id: 3,
+    name: "GCP",
+
+    imageSrc:
+      "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg",
+    imageAlt: "GCP",
   },
 ];
 
@@ -288,7 +296,7 @@ const security = [
     name: "OAuth",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/1196px-Oauth_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/d/d2/Oauth_logo.svg",
     imageAlt: "OAuth",
   },
 ];
@@ -307,7 +315,7 @@ const containerization = [
     name: "Kubernetes",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/168px-Kubernetes_logo_without_workmark.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg",
     imageAlt: "Kubernetes",
   },
 ];
@@ -318,7 +326,7 @@ const toolsTech = [
     name: "VS code",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
     imageAlt: "VS",
   },
   {
@@ -326,7 +334,7 @@ const toolsTech = [
     name: "Git",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg",
     imageAlt: "Kubernetes",
   },
 
@@ -356,7 +364,7 @@ const toolsTech = [
     name: "Mocha",
 
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mocha_logo.svg/200px-Mocha_logo.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/d/de/Mocha_logo.svg",
     imageAlt: "Mocha",
   },
 ];
@@ -375,7 +383,9 @@ export default function SkillsComponent() {
                 {programmingLanguages.map((languages) => (
                   <div key={languages.id}>
                     <div className="my-2 flex justify-center">
-                      <div className="w-24 h-24 overflow-hidden p-2 rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75">
+                      <div
+                        className={`w-24 h-24 overflow-hidden p-2 rounded-md lg:aspect-none group-hover:opacity-75 ${languages.name === "Python" ? "bg-white dark:bg-black" : "bg-gray-200"}`}
+                      >
                         <Image
                           alt={languages.imageAlt}
                           src={languages.imageSrc}

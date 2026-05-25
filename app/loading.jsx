@@ -40,6 +40,8 @@ const Loading = () => {
                   alt="logo"
                   width={720}
                   height={720}
+                  loading="eager"
+                  suppressHydrationWarning
                 />
               </Transition>
             </div>

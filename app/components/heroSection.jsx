@@ -94,7 +94,7 @@ export default function HeroSection() {
                     MS in Computer Science at George Mason University.
                   </div>
                   <div className="text-base sm:text-lg lg:text-xl leading-6 text-gray-600 dark:text-white">
-                    Graduating Dec '24.{" "}
+                    Graduated Dec '24.{" "}
                   </div>
                   <div
                     onClick={openModal}
@@ -280,8 +280,8 @@ export default function HeroSection() {
                                 <div className="my-0 sm:my-2">
                                   <div className="text-md text-white dark:text-black text-justify">
                                     As a results-driven software engineer with
-                                    four years of experience, I specialize in
-                                    full-stack development and cloud-based
+                                    over six years of experience, I specialize
+                                    in full-stack development and cloud-based
                                     solutions. With a robust foundation in both
                                     frontend and backend technologies, I have
                                     successfully designed, developed, and
@@ -301,12 +301,12 @@ export default function HeroSection() {
                                     authentication systems using JWT and OAuth.
                                   </div>
                                   <div className="text-md text-white dark:text-black my-2 text-justify">
-                                    Currently pursuing a Master's in Computer
-                                    Science at George Mason University, I am
-                                    deepening my knowledge in data structures,
-                                    algorithms, and software project management.
-                                    I leverage my industry experience to lead
-                                    impactful projects and drive innovation.
+                                    I hold a Master's in Computer Science from
+                                    George Mason University, with deep knowledge
+                                    in data structures, algorithms, and software
+                                    project management. I leverage my industry
+                                    experience to lead impactful projects and
+                                    drive innovation.
                                   </div>
                                   <div className="text-md text-white dark:text-black my-2 text-justify">
                                     I thrive in fast-paced environments and I am

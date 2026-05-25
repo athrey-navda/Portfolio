@@ -46,9 +46,10 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <script
+        {/* Hotjar commented out for development - only works over HTTPS */}
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(h,o,t,j,a,r){
@@ -61,7 +62,7 @@ export default function RootLayout({ children }) {
               })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
             `,
           }}
-        />
+        /> */}
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <link rel="shortcut icon" href="/images/logo/favicon.ico" />

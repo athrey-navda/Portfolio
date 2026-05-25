@@ -7,6 +7,67 @@ export default function ExperienceComponent() {
       <h2 className="text-3xl font-bold py-8 sm:text-4xl">Experience</h2>
       <div className="overflow-hidden py-4 sm:py-4 bg-slate-200 dark:bg-zinc-800 mt-3">
         <div className="mx-auto px-6 lg:px-8">
+          <div>
+            <div className="flex items-center gap-x-6">
+              <img
+                className="h-16 w-48"
+                src="/images/homepage/goldman_sachs_logo.png"
+                alt="goldman_sachs_logo"
+              />
+            </div>
+            <h2 className="text-base font-semibold leading-7 mt-4">
+              Goldman Sachs Services LLC - Dallas, United States
+            </h2>
+          </div>
+          <div className="mt-4 space-y-8 text-base leading-7 lg:max-w-none">
+            <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
+              Associate Engineering - Cloud Platforms & Foundation
+              Infrastructure
+            </p>
+            <div className="mt-2">
+              <div className="inline font-semibold">Jul 2025 - present</div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>High-Scale Middleware Systems:</strong> Built backend
+                features for high-scale middleware systems, implementing proxy,
+                routing, and API rate-limiting improvements to handle massive
+                traffic loads efficiently.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>Data Migration & Audit Readiness:</strong> Developed
+                services for log-file-based data migration to central servers,
+                improving data consistency and ensuring comprehensive audit
+                readiness for regulatory compliance.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>API Enhancement & Regulatory Compliance:</strong>{" "}
+                Enhanced internal APIs to resolve item-discovery issues, apply
+                regulatory updates, and correct mis-flagged inventory, ensuring
+                accurate data representation and compliance.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>Database Integration Optimization:</strong> Improved
+                database-integration workflows for internal applications,
+                optimizing data access patterns and backend performance for
+                reduced latency and improved throughput.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>Load Balancing Architecture:</strong> Engineered a
+                reverse proxy load balancer, migrating from round-robin to a
+                least-connection algorithm, improving server availability by 60%
+                and ensuring optimal resource utilization.
+              </div>
+              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
+                <strong>Frontend Modernization:</strong> Supporting frontend
+                modernization efforts while transitioning into UI development
+                responsibilities, bridging backend expertise with frontend
+                development to deliver comprehensive solutions.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="overflow-hidden py-4 sm:py-4 bg-slate-200 dark:bg-zinc-800 mt-3">
+        <div className="mx-auto px-6 lg:px-8">
           <div className="flex justify-start gap-x-6">
             <Link href="https://www.ifees.net">
               <div className="flex items-center  gap-x-6">
@@ -36,56 +97,40 @@ export default function ExperienceComponent() {
             <Link href="https://www.gedcouncil.org/">
               Global Engineering Deans Council (GEDC)
             </Link>
+            {" - United States"}
           </h2>
           <div className="mt-4 space-y-8 text-base leading-7 lg:max-w-none">
             <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
               Software Developer
             </p>
             <div className="mt-2">
-              <div className="inline font-semibold">Aug 2024 - present</div>
+              <div className="inline font-semibold">Aug 2024 - July 2025</div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                At IFEES and GEDC, I am leading the full-stack development of a
-                robust CRM platform designed to support a growing community of
-                over 1,000 users. My role encompasses architecting scalable
-                backend services, enhancing search functionalities, and
-                optimizing user interactions to deliver a seamless experience.
+                <strong>Full-Stack CRM Development:</strong> Spearheading the
+                full stack development of a platform services (CRM) using React,
+                TypeScript, and Python for 1,000+ users, delivering a robust and
+                scalable solution.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                <strong>
-                  Full-Stack Development & Performance Optimization:
-                </strong>{" "}
-                Spearheading the development of a CRM platform using React,
-                TypeScript, and Python, ensuring a responsive and efficient user
-                experience. Optimized frontend performance by implementing
-                Webpack, CDNs, and advanced image optimization techniques,
-                reducing load times by 35%.
+                <strong>Backend Architecture:</strong> Architected backend
+                services with Flask and PostgreSQL, improving API response times
+                by 25% through optimized queries and efficient data modeling.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                <strong>Backend Architecture & API Efficiency:</strong> Designed
-                and implemented scalable backend services using Flask and
-                PostgreSQL, leading to a 25% improvement in API response times.
-                Integrated Kafka-based real-time messaging to enable seamless
-                user interactions and instant notifications.
+                <strong>Advanced Search Integration:</strong> Leveraging
+                KeyBERT, spaCy, Elasticsearch & Redis to deliver better search
+                functionalities with less latency, enhancing user experience and
+                data retrieval accuracy.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                <strong>Advanced Search & AI Integration:</strong> Leveraging
-                LangChain, TensorFlow, Elasticsearch, and Redis, I developed
-                intelligent search functionalities that enhance accuracy and
-                minimize latency, enabling faster and more relevant results for
-                users.
+                <strong>Real-Time Messaging:</strong> Implemented Kafka-based
+                real-time messaging for seamless user interactions and
+                notifications, enabling instant communication and updates.
               </div>
               <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                <strong>Cross-Team Collaboration & SDLC Standards:</strong>{" "}
-                Managing a distributed development team across different time
-                zones while ensuring adherence to SDLC best practices and coding
-                standards. Actively involved in code reviews, performance
-                monitoring, and iterative improvements to deliver high-quality
-                digital products.
-              </div>
-              <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
-                This project reflects my ability to architect scalable
-                solutions, optimize system performance, and integrate
-                cutting-edge AI and real-time technologies to enhance user
+                <strong>Performance Optimization:</strong> Optimized frontend
+                performance using Webpack, CDN & advanced image optimization
+                techniques, reducing load time by 35% for improved user
                 engagement.
               </div>
             </div>
@@ -117,7 +162,7 @@ export default function ExperienceComponent() {
                 Software Engineer II
               </p>
               <div className="mt-2">
-                <div className="inline font-semibold">Jul 2022 - Jan 2023</div>
+                <div className="inline font-semibold">Jun 2022 - Jan 2023</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   At ClayWorks, I played a pivotal role in developing a
                   scalable, secure SaaS-based booking system with a four-tier
@@ -183,7 +228,7 @@ export default function ExperienceComponent() {
                 Software Engineer
               </p>
               <div className="mt-2">
-                <div className="inline font-semibold">Sep 2019 - Jul 2022</div>
+                <div className="inline font-semibold">Sep 2019 - Jun 2022</div>
                 <div className="text-md mt-2 hover:font-bold hover:p-1 hover:dark:bg-gray-300 hover:dark:text-black hover:bg-gray-400 hover:text-black rounded-lg">
                   During my tenure at ClayWorks, I played a key role in
                   designing scalable software architectures, integrating IoT

@@ -47,7 +47,7 @@ const projects = [
     name: "Universal Booking System",
     href: "https://book.clayworks.space",
     imageSrc:
-      "https://clayworks.space/assets/website/property/clayworks-cbd/Clayworks-cbd-hot-seats.jpg",
+      "https://images.unsplash.com/photo-1596702337959-2fcaf14d21e7?w=640",
     imageAlt: "Booking System",
     stack:
       "React - Next.js(pageRouter), Node.js, ExpressJS, MySQL, Tailwind CSS, JWT and OAuth",

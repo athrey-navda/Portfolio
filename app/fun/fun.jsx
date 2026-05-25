@@ -9,7 +9,7 @@ const games = [
     name: "Tic Tac Toe",
     href: "/fun/tic-tac-toe/",
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/400px-Tic_tac_toe.svg.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/1920px-Tic_tac_toe.svg.png",
     imageAlt: "Tic Tac Toe",
     description:
       "Tic-tac-toe, noughts and crosses, or Xs and Os is a paper-and-pencil game for two players who take turns" +

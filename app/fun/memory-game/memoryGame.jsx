@@ -3,9 +3,7 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import confetti from "canvas-confetti";
 
-const cardIcons = [
-  "🎮", "🎲", "🎯", "🎨", "🎭", "🎪", "🎢", "🎡"
-];
+const cardIcons = ["🎮", "🎲", "🎯", "🎨", "🎭", "🎪", "🎢", "🎡"];
 
 export default function MemoryGame() {
   const { resolvedTheme } = useTheme();
@@ -90,6 +88,13 @@ export default function MemoryGame() {
               <h1 className="text-3xl font-bold mb-5 text-center">
                 Memory Card Game
               </h1>
+              <div className="flex justify-center mb-5">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/WMCZ_Protected_Areas_Card_Game-7_%28cropped%29.jpg/1920px-WMCZ_Protected_Areas_Card_Game-7_%28cropped%29.jpg"
+                  alt="Memory Card Game"
+                  className="w-48 h-48 object-contain"
+                />
+              </div>
             </div>
 
             {!gameStarted ? (
@@ -111,9 +116,7 @@ export default function MemoryGame() {
             ) : (
               <>
                 <div className="flex justify-between items-center mb-4">
-                  <div className="font-bold text-lg">
-                    Moves: {moves}
-                  </div>
+                  <div className="font-bold text-lg">Moves: {moves}</div>
                   <button
                     className={
                       resolvedTheme === "dark"
@@ -131,9 +134,7 @@ export default function MemoryGame() {
                     <div className="text-2xl font-bold text-green-500 dark:text-green-400">
                       🎉 You Won! 🎉
                     </div>
-                    <div className="text-lg">
-                      Completed in {moves} moves
-                    </div>
+                    <div className="text-lg">Completed in {moves} moves</div>
                   </div>
                 )}
 
@@ -142,7 +143,8 @@ export default function MemoryGame() {
                     <div
                       key={card.id}
                       className={`aspect-square cursor-pointer rounded-lg flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl transition-all duration-300 ${
-                        flippedCards.includes(card.id) || matchedCards.includes(card.id)
+                        flippedCards.includes(card.id) ||
+                        matchedCards.includes(card.id)
                           ? "bg-indigo-500 dark:bg-indigo-600 text-white rotate-0"
                           : "bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600 rotate-0"
                       } ${
@@ -152,7 +154,8 @@ export default function MemoryGame() {
                       }`}
                       onClick={() => handleCardClick(card.id)}
                     >
-                      {flippedCards.includes(card.id) || matchedCards.includes(card.id)
+                      {flippedCards.includes(card.id) ||
+                      matchedCards.includes(card.id)
                         ? card.icon
                         : "?"}
                     </div>

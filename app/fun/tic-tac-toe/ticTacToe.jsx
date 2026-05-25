@@ -29,12 +29,12 @@ export default function Tictactoe() {
 
       if (Array.isArray(jsonData)) {
         const ticTacToeGame = jsonData.find(
-          (game) => game.name === "tic-tac-toe"
+          (game) => game.name === "tic-tac-toe",
         );
         if (ticTacToeGame) {
           total = Object.values(ticTacToeGame.count).reduce(
             (acc, count) => acc + count,
-            0
+            0,
           );
         }
       }
@@ -64,7 +64,7 @@ export default function Tictactoe() {
     if (ticTacToeData) {
       const todayDate = new Date().toLocaleDateString();
       const ticTacToeGame = ticTacToeData.find(
-        (game) => game.name === "tic-tac-toe"
+        (game) => game.name === "tic-tac-toe",
       );
 
       if (ticTacToeGame) {
@@ -373,6 +373,13 @@ export default function Tictactoe() {
               <h1 className="text-3xl font-bold mb-5 text-center">
                 Tic Tac Toe
               </h1>
+              <div className="flex justify-center mb-5">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/1920px-Tic_tac_toe.svg.png"
+                  alt="Tic Tac Toe"
+                  className="w-48 h-48 object-contain"
+                />
+              </div>
             </div>
             <div>
               {(!gameStarted || winner || stepNumber === 9) && (

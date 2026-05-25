@@ -21,8 +21,7 @@ export default function ExperienceComponent() {
           </div>
           <div className="mt-4 space-y-8 text-base leading-7 lg:max-w-none">
             <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-              Associate Engineering - Cloud Platforms & Foundation
-              Infrastructure
+              Associate in Engineering Division
             </p>
             <div className="mt-2">
               <div className="inline font-semibold">Jul 2025 - present</div>

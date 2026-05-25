@@ -38,7 +38,7 @@ const games = [
     name: "Memory Card Game",
     href: "/fun/memory-game/",
     imageSrc:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Memory_game.jpg/640px-Memory_game.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/WMCZ_Protected_Areas_Card_Game-7_%28cropped%29.jpg/1920px-WMCZ_Protected_Areas_Card_Game-7_%28cropped%29.jpg",
     imageAlt: "Memory Card Game",
     description:
       "Test your memory by matching pairs of cards! Flip cards to reveal icons and find matching pairs. The game challenges your memory and concentration skills with colorful emoji cards.",
